@@ -1,6 +1,5 @@
 // Common
 const gulp = require('gulp');
-const runSequence = require('run-sequence');
 const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
@@ -18,7 +17,7 @@ const inline = require('gulp-inline-source');
 
 const BUILD = 'public';
 
-gulp.task('clean', () => del.sync([`${BUILD}/**`, `!${BUILD}`]));
+gulp.task('clean', () => del([`${BUILD}/**`, `!${BUILD}`]));
 
 gulp.task('css', () => {
   return gulp.src('styles/*.less')
@@ -63,11 +62,11 @@ gulp.task('html', () => {
 });
 
 
-gulp.task('default', cb => runSequence('clean', ['css', 'js', 'copy-static'], 'html', cb));
+gulp.task('default', gulp.series('clean', gulp.parallel('css', 'js', 'copy-static'), 'html'));
 
 gulp.task('watch', () => {
-  gulp.watch('styles/**', () => runSequence('css', 'html'));
-  gulp.watch('scripts/**', () => runSequence('js', 'html'));
-  gulp.watch('static/**', () => runSequence('copy-static', 'html'));
-  gulp.watch(['templates/**', 'pages/**'], ['html']);
+  gulp.watch('styles/**', gulp.series('css', 'html'));
+  gulp.watch('scripts/**', gulp.series('js', 'html'));
+  gulp.watch('static/**', gulp.series('copy-static', 'html'));
+  gulp.watch(['templates/**', 'pages/**'], gulp.series('html'));
 });
