@@ -45,7 +45,7 @@
   &-header {
     align-items: flex-end;
     justify-content: space-between;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0;
 
     @media print, (min-width: @screen-lg-min) {
       display: flex;
@@ -172,17 +172,18 @@
 
     h2,
     h3 {
-      margin: 0 0 0.125em;
+      margin: 0 0 0.125rem;
       color: @subheading-color;
     }
 
     h2 {
       font-size: 1.25rem;
-      font-weight: 500;
+      font-weight: 700;
+      flex-basis: 100%;
     }
 
     h3 {
-      font-size: 1.1rem;
+      font-size: 1.125rem;
       font-weight: 400;
     }
 
@@ -198,6 +199,7 @@
 
     ul {
       padding-left: 18px;
+      margin: 0.25rem 0;
       list-style-type: circle;
     }
 
@@ -224,6 +226,7 @@
   &-row {
     @media (min-width: @screen-lg-min) {
       display: flex;
+      flex-wrap: wrap;
     }
 
     & + & {
