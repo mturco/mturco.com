@@ -1,14 +1,33 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import { LayoutBase, PageMeta } from '@components';
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+`;
+
+const Heading = styled.h1`
+  font: 700 3em var(--font-heading);
+  letter-spacing: 0.03em;
+  margin: 0 0 1rem;
+  color: var(--color-primary);
+`;
+
+const Paragraph = styled.p`
+  font-size: 2rem;
+`;
+
+export default () => (
+  <LayoutBase>
+    <Wrapper>
+      <PageMeta title="404 Not Found" />
+      <Heading>Nope...</Heading>
+      <Paragraph>That's not a thing. In other words, 404.</Paragraph>
+    </Wrapper>
+  </LayoutBase>
 );
-
-export default NotFoundPage;
