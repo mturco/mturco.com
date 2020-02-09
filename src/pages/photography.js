@@ -142,7 +142,7 @@ const photos = [
   'IMG_20161021_165411_bq5r7y',
   'IMG_20161028_155531_aqwv32',
   'IMG_20160908_182514_zhnxh6',
-  'mturco.com/IMG_20181013_161059_xkew3e',
+  'dHJhdmVsL3JleWtqYXZpay0x',
   'IMG_20160704_190132_tlascj',
   'MVIMG_20171024_000337_dtgayl',
   'MVIMG_20171028_083314_zrr8cx',
