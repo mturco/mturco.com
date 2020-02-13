@@ -1,0 +1,40 @@
+:root {
+  /* colors */
+  --color-accent: hsl(358, 100%, 68%);
+  --color-background-alt: hsl(200, 20%, 97%);
+  --color-background: hsl(0, 0%, 100%);
+  --color-divider: hsl(197, 14%, 90%);
+  --color-primary: hsl(200, 85%, 38%);
+  --color-selection: var(--color-accent);
+  --color-text: hsl(199, 9%, 36%);
+  --color-text-hc: hsl(199, 10%, 31%);
+
+  /* themes */
+  --color-light-background: hsl(0, 0%, 100%);
+  --color-light-background-alt: hsl(200, 20%, 97%);
+  --color-light-divider: hsl(197, 14%, 90%);
+  --color-light-text: hsl(199, 9%, 36%);
+  --color-light-selection: hsl(358, 100%, 78%);
+  --color-dark-background: hsl(225, 6%, 13%);
+  --color-dark-background-alt: hsl(225, 4%, 18%);
+  --color-dark-divider: hsl(214, 4%, 39%);
+  --color-dark-text: hsl(199, 8%, 61%);
+  --color-dark-text-hc: hsl(203, 11%, 71%);
+  --color-dark-selection: hsl(358, 100%, 78%);
+
+  /* typography */
+  --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-heading: Montserrat, var(--font-base);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-background: var(--color-dark-background);
+    --color-background-alt: var(--color-dark-background-alt);
+    --color-divider: var(--color-dark-divider);
+    --color-text: var(--color-dark-text);
+    --color-text-hc: var(--color-dark-text-hc);
+    --color-selection: var(--color-dark-selection);
+  }
+}
