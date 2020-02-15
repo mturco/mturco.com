@@ -1,22 +1,23 @@
 :root {
   /* colors */
-  --color-accent: hsl(358, 100%, 68%);
-  --color-background-alt: hsl(200, 20%, 97%);
-  --color-background: hsl(0, 0%, 100%);
-  --color-divider: hsl(197, 14%, 90%);
   --color-primary: hsl(200, 85%, 38%);
-  --color-selection: var(--color-accent);
-  --color-text: hsl(199, 9%, 36%);
-  --color-text-hc: hsl(199, 10%, 31%);
+  --color-accent: hsl(358, 100%, 68%);
+  --color-background: var(--color-light-background);
+  --color-background-alt: var(--color-light-background-alt);
+  --color-divider: var(--color-light-divider);
+  --color-selection: var(--color-light-selection);
+  --color-text: var(--color-light-text);
+  --color-text-hc: var(--color-light-text-hc);
 
   /* themes */
   --color-light-background: hsl(0, 0%, 100%);
-  --color-light-background-alt: hsl(200, 20%, 97%);
+  --color-light-background-alt: hsl(200, 20%, 96%);
   --color-light-divider: hsl(197, 14%, 90%);
   --color-light-text: hsl(199, 9%, 36%);
-  --color-light-selection: hsl(358, 100%, 78%);
-  --color-dark-background: hsl(225, 6%, 13%);
-  --color-dark-background-alt: hsl(225, 4%, 18%);
+  --color-light-text-hc: hsl(199, 10%, 31%);
+  --color-light-selection: var(--color-accent);
+  --color-dark-background: hsl(196, 23%, 11%);
+  --color-dark-background-alt: hsl(196, 23%, 14%);
   --color-dark-divider: hsl(214, 4%, 39%);
   --color-dark-text: hsl(199, 8%, 61%);
   --color-dark-text-hc: hsl(203, 11%, 71%);
