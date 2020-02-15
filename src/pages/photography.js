@@ -97,24 +97,27 @@ const PhotoViewerSpinner = styled(Spinner)`
 const PhotoViewer = ({ id, onClose, onNext, onPrev }) => {
   const ref = useRef();
   const [loaded, setLoaded] = useState(false);
-  const handleKeyUp = useCallback(e => {
-    switch (e.key) {
-      case 'Escape': {
-        onClose();
-        break;
+  const handleKeyUp = useCallback(
+    e => {
+      switch (e.key) {
+        case 'Escape': {
+          onClose();
+          break;
+        }
+        case 'ArrowLeft': {
+          onPrev();
+          break;
+        }
+        case 'ArrowRight': {
+          onNext();
+          break;
+        }
+        default: {
+        }
       }
-      case 'ArrowLeft': {
-        onPrev();
-        break;
-      }
-      case 'ArrowRight': {
-        onNext();
-        break;
-      }
-      default: {
-      }
-    }
-  });
+    },
+    [onClose, onPrev, onNext],
+  );
 
   useEffect(() => {
     ref.current.focus();
@@ -166,12 +169,12 @@ export default () => {
   const handleNext = useCallback(() => {
     const current = photos.findIndex(photo => photo === selected);
     setSelected(photos[Math.min(current + 1, photos.length - 1)]);
-  });
+  }, [selected]);
 
   const handlePrev = useCallback(() => {
     const current = photos.findIndex(photo => photo === selected);
     setSelected(photos[Math.max(current - 1, 0)]);
-  });
+  }, [selected]);
 
   return (
     <LayoutBase>

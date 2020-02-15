@@ -17,7 +17,7 @@ export const useProgressiveImage = srcset => {
       }
     };
     loadAll();
-  }, []);
+  }, [srcset]);
 
   return current;
 };

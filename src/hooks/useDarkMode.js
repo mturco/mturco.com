@@ -12,7 +12,7 @@ export const useDarkMode = () => {
   const toggleDarkMode = useCallback(() => {
     setPrefersDark(prefersDark === null ? !darkMode : null);
     setDarkMode(!darkMode);
-  }, [darkMode, prefersDark]);
+  }, [darkMode, prefersDark, setPrefersDark]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
