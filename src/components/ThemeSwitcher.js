@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { useDarkMode } from '@hooks';
-import Lightbulb from '@images/lightbulb.svg';
+import Brightness from '@images/brightness.svg';
 
 const Wrapper = styled.div`
   overflow: hidden;
@@ -23,12 +23,14 @@ const Toggle = styled.button`
   padding: 1rem;
   align-items: center;
 
-  :hover {
+  :hover,
+  :focus {
     transform: none;
+    background-color: var(--color-background-alt);
   }
 `;
 
-const LightbulbIcon = styled(Lightbulb)`
+const BrightnessIcon = styled(Brightness)`
   width: 1.5rem;
   height: 1.5rem;
   fill: currentColor;
@@ -43,7 +45,8 @@ const Label = styled.span`
   transition-property: opacity;
   white-space: nowrap;
 
-  ${Toggle}:hover & {
+  ${Toggle}:hover &,
+  ${Toggle}:focus & {
     opacity: 1;
   }
 `;
@@ -53,7 +56,7 @@ export const ThemeSwitcher = () => {
   return (
     <Wrapper>
       <Toggle onClick={toggleDarkMode}>
-        <LightbulbIcon />
+        <BrightnessIcon />
         <Label>
           {darkMode
             ? `Dark${devicePrefersDark ? ' (device default)' : ''}`
