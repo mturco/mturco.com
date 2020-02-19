@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const load = src =>
   new Promise(resolve => {
@@ -8,16 +8,17 @@ const load = src =>
   });
 
 export const useProgressiveImage = srcset => {
+  const srcsetRef = useRef(srcset);
   const [current, setCurrent] = useState(srcset[0]);
+
   useEffect(() => {
-    const loadAll = async () => {
-      for (let i = 0; i < srcset.length; i++) {
-        await load(srcset[i][1]);
-        setCurrent(srcset[i]);
+    (async () => {
+      for (let i = 0; i < srcsetRef.current.length; i++) {
+        await load(srcsetRef.current[i][1]);
+        setCurrent(srcsetRef.current[i]);
       }
-    };
-    loadAll();
-  }, [srcset]);
+    })();
+  }, []);
 
   return current;
 };
