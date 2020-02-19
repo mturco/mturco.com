@@ -5,10 +5,6 @@ import { createGlobalStyle } from 'styled-components';
 import { Heading, LayoutBase, PageMeta, Resume } from '@components';
 
 const GlobalStyle = createGlobalStyle`
-  :root {
-    font-size: 1.0625rem;
-  }
-
   @media print {
     :root {
       height: 0;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { LayoutBase, PageMeta, ProfileLink, ThemeSwitcher } from '@components';
+import { LayoutBase, PageMeta, ProfileLink } from '@components';
 
 import Bitbucket from '@images/bitbucket.svg';
 import Email from '@images/email.svg';
@@ -110,7 +110,6 @@ export default () => (
   <LayoutBase>
     <Container>
       <PageMeta />
-      <ThemeSwitcher />
       <Heading>Matt Turco</Heading>
       <Tagline>
         Front end engineer <wbr />

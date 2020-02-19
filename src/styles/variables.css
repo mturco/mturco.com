@@ -16,6 +16,7 @@
   --color-light-text: hsl(199, 9%, 36%);
   --color-light-text-hc: hsl(199, 10%, 31%);
   --color-light-selection: var(--color-accent);
+
   --color-dark-background: hsl(196, 23%, 11%);
   --color-dark-background-alt: hsl(196, 23%, 14%);
   --color-dark-divider: hsl(214, 4%, 39%);
