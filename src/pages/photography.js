@@ -98,7 +98,7 @@ const PhotoViewer = ({ id, onClose, onNext, onPrev }) => {
   const ref = useRef();
   const [loaded, setLoaded] = useState(false);
   const handleKeyUp = useCallback(
-    e => {
+    (e) => {
       switch (e.key) {
         case 'Escape': {
           onClose();
@@ -163,16 +163,16 @@ const photos = [
   'IMG_20160707_120013_sbmear',
 ];
 
-export default () => {
+export default function PhotographyPage() {
   const [selected, setSelected] = useState(null);
 
   const handleNext = useCallback(() => {
-    const current = photos.findIndex(photo => photo === selected);
+    const current = photos.findIndex((photo) => photo === selected);
     setSelected(photos[Math.min(current + 1, photos.length - 1)]);
   }, [selected]);
 
   const handlePrev = useCallback(() => {
-    const current = photos.findIndex(photo => photo === selected);
+    const current = photos.findIndex((photo) => photo === selected);
     setSelected(photos[Math.max(current - 1, 0)]);
   }, [selected]);
 
@@ -185,7 +185,7 @@ export default () => {
           <Heading />
         </Header>
         <PhotoGrid>
-          {photos.map(id => (
+          {photos.map((id) => (
             <Photo key={id} id={id} onClick={() => setSelected(id)} />
           ))}
         </PhotoGrid>
@@ -201,4 +201,4 @@ export default () => {
       </Container>
     </LayoutBase>
   );
-};
+}

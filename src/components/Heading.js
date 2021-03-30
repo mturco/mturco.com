@@ -20,7 +20,7 @@ const HeadingLink = styled(Link)`
   }
 `;
 
-export const Heading = props => (
+export const Heading = (props) => (
   <Wrapper {...props}>
     <HeadingLink to="/">Matt Turco</HeadingLink>
   </Wrapper>

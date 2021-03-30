@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import { Heading, Subheading } from './Typography';
 
@@ -16,10 +16,14 @@ const ItemDatesWrapper = styled.div`
 
 const ItemDates = ({ from, to }) => (
   <ItemDatesWrapper>
-    <time dateTime={format(from, 'YYYY-MM')}>{format(from, 'MMM YYYY')}</time>
+    <time dateTime={format(parseISO(from), 'yyyy-MM')}>
+      {format(parseISO(from), 'MMM yyyy')}
+    </time>
     &thinsp;&ndash;&thinsp;
     {to ? (
-      <time dateTime={format(to, 'YYYY-MM')}>{format(to, 'MMM YYYY')}</time>
+      <time dateTime={format(parseISO(to), 'yyyy-MM')}>
+        {format(parseISO(to), 'MMM yyyy')}
+      </time>
     ) : (
       'Present'
     )}

@@ -22,12 +22,14 @@ const Paragraph = styled.p`
   font-size: 2rem;
 `;
 
-export default () => (
-  <LayoutBase>
-    <Wrapper>
-      <PageMeta title="404 Not Found" />
-      <Heading>Nope...</Heading>
-      <Paragraph>That's not a thing. In other words, 404.</Paragraph>
-    </Wrapper>
-  </LayoutBase>
-);
+export default function NotFoundPage() {
+  return (
+    <LayoutBase>
+      <Wrapper>
+        <PageMeta title="404 Not Found" />
+        <Heading>Nope...</Heading>
+        <Paragraph>That's not a thing. In other words, 404.</Paragraph>
+      </Wrapper>
+    </LayoutBase>
+  );
+}

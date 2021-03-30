@@ -10,7 +10,7 @@ export const Link = styled.a`
     border-color: currentColor;
   }
 
-  ${props =>
+  ${(props) =>
     props['data-short-url'] &&
     css`
       @media print {

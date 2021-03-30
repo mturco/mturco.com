@@ -1,13 +1,13 @@
 import { useEffect, useState, useRef } from 'react';
 
-const load = src =>
-  new Promise(resolve => {
+const load = (src) =>
+  new Promise((resolve) => {
     const img = new Image();
     img.onload = resolve;
     img.src = src;
   });
 
-export const useProgressiveImage = srcset => {
+export const useProgressiveImage = (srcset) => {
   const srcsetRef = useRef(srcset);
   const [current, setCurrent] = useState(srcset[0]);
 

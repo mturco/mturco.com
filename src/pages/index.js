@@ -106,60 +106,62 @@ const ProfileLinkItem = ({ className, ...props }) => (
   </li>
 );
 
-export default () => (
-  <LayoutBase>
-    <Container>
-      <PageMeta />
-      <Heading>Matt Turco</Heading>
-      <Tagline>
-        Front end engineer <wbr />
-        &amp; design enthusiast
-      </Tagline>
+export default function IndexPage() {
+  return (
+    <LayoutBase>
+      <Container>
+        <PageMeta />
+        <Heading>Matt Turco</Heading>
+        <Tagline>
+          Front end engineer <wbr />
+          &amp; design enthusiast
+        </Tagline>
 
-      <ProfileLinkGrid>
-        <ProfileLinkSection title="Code">
-          <ProfileLinkItem
-            to="https://github.com/mturco"
-            external
-            icon={Github}
-          >
-            GitHub
-          </ProfileLinkItem>
-          <ProfileLinkItem
-            to="https://bitbucket.org/mturco"
-            external
-            icon={Bitbucket}
-          >
-            BitBucket
-          </ProfileLinkItem>
-        </ProfileLinkSection>
+        <ProfileLinkGrid>
+          <ProfileLinkSection title="Code">
+            <ProfileLinkItem
+              to="https://github.com/mturco"
+              external
+              icon={Github}
+            >
+              GitHub
+            </ProfileLinkItem>
+            <ProfileLinkItem
+              to="https://bitbucket.org/mturco"
+              external
+              icon={Bitbucket}
+            >
+              BitBucket
+            </ProfileLinkItem>
+          </ProfileLinkSection>
 
-        <ProfileLinkSection title="Contact">
-          <ProfileLinkItem
-            to="https://linkedin.com/in/mattturco"
-            external
-            icon={Linkedin}
-          >
-            LinkedIn
-          </ProfileLinkItem>
-          <ProfileLinkItem
-            to="mailto:matt.turco@gmail.com"
-            external
-            icon={Email}
-          >
-            Email
-          </ProfileLinkItem>
-        </ProfileLinkSection>
+          <ProfileLinkSection title="Contact">
+            <ProfileLinkItem
+              to="https://linkedin.com/in/mattturco"
+              external
+              icon={Linkedin}
+            >
+              LinkedIn
+            </ProfileLinkItem>
+            <ProfileLinkItem
+              to="mailto:matt.turco@gmail.com"
+              external
+              icon={Email}
+            >
+              Email
+            </ProfileLinkItem>
+          </ProfileLinkSection>
 
-        <ProfileLinkSection title="Other">
-          <ProfileLinkItem to="/resume" icon={Resume}>
-            Resume
-          </ProfileLinkItem>
-          <ProfileLinkItem to="/photography" icon={Photography}>
-            Photography
-          </ProfileLinkItem>
-        </ProfileLinkSection>
-      </ProfileLinkGrid>
-    </Container>
-  </LayoutBase>
-);
+          <ProfileLinkSection title="Other">
+            <ProfileLinkItem to="/resume" icon={Resume}>
+              Resume
+            </ProfileLinkItem>
+            <ProfileLinkItem to="/photography" icon={Photography}>
+              Photography
+            </ProfileLinkItem>
+          </ProfileLinkSection>
+        </ProfileLinkGrid>
+      </Container>
+    </LayoutBase>
+  );
+}

@@ -15,7 +15,7 @@ const Image = styled.img`
   object-fit: fill;
   transition: transform 0.3s, filter 0.3s;
 
-  ${props =>
+  ${(props) =>
     props['data-type'] === 'preview' &&
     css`
       filter: blur(1vw);
