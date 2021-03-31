@@ -182,7 +182,7 @@ export default function PhotographyPage() {
         <PageMeta title="Photography" />
 
         <Header>
-          <Heading />
+          <Heading>Matt Turco</Heading>
         </Header>
         <PhotoGrid>
           {photos.map((id) => (

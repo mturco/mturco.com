@@ -28,34 +28,22 @@ const SectionHeading = styled.h1`
   }
 
   @media print {
+    margin-bottom: 0.5rem;
     color: var(--color-primary);
     background-color: transparent;
   }
 `;
 
 const SectionWrapper = styled.section`
-  margin-top: 1rem;
-  border-top: 2px solid #0f7cb3;
-
-  & + & {
-    margin-top: 2rem;
-  }
+  margin-top: 2rem;
+  border-top: 2px solid var(--color-primary);
 
   @media (min-width: 30rem) {
-    & + & {
-      margin-top: 2.5rem;
-    }
-  }
-
-  @media print, (min-width: 48rem) {
-    display: flex;
-    align-items: flex-start;
+    margin-top: 2.5rem;
   }
 
   @media print {
-    & + & {
-      margin-top: 1.5rem;
-    }
+    margin-top: 1.25rem;
   }
 `;
 
@@ -63,9 +51,8 @@ const SectionContent = styled.section`
   flex: 1;
   line-height: 1.6;
 
-  @media print, (min-width: 768px) {
-    padding-top: 0.75rem;
-    padding-left: 1.25rem;
+  @media screen and (min-width: 48rem) {
+    padding-left: 8.5rem;
   }
 
   @media print {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const UnorderedList = styled.ul`
-  padding-left: 1.25rem;
+  padding-left: 1.5rem;
   margin: 0.25rem 0 0;
   list-style-type: circle;
 `;

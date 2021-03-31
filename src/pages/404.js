@@ -28,7 +28,7 @@ export default function NotFoundPage() {
       <Wrapper>
         <PageMeta title="404 Not Found" />
         <Heading>Nope...</Heading>
-        <Paragraph>That's not a thing. In other words, 404.</Paragraph>
+        <Paragraph>That&apos;s not a thing. In other words, 404.</Paragraph>
       </Wrapper>
     </LayoutBase>
   );

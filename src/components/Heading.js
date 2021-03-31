@@ -12,16 +12,18 @@ const HeadingLink = styled(Link)`
   color: var(--color-primary);
   display: inline-flex;
   line-height: 1;
-  text-decoration: none;
-  transition: box-shadow 0.2s ease-out;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: all 0.2s ease-out;
 
   :hover {
-    box-shadow: 1px 4px 0 -2px var(--color-primary);
+    text-decoration-color: currentColor;
   }
 `;
 
-export const Heading = (props) => (
+export const Heading = ({ children, ...props }) => (
   <Wrapper {...props}>
-    <HeadingLink to="/">Matt Turco</HeadingLink>
+    <HeadingLink to="/">{children}</HeadingLink>
   </Wrapper>
 );

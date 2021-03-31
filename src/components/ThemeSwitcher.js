@@ -9,6 +9,10 @@ const Wrapper = styled.div`
   position: absolute;
   top: 0;
   right: 0;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Toggle = styled.button`

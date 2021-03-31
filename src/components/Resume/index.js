@@ -5,4 +5,6 @@ export * from './Link';
 export * from './List';
 export * from './Paragraph';
 export * from './Section';
+export * from './Slash';
+export * from './Timeline';
 export * from './Typography';
