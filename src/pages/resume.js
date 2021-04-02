@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import { format, parseISO } from 'date-fns';
 
@@ -97,7 +97,7 @@ const Experience = styled.section`
   --grid-line-color: var(--color-primary);
 `;
 
-const Link = styled.a`
+const linkStyling = css`
   color: var(--color-primary);
   text-decoration-color: transparent;
   text-decoration-thickness: 2px;
@@ -107,6 +107,9 @@ const Link = styled.a`
   :hover {
     text-decoration-color: currentColor;
   }
+`;
+const Link = styled.a`
+  ${linkStyling}
 `;
 
 const Name = styled.h1`
@@ -196,17 +199,23 @@ const Paragraph = styled.p`
   }
 `;
 
-const UnorderedList = styled.ul`
-  padding-left: 1.5rem;
-  margin: 0.25rem 0 0;
-  list-style-type: circle;
-`;
+const Markdown = styled.div`
+  a {
+    ${linkStyling}
+  }
 
-const ListItem = styled.li`
-  margin-bottom: 0.5em;
+  ul {
+    padding-left: 1.5rem;
+    margin: 0.25rem 0 0;
+    list-style-type: circle;
+  }
 
-  :last-child {
-    margin-bottom: 0;
+  li {
+    margin-bottom: 0.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -297,11 +306,7 @@ const ResumePage = () => (
               </FlexRow>
             ))}
 
-            <UnorderedList>
-              {exp.notes.map((note, noteIdx) => (
-                <ListItem key={noteIdx}>{note}</ListItem>
-              ))}
-            </UnorderedList>
+            <Markdown>{exp.notes}</Markdown>
           </SectionItem>
         ))}
       </Experience>
