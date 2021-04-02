@@ -1,25 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
+import { format, parseISO } from 'date-fns';
 
-import { Heading, LayoutBase, PageMeta, Resume } from '@components';
-
+import { LayoutBase, PageMeta } from '@components';
 import { resume } from '@content/resume';
 
 const GlobalStyle = createGlobalStyle`
+  body {
+    color: var(--color-text-hc);
+  }
+
   @media print {
     :root {
       height: 0;
       margin: 0.75cm 1cm;
+      padding: 0;
       font-size: 10pt;
-    }
-
-    .preview {
-      height: 11in;
-      width: 8.5in;
-      margin: 1cm;
-      padding: 0.75cm 1cm;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
     }
 
     @page {
@@ -28,39 +25,24 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Stack = styled.div`
+const Container = styled.main`
+  --grid-line-color: hsl(214, 4%, 39%);
+  --section-item-gap: 1.25rem;
+
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem 0;
-
-  @media print {
-    gap: 1rem 0;
-  }
-`;
-
-const Grid = styled.div`
-  display: grid;
-  gap: 1.5rem 2.5rem;
-  grid-template-columns: 1fr;
-
-  @media print, (min-width: 64rem) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media print {
-    row-gap: 1rem;
-  }
-`;
-
-const Wrapper = styled.div`
-  box-sizing: content-box;
+  grid-template:
+    'header header header' max-content
+    'experience divider education' max-content
+    'experience divider tools' max-content
+    'experience divider about' max-content
+    'experience divider .' max-content
+    / 1fr min-content 25ch;
+  gap: 2rem;
+  align-content: start;
+  line-height: 1.5;
+  margin: 0 auto;
   padding: 1.5rem;
-  color: var(--color-text-hc);
-
-  @media screen {
-    margin: 0 auto;
-    max-width: 58rem;
-  }
+  max-width: 64rem;
 
   @media (min-width: 30rem) {
     padding-right: 1.5rem;
@@ -73,30 +55,123 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 48rem) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   @media print {
     padding: 0;
+    height: calc(11in - 1.5cm);
   }
 `;
 
 const Header = styled.header`
-  align-items: flex-end;
+  grid-area: header;
+  display: flex;
   justify-content: space-between;
+  align-items: baseline;
+`;
 
-  @media print, (min-width: 64rem) {
-    display: flex;
+const About = styled.section`
+  grid-area: about;
+`;
+
+const Tools = styled.section`
+  grid-area: tools;
+`;
+
+const Education = styled.section`
+  grid-area: education;
+`;
+
+const Divider = styled('div').attrs({
+  'aria-hidden': 'true',
+})`
+  grid-area: divider;
+  border-left: 2px solid hsl(197, 14%, 94%);
+`;
+
+const Experience = styled.section`
+  grid-area: experience;
+
+  --grid-line-color: var(--color-primary);
+`;
+
+const Link = styled.a`
+  color: var(--color-primary);
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  transition: all 0.2s ease-out;
+
+  :hover {
+    text-decoration-color: currentColor;
   }
 `;
 
-const StyledHeading = styled(Heading)`
-  margin: 0 0 0.75rem -3px;
+const Name = styled.h1`
+  font: 700 2.5rem var(--font-heading);
+  letter-spacing: 0.03em;
+  margin: 0;
   line-height: 1;
+  white-space: nowrap;
+`;
 
-  @media print, (min-width: 64rem) {
-    margin-bottom: -3px;
+const SectionHeadingSpan = styled.span`
+  display: inline-flex;
+  padding: 0.25rem 0.375rem;
+  border: 2px solid var(--grid-line-color);
+  border-top: 0;
+`;
+
+const SectionHeadingH1 = styled.h1`
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0 0 0.75rem 0;
+  line-height: 1;
+  border-top: 2px solid var(--grid-line-color);
+  color: var(--grid-line-color);
+`;
+
+const SectionHeading = ({ children }) => (
+  <SectionHeadingH1>
+    <SectionHeadingSpan>{children}</SectionHeadingSpan>
+  </SectionHeadingH1>
+);
+
+const SectionItem = styled.section`
+  &:not(:last-child) {
+    margin-bottom: var(--section-item-gap);
+  }
+`;
+
+const SectionItemHeading = styled.h1`
+  margin: 0 0 0.125rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+`;
+
+const SectionItemSubheading = styled.h2`
+  margin: 0 0 0.125rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+`;
+
+const Slash = styled('span').attrs({
+  'aria-hidden': 'true',
+})`
+  margin: 0 1rem;
+  display: inline-flex;
+  align-self: center;
+
+  &::before {
+    content: '';
+    display: inline-flex;
+    transform: rotateZ(30deg);
+    height: 1.375rem;
+    border-left: 2px solid var(--color-primary);
   }
 `;
 
@@ -107,86 +182,167 @@ const FlexRow = styled.div`
   }
 
   @media (max-width: 479px) {
-    ${Resume.Slash} {
+    ${Slash} {
       display: none;
     }
   }
 `;
 
-export default function ResumePage() {
-  return (
-    <LayoutBase>
-      <PageMeta title="Resume" />
-      <GlobalStyle />
+const Paragraph = styled.p`
+  margin: 0;
 
-      <Wrapper>
-        <Header>
-          <StyledHeading>{resume.name}</StyledHeading>
-          <Resume.ContactInfoList>
-            <Resume.ContactInfoItem>{resume.location}</Resume.ContactInfoItem>
-            <Resume.ContactInfoItem href={`mailto:${resume.email}`}>
-              {resume.email}
-            </Resume.ContactInfoItem>
-            <Resume.ContactInfoItem href={resume.website.url}>
-              {resume.website.name}
-            </Resume.ContactInfoItem>
-          </Resume.ContactInfoList>
-        </Header>
+  &:not(:last-child) {
+    margin-bottom: 0.375em;
+  }
+`;
 
-        <Resume.Section title="Experience">
-          <Stack>
-            {resume.experience.map((exp, expIdx) => (
-              <Resume.Item key={expIdx}>
-                <Resume.Heading>{exp.company}</Resume.Heading>
-                {exp.roles.map((role, roleIdx) => (
-                  <FlexRow key={roleIdx}>
-                    <Resume.Subheading>{role.title}</Resume.Subheading>
-                    <Resume.Slash />
-                    <Resume.Timeline from={role.from} to={role.to} />
-                  </FlexRow>
-                ))}
+const UnorderedList = styled.ul`
+  padding-left: 1.5rem;
+  margin: 0.25rem 0 0;
+  list-style-type: circle;
+`;
 
-                <Resume.UnorderedList>
-                  {exp.notes.map((note, noteIdx) => (
-                    <Resume.ListItem key={noteIdx}>{note}</Resume.ListItem>
-                  ))}
-                </Resume.UnorderedList>
-              </Resume.Item>
+const ListItem = styled.li`
+  margin-bottom: 0.5em;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const SidebarSubheading = styled.h2`
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 0.125em 0;
+`;
+
+const TimeSpanWrapper = styled.span`
+  color: var(--color-text-lc);
+`;
+
+const TimeSpan = ({ from, to }) => (
+  <TimeSpanWrapper>
+    <time dateTime={format(parseISO(from), 'yyyy-MM')}>
+      {format(parseISO(from), 'MMM yyyy')}
+    </time>
+    &thinsp;&ndash;&thinsp;
+    {to ? (
+      <time dateTime={format(parseISO(to), 'yyyy-MM')}>
+        {format(parseISO(to), 'MMM yyyy')}
+      </time>
+    ) : (
+      'Present'
+    )}
+  </TimeSpanWrapper>
+);
+
+const ContactInfo = styled.ul`
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: baseline;
+  flex-wrap: wrap;
+`;
+
+const ContactInfoItem = styled.li`
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  ${Link} {
+    color: inherit;
+  }
+`;
+
+const ResumePage = () => (
+  <LayoutBase>
+    <PageMeta title="Resume" />
+    <GlobalStyle />
+
+    <Container>
+      <Header>
+        <Name>
+          <Link href="/">{resume.name}</Link>
+        </Name>
+        <ContactInfo>
+          <ContactInfoItem>{resume.location}</ContactInfoItem>
+          <Slash />
+          <ContactInfoItem>
+            <Link href={`mailto:${resume.email}`}>{resume.email}</Link>
+          </ContactInfoItem>
+          <Slash />
+          <ContactInfoItem>
+            <Link href={`tel:${resume.phone.replace(/[^\d]/g, '')}`}>
+              {resume.phone}
+            </Link>
+          </ContactInfoItem>
+          <Slash />
+          <ContactInfoItem>
+            <Link href={resume.website.url}>{resume.website.name}</Link>
+          </ContactInfoItem>
+        </ContactInfo>
+      </Header>
+
+      <Experience>
+        <SectionHeading>Experience</SectionHeading>
+        {resume.experience.map((exp, expIdx) => (
+          <SectionItem key={expIdx}>
+            <SectionItemHeading>{exp.company}</SectionItemHeading>
+            {exp.roles.map((role, roleIdx) => (
+              <FlexRow key={roleIdx}>
+                <SectionItemSubheading>{role.title}</SectionItemSubheading>
+                <Slash />
+                <TimeSpan from={role.from} to={role.to} />
+              </FlexRow>
             ))}
-          </Stack>
-        </Resume.Section>
 
-        <Resume.Section title="Skills">
-          <Grid>
-            {resume.skills.map((skill, skillIdx) => (
-              <Resume.Item key={skillIdx}>
-                <Resume.Heading>{skill.title}</Resume.Heading>
-                <Resume.UnorderedList>
-                  {skill.notes.map((note, noteIdx) => (
-                    <Resume.ListItem key={noteIdx}>{note}</Resume.ListItem>
-                  ))}
-                </Resume.UnorderedList>
-              </Resume.Item>
-            ))}
-          </Grid>
-        </Resume.Section>
+            <UnorderedList>
+              {exp.notes.map((note, noteIdx) => (
+                <ListItem key={noteIdx}>{note}</ListItem>
+              ))}
+            </UnorderedList>
+          </SectionItem>
+        ))}
+      </Experience>
 
-        <Resume.Section title="Education">
-          <Stack>
-            {resume.education.map((education, educationIdx) => (
-              <Resume.Item>
-                <Resume.Heading>{education.name}</Resume.Heading>
+      <Divider />
 
-                <FlexRow>
-                  <Resume.Subheading>{education.degree}</Resume.Subheading>
-                  <Resume.Slash />
-                  <Resume.Paragraph>{education.major}</Resume.Paragraph>
-                </FlexRow>
-              </Resume.Item>
-            ))}
-          </Stack>
-        </Resume.Section>
-      </Wrapper>
-    </LayoutBase>
-  );
-}
+      <Education>
+        <SectionHeading>Education</SectionHeading>
+        {resume.education.map((education, educationIdx) => (
+          <SectionItem key={educationIdx}>
+            <SidebarSubheading>{education.name}</SidebarSubheading>
+            <Paragraph>
+              {education.degree}
+              <br />
+              {education.major}
+            </Paragraph>
+          </SectionItem>
+        ))}
+      </Education>
+
+      <Tools>
+        <SectionHeading>Technologies</SectionHeading>
+
+        {resume.tools.map((tool, toolIdx) => (
+          <SectionItem key={toolIdx}>
+            <SidebarSubheading>{tool.category}</SidebarSubheading>
+            <Paragraph>{tool.items.join(', ')}</Paragraph>
+          </SectionItem>
+        ))}
+      </Tools>
+
+      <About>
+        <SectionHeading>About</SectionHeading>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+          Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+          Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+        </Paragraph>
+      </About>
+    </Container>
+  </LayoutBase>
+);
+
+export default ResumePage;
