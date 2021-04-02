@@ -5,7 +5,7 @@ const Link = styled.a`
   color: var(--color-primary);
   text-decoration-color: transparent;
   text-decoration-thickness: 2px;
-  text-underline-offset: 0.15em;
+  text-underline-offset: 0.2em;
   transition: all 0.2s ease-out;
 
   :hover {
@@ -28,7 +28,7 @@ export const resume = {
       company: 'Namely',
       roles: [
         {
-          title: 'Senior Front End Engineer',
+          title: 'Senior Front End Engineer, Tech Lead',
           from: '2019-03',
         },
         {
