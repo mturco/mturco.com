@@ -49,14 +49,15 @@ const SectionWrapper = styled.section`
 
 const SectionContent = styled.section`
   flex: 1;
-  line-height: 1.6;
+  line-height: 1.5;
 
   @media screen and (min-width: 48rem) {
     padding-left: 8.5rem;
   }
 
   @media print {
-    line-height: 1.5;
+    line-height: 1.4;
+    padding-left: 8.5rem;
   }
 `;
 

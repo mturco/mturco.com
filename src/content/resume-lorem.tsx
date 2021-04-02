@@ -1,17 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Link = styled.a`
-  color: var(--color-primary);
-  text-decoration-color: transparent;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.15em;
-  transition: all 0.2s ease-out;
-
-  :hover {
-    text-decoration-color: currentColor;
-  }
-`;
 
 export const resume = {
   name: 'Matt Turco',
@@ -64,27 +51,22 @@ export const resume = {
       roles: [{ title: 'Front End Engineer', from: '2015-02', to: '2018-04' }],
       notes: [
         <>
-          Wrote an SVG charting library from scratch; used it to build an
-          interactive data visualization for{' '}
-          <Link href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx">
-            exploring presidential approval ratings
-          </Link>
+          Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod
+          in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat
         </>,
         <>
-          Built a library of UI components used by Gallup&apos;s web apps and
-          marketing sites
+          Praesent dapibus, neque id cursus faucibus, tortor neque egestas
+          augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui
+          mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
         </>,
         <>
-          Improved site performance by optimizing the critical rendering path,
-          minimizing asset sizes, and reducing dependencies
+          Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor,
+          ultrices ut, elementum vulputate, nunc.
         </>,
         <>
-          Enhanced keyboard and screen reader accessibility of the
-          StrengthsQuest web app to obtain WCAG2 certification
-        </>,
-        <>
-          Conducted remote and in-person usability studies and presented
-          findings to stakeholders
+          Sed adipiscing ornare risus. Morbi est est, blandit sit amet, sagittis
+          vel, euismod vel, velit. Pellentesque egestas sem. Suspendisse commodo
+          ullamcorper magna.
         </>,
       ],
     },
@@ -109,29 +91,25 @@ export const resume = {
     {
       title: 'Engineering',
       notes: [
-        <>Building and maintaining component libraries</>,
-        <>
-          Designing flexible component APIs that use composition to manage
-          complexity
-        </>,
+        <>Lorem ipsum dolor sit amet, consectetuer adipiscing</>,
+        <>Aliquam tincidunt mauris eu risus</>,
+        <>Vestibulum auctor dapibus neque</>,
       ],
     },
     {
       title: 'Leadership',
       notes: [
-        <>Mentoring and onboarding other engineers</>,
-        <>Unblocking teammates</>,
-        <>Establishing team- and department-wide standards</>,
+        <>Integer vitae libero ac risus egestas placerat</>,
+        <>Vestibulum commodo felis quis tortor vitae</>,
+        <>Ut aliquam sollicitudin leo risus</>,
       ],
     },
     {
       title: 'Collaboration',
       notes: [
-        <>
-          Partnering with designers to identify patterns and standardize user
-          experience
-        </>,
-        <>Working with product managers to groom backlogs and plan sprints</>,
+        <>Cras iaculis ultricies nulla</>,
+        <>Donec quis dui at dolor tempor interdum</>,
+        <>Vivamus vestibulum ntulla nec ante</>,
       ],
     },
   ],

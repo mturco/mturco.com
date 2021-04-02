@@ -6,8 +6,6 @@ import { Heading, LayoutBase, PageMeta, Resume } from '@components';
 
 import { resume } from '@content/resume';
 
-console.log(resume);
-
 const GlobalStyle = createGlobalStyle`
   @media print {
     :root {

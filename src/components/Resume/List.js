@@ -12,4 +12,8 @@ export const ListItem = styled.li`
   :last-child {
     margin-bottom: 0;
   }
+
+  @media print {
+    margin-bottom: 0.25em;
+  }
 `;
