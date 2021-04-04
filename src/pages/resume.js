@@ -1,16 +1,12 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
+import styled, { css, createGlobalStyle } from 'styled-components';
 import { format, parseISO } from 'date-fns';
+import { Link as GatsbyLink } from 'gatsby';
 
 import { LayoutBase, PageMeta } from '@components';
 import { resume } from '@content/resume';
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    color: var(--color-text-hc);
-  }
-
   @media print {
     :root {
       height: 0;
@@ -26,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.main`
-  --grid-line-color: hsl(214, 4%, 39%);
+  --grid-line-color: var(--color-divider-hc);
   --section-item-gap: 1.25rem;
 
   display: grid;
@@ -88,7 +84,7 @@ const Divider = styled('div').attrs({
   'aria-hidden': 'true',
 })`
   grid-area: divider;
-  border-left: 2px solid hsl(197, 14%, 94%);
+  border-left: 2px solid var(--color-divider-lc);
 `;
 
 const Experience = styled.section`
@@ -108,7 +104,12 @@ const linkStyling = css`
     text-decoration-color: currentColor;
   }
 `;
-const Link = styled.a`
+
+const Link = styled(GatsbyLink)`
+  ${linkStyling}
+`;
+
+const LinkExternal = styled.a`
   ${linkStyling}
 `;
 
@@ -124,17 +125,26 @@ const SectionHeadingSpan = styled.span`
   display: inline-flex;
   padding: 0.25rem 0.375rem;
   border: 2px solid var(--grid-line-color);
-  border-top: 0;
+  border-radius: 2px 0 2px 2px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    right: 0;
+    border-top: 2px solid var(--grid-line-color);
+  }
 `;
 
 const SectionHeadingH1 = styled.h1`
+  position: relative;
   font-weight: 700;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin: 0 0 0.75rem 0;
   line-height: 1;
-  border-top: 2px solid var(--grid-line-color);
   color: var(--grid-line-color);
 `;
 
@@ -191,7 +201,7 @@ const FlexRow = styled.div`
   }
 `;
 
-const Paragraph = styled.p`
+const paragraphStyles = css`
   margin: 0;
 
   &:not(:last-child) {
@@ -199,9 +209,17 @@ const Paragraph = styled.p`
   }
 `;
 
-const Markdown = styled.div`
+const Paragraph = styled.p`
+  ${paragraphStyles}
+`;
+
+const Content = styled.div`
   a {
     ${linkStyling}
+  }
+
+  p {
+    ${paragraphStyles}
   }
 
   ul {
@@ -211,7 +229,7 @@ const Markdown = styled.div`
   }
 
   li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em;
 
     &:last-child {
       margin-bottom: 0;
@@ -227,6 +245,10 @@ const SidebarSubheading = styled.h2`
 
 const TimeSpanWrapper = styled.span`
   color: var(--color-text-lc);
+
+  @media print {
+    color: var(--gray-600);
+  }
 `;
 
 const TimeSpan = ({ from, to }) => (
@@ -259,7 +281,8 @@ const ContactInfoItem = styled.li`
   margin: 0;
   padding: 0;
 
-  ${Link} {
+  ${Link},
+  ${LinkExternal} {
     color: inherit;
   }
 `;
@@ -272,23 +295,25 @@ const ResumePage = () => (
     <Container>
       <Header>
         <Name>
-          <Link href="/">{resume.name}</Link>
+          <Link to="/">{resume.name}</Link>
         </Name>
         <ContactInfo>
           <ContactInfoItem>{resume.location}</ContactInfoItem>
           <Slash />
           <ContactInfoItem>
-            <Link href={`mailto:${resume.email}`}>{resume.email}</Link>
+            <LinkExternal href={`mailto:${resume.email}`}>
+              {resume.email}
+            </LinkExternal>
           </ContactInfoItem>
           <Slash />
           <ContactInfoItem>
-            <Link href={`tel:${resume.phone.replace(/[^\d]/g, '')}`}>
+            <LinkExternal href={`tel:${resume.phone.replace(/[^\d]/g, '')}`}>
               {resume.phone}
-            </Link>
+            </LinkExternal>
           </ContactInfoItem>
           <Slash />
           <ContactInfoItem>
-            <Link href={resume.website.url}>{resume.website.name}</Link>
+            <Link to={resume.website.url}>{resume.website.name}</Link>
           </ContactInfoItem>
         </ContactInfo>
       </Header>
@@ -306,7 +331,7 @@ const ResumePage = () => (
               </FlexRow>
             ))}
 
-            <Markdown>{exp.notes}</Markdown>
+            <Content>{exp.notes}</Content>
           </SectionItem>
         ))}
       </Experience>
@@ -340,11 +365,7 @@ const ResumePage = () => (
 
       <About>
         <SectionHeading>About</SectionHeading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-          Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-          Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-        </Paragraph>
+        <Content>{resume.about}</Content>
       </About>
     </Container>
   </LayoutBase>

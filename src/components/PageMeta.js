@@ -34,7 +34,7 @@ export const PageMeta = ({ description, lang, meta, title }) => {
         },
         {
           name: 'theme-color',
-          content: '#0f7cb3',
+          content: '#007ab8',
         },
         {
           property: 'og:title',

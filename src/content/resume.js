@@ -1,17 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Link = styled.a`
-  color: var(--color-primary);
-  text-decoration-color: transparent;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2em;
-  transition: all 0.2s ease-out;
-
-  :hover {
-    text-decoration-color: currentColor;
-  }
-`;
 
 export const resume = {
   name: 'Matt Turco',
@@ -67,27 +54,28 @@ export const resume = {
       notes: (
         <ul>
           <li>
-            Wrote an SVG charting library from scratch; used it to build an
-            interactive data visualization for{' '}
+            Created the charting library that renders all of Gallup&apos;s line
+            chart graphics using JavaScript and SVG. Using that library, created
+            an interactive data visualization for{' '}
             <a href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx">
               exploring presidential approval ratings
             </a>
+            .
           </li>
           <li>
-            Built a library of UI components used by Gallup&apos;s web apps and
-            marketing sites
+            Developed a library of UI components that powers Gallup&apos;s web
+            apps and marketing sites.
           </li>
           <li>
             Improved site performance by optimizing the critical rendering path,
-            minimizing asset sizes, and reducing dependencies
+            minimizing asset sizes, and reducing dependencies.
           </li>
           <li>
             Enhanced keyboard and screen reader accessibility of the
-            StrengthsQuest web app to obtain WCAG2 certification
+            StrengthsQuest web app to obtain WCAG2 certification.
           </li>
           <li>
-            Conducted remote and in-person usability studies and presented
-            findings to stakeholders
+            Conducted usability studies and presented findings to stakeholders.
           </li>
         </ul>
       ),
@@ -99,12 +87,13 @@ export const resume = {
       notes: (
         <ul>
           <li>
-            Morbi in sem quis dui placerat ornare. Pellentesque odio nisi,
-            euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat
+            Designed and developed a modern inventory and order management web
+            app that interfaces with Microsoft Dynamics NAV using PHP and
+            jQuery.
           </li>
           <li>
-            Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor,
-            ultrices ut, elementum vulputate, nunc.
+            Improved company workflows through automation and integrations with
+            other software.
           </li>
         </ul>
       ),
@@ -122,7 +111,11 @@ export const resume = {
   tools: [
     {
       category: 'Web platform',
-      items: ['HTML', 'JavaScript', 'TypeScript', 'CSS'],
+      items: ['HTML', 'JavaScript', 'TypeScript', 'CSS', 'SVG'],
+    },
+    {
+      category: 'Other languages',
+      items: ['C#', 'PHP', 'SQL'],
     },
     {
       category: 'Component frameworks',
@@ -141,4 +134,14 @@ export const resume = {
       items: ['Webpack', 'Babel', 'PostCSS', 'ESLint', 'Stylelint'],
     },
   ],
+
+  about: (
+    <>
+      <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+        Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
+        Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+      </p>
+    </>
+  ),
 };

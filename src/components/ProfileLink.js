@@ -20,7 +20,7 @@ const Link = styled(Composable)`
   transition-property: transform, background-color;
 
   :hover {
-    color: var(--color-accent);
+    color: var(--color-primary);
     transform: translateY(-7px);
   }
 

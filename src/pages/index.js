@@ -34,6 +34,7 @@ const Tagline = styled.p`
   text-transform: lowercase;
   white-space: nowrap;
   line-height: 1.5;
+  color: var(--color-text-lc);
 `;
 
 const ProfileLinkGrid = styled.ul`
@@ -62,7 +63,7 @@ const ProfileLinkSectionTitle = styled.span`
     top: 50%;
     width: 100vw;
     content: '';
-    border-top: 1px solid var(--color-divider);
+    border-top: 1px solid var(--color-divider-lc);
   }
 
   :before {
