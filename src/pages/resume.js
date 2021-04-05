@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
       height: 0;
       margin: 0.75cm 1cm;
       padding: 0;
-      font-size: 10pt;
+      font-size: 9.5pt;
     }
 
     @page {
@@ -23,16 +23,17 @@ const GlobalStyle = createGlobalStyle`
 
 const Container = styled.main`
   --grid-line-color: var(--color-divider-hc);
-  --section-item-gap: 1.25rem;
+  --section-item-gap: 1.5rem;
 
   display: grid;
   grid-template:
     'header header header' max-content
     'experience divider education' max-content
     'experience divider tools' max-content
+    'experience divider talks' max-content
     'experience divider about' max-content
     'experience divider .' max-content
-    / 1fr min-content 25ch;
+    / 1fr min-content 26ch;
   gap: 2rem;
   align-content: start;
   line-height: 1.5;
@@ -56,6 +57,9 @@ const Container = styled.main`
   }
 
   @media print {
+    --section-item-gap: 1.25rem;
+
+    gap: 2rem 1.5rem;
     padding: 0;
     height: calc(11in - 1.5cm);
   }
@@ -78,6 +82,10 @@ const Tools = styled.section`
 
 const Education = styled.section`
   grid-area: education;
+`;
+
+const Talks = styled.section`
+  grid-area: talks;
 `;
 
 const Divider = styled('div').attrs({
@@ -143,9 +151,13 @@ const SectionHeadingH1 = styled.h1`
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 1rem 0;
   line-height: 1;
   color: var(--grid-line-color);
+
+  @media print {
+    margin-bottom: 0.75rem;
+  }
 `;
 
 const SectionHeading = ({ children }) => (
@@ -161,15 +173,23 @@ const SectionItem = styled.section`
 `;
 
 const SectionItemHeading = styled.h1`
-  margin: 0 0 0.125rem;
-  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+  font-size: 1.375rem;
   font-weight: 700;
+
+  @media print {
+    margin-bottom: 0.125rem;
+  }
 `;
 
 const SectionItemSubheading = styled.h2`
-  margin: 0 0 0.125rem;
+  margin: 0 0 0.25rem;
   font-size: 1.125rem;
   font-weight: 500;
+
+  @media print {
+    margin-bottom: 0.125rem;
+  }
 `;
 
 const Slash = styled('span').attrs({
@@ -229,7 +249,7 @@ const Content = styled.div`
   }
 
   li {
-    margin-bottom: 0.75em;
+    margin-bottom: 0.5em;
 
     &:last-child {
       margin-bottom: 0;
@@ -237,7 +257,7 @@ const Content = styled.div`
   }
 `;
 
-const SidebarSubheading = styled.h2`
+const SidebarHeading = styled.h1`
   font-size: 1.125rem;
   font-weight: 700;
   margin: 0 0 0.125em 0;
@@ -342,7 +362,7 @@ const ResumePage = () => (
         <SectionHeading>Education</SectionHeading>
         {resume.education.map((education, educationIdx) => (
           <SectionItem key={educationIdx}>
-            <SidebarSubheading>{education.name}</SidebarSubheading>
+            <SidebarHeading>{education.name}</SidebarHeading>
             <Paragraph>
               {education.degree}
               <br />
@@ -357,14 +377,27 @@ const ResumePage = () => (
 
         {resume.tools.map((tool, toolIdx) => (
           <SectionItem key={toolIdx}>
-            <SidebarSubheading>{tool.category}</SidebarSubheading>
+            <SidebarHeading>{tool.category}</SidebarHeading>
             <Paragraph>{tool.items.join(', ')}</Paragraph>
           </SectionItem>
         ))}
       </Tools>
 
+      <Talks>
+        <SectionHeading>Talks</SectionHeading>
+        {resume.talks.map((talk) => (
+          <div key={talk.title}>
+            <Paragraph>
+              <LinkExternal href={talk.url}>{talk.title}</LinkExternal>
+              <br />
+              {talk.year} &middot; {talk.event}
+            </Paragraph>
+          </div>
+        ))}
+      </Talks>
+
       <About>
-        <SectionHeading>About</SectionHeading>
+        <SectionHeading>Interests</SectionHeading>
         <Content>{resume.about}</Content>
       </About>
     </Container>
