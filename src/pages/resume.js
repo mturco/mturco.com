@@ -390,7 +390,7 @@ const ResumePage = () => (
             <Paragraph>
               <LinkExternal href={talk.url}>{talk.title}</LinkExternal>
               <br />
-              {talk.year} &middot; {talk.event}
+              {talk.event} &middot; {talk.year}
             </Paragraph>
           </div>
         ))}

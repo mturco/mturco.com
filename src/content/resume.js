@@ -79,8 +79,8 @@ export const resume = {
             <ul>
               <li>
                 Strove to share knowledge and level up the team as a whole.
-                Frequently presented new ideas and technologies, compiled weekly
-                reading lists, created proof-of-concepts to demonstrate
+                Frequently presented new ideas and technologies and compiled
+                weekly reading lists. Created proof-of-concepts to demonstrate
                 feasibility of new ideas.
               </li>
               <li>
@@ -191,9 +191,8 @@ export const resume = {
 
   about: (
     <p>
-      Here are some things I&apos;ll talk to anyone about anytime: tech,
-      basketball, design, the web, photography, and of course, building cool
-      things with code.
+      Here are some things I love to chat about: tech, basketball, design, the
+      web, photography, and of course, building cool things with code.
     </p>
   ),
 };
