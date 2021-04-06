@@ -190,12 +190,10 @@ export const resume = {
   ],
 
   about: (
-    <>
-      <p>
-        Hello! Here are some things I&apos;ll talk to anyone about anytime:
-        tech, basketball, design, the web, photography, and of course, building
-        cool things with code.
-      </p>
-    </>
+    <p>
+      Here are some things I&apos;ll talk to anyone about anytime: tech,
+      basketball, design, the web, photography, and of course, building cool
+      things with code.
+    </p>
   ),
 };

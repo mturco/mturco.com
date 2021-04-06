@@ -62,7 +62,7 @@ const PhotoButton = styled.button`
   }
 `;
 
-const Photo = ({ className, onClick, ...props }) => (
+const Photo = ({ onClick, ...props }) => (
   <PhotoGridItem>
     <PhotoButton onClick={onClick}>
       <ImageProgressive {...props} options={{ w: 400 }} />
@@ -111,8 +111,6 @@ const PhotoViewer = ({ id, onClose, onNext, onPrev }) => {
         case 'ArrowRight': {
           onNext();
           break;
-        }
-        default: {
         }
       }
     },
