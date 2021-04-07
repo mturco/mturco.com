@@ -177,7 +177,7 @@
 
 		<div class="subsection">
 			<SidebarHeading>App frameworks</SidebarHeading>
-			<p>Gatsby, CRA, Svelte Kit</p>
+			<p>Gatsby, CRA, SvelteKit</p>
 		</div>
 
 		<div class="subsection">
