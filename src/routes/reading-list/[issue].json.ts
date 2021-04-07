@@ -10,8 +10,8 @@ export function get({ params }: Request): Response {
 	const post = fs.readFileSync(path.resolve('static/posts/reading-list/', `${issue}.md`), 'utf-8');
 	const renderer = new marked.Renderer();
 
-	const { data } = grayMatter(post);
-	const html = marked(data.body, { renderer });
+	const { data, content } = grayMatter(post);
+	const html = marked(content, { renderer });
 
 	if (html) {
 		return {
