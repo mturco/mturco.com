@@ -2,15 +2,23 @@ backend:
   name: git-gateway
   branch: master
 
+publish_mode: editorial_workflow
 media_folder: static/uploads
 public_folder: /uploads
+site_url: https://mturco.com
+display_url: https://mturco.com
+logo_url: https://mturco.com/favicon.svg
 
 collections:
   - name: reading-list
     label: Reading List
     folder: static/posts/reading-list
     create: true
+    preview_path: reading-list/{{slug}}
     fields:
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Content", name: "content", widget: "markdown" }
+      - name: title
+        label: Title
+        widget: string
+      - name: content
+        label: Content
+        widget: markdown
