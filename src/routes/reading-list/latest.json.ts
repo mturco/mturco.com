@@ -14,7 +14,7 @@ export function get(): Response {
 	const renderer = new marked.Renderer();
 
 	const { data } = grayMatter(post);
-	const html = marked(data.content, { renderer });
+	const html = marked(data.body, { renderer });
 
 	if (html) {
 		return {

@@ -11,7 +11,7 @@ export function get(): Response {
 		const { data } = grayMatter(post);
 
 		return Object.assign(data, {
-			html: marked(data.content, { renderer }),
+			html: marked(data.body, { renderer }),
 			id: Number(fileName.slice(0, fileName.lastIndexOf('.')))
 		});
 	});
