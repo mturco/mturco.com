@@ -23,7 +23,9 @@ collections:
         label: Date
         widget: datetime
         date_format: YYYY-MM-DD
+        time_format: false
         format: YYYY-MM-DD
+        picker_utc: true
       - name: content
         label: Content
         widget: markdown

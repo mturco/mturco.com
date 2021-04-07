@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { format } from 'date-fns';
+	import { format, parseISO } from 'date-fns';
 	import Link from '$lib/Link.svelte';
 	import type { Post } from './types';
 
@@ -9,7 +9,7 @@
 
 <h1 class={size}>
 	<Link href="/reading-list/{post.id}">{post.title}</Link> <span class="slash">/</span>
-	<span class="date">{format(new Date(post.date), 'MMM d, y')}</span>
+	<span class="date">{format(parseISO(post.date), 'MMM d, y')}</span>
 </h1>
 
 <style lang="postcss">
