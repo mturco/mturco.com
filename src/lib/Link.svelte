@@ -13,7 +13,7 @@
 		color: var(--color-primary);
 		text-decoration-color: transparent;
 		text-decoration-thickness: 2px;
-		text-underline-offset: 0.2em;
+		text-underline-offset: 0.15em;
 		transition: text-decoration-color 0.2s ease-out;
 
 		&:hover {

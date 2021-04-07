@@ -53,5 +53,7 @@
 	/* typography */
 	--font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
 		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	--font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+		monospace;
 	--font-heading: Montserrat, var(--font-base);
 }

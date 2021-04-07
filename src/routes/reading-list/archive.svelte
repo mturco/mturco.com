@@ -22,7 +22,7 @@
 </script>
 
 <svelte:head>
-	<title>All Reading Lists | Matt Turco</title>
+	<title>Reading List Archive | Matt Turco</title>
 </svelte:head>
 
 {#each posts as post}

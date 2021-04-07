@@ -52,7 +52,7 @@
 		text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 	}
 
-	:global(svg) {
+	a :global(svg) {
 		width: 48px;
 		height: 48px;
 		fill: currentColor;

@@ -15,7 +15,13 @@ export function get({ params }: Request): Response {
 
 	if (html) {
 		return {
-			body: { post: { ...data, html } }
+			body: {
+				post: {
+					...data,
+					html,
+					id: Number(issue)
+				}
+			}
 		};
 	}
 }

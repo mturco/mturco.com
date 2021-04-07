@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Content from '$lib/Content.svelte';
 	import PostHeader from './PostHeader.svelte';
 	import type { Post } from './types';
 
@@ -6,10 +7,16 @@
 </script>
 
 <article>
-	<PostHeader {post} />
+	<PostHeader {post} standalone />
 
-	{@html post.html}
+	<Content>
+		{@html post.html}
+	</Content>
 </article>
 
 <style lang="postcss">
+	article :global(h1) {
+		font-size: 1.25em;
+		line-height: 1.5;
+	}
 </style>

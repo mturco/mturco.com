@@ -39,17 +39,27 @@
 
 	<Post post={latest} />
 
-	<Link href="/reading-list/all">View All</Link>
+	<footer>
+		<h1>Need more to read?</h1>
+		<p>Give some <Link href="/reading-list/archive">archived reading lists</Link> a look.</p>
+	</footer>
 </main>
 
 <style>
 	header {
+		padding-bottom: 1rem;
+		border-bottom: 1px solid var(--color-divider-lc);
+		margin-bottom: 5rem;
 	}
 
-	header h1 {
-		color: var(--color-primary);
-		font: 700 3em Montserrat, var(--font-base);
-		letter-spacing: 0.03em;
-		margin: 0 0 0.5rem;
+	h1 {
+		font: 700 1.25em Montserrat, var(--font-base);
+		margin: 0.5em 0;
+	}
+
+	footer {
+		padding-top: 1rem;
+		border-top: 1px solid var(--color-divider-lc);
+		margin-top: 6rem;
 	}
 </style>
