@@ -9,7 +9,9 @@
 
 <h1 class={size}>
 	<Link href="/reading-list/{post.id}">{post.title}</Link> <span class="slash">/</span>
-	<span class="date">{format(parseISO(post.date), 'MMM d, y')}</span>
+	<span class="date"
+		>{format(parseISO(post.date.slice(0, post.date.indexOf('T'))), 'MMM d, y')}</span
+	>
 </h1>
 
 <style lang="postcss">
