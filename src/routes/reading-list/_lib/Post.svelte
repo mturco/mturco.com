@@ -19,4 +19,9 @@
 		font-size: 1.25em;
 		line-height: 1.5;
 	}
+
+	article :global(h2) {
+		font-size: 1em;
+		line-height: 1.5;
+	}
 </style>
