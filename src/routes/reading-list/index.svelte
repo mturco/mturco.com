@@ -41,7 +41,7 @@
 
 	<footer>
 		<h1>Need more to read?</h1>
-		<p>Give some <Link href="/reading-list/archive">archived reading lists</Link> a look.</p>
+		<p>Give some <Link href="/reading-list/archive">previous reading lists</Link> a look.</p>
 	</footer>
 </main>
 

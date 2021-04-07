@@ -25,6 +25,15 @@
 	<title>Reading List Archive | Matt Turco</title>
 </svelte:head>
 
-{#each posts as post}
-	<PostHeader {post} />
-{/each}
+<div>
+	{#each posts as post}
+		<PostHeader {post} />
+	{/each}
+</div>
+
+<style lang="postcss">
+	div {
+		margin: 0 auto;
+		width: max-content;
+	}
+</style>
