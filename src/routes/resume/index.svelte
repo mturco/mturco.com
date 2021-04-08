@@ -8,6 +8,20 @@
 
 <svelte:head>
 	<title>Resume | Matt Turco</title>
+	<style>
+		@media print {
+			:root {
+				height: 0;
+				margin: 0.75cm 1cm;
+				padding: 0;
+				font-size: 9.5pt;
+			}
+
+			@page {
+				margin: 0;
+			}
+		}
+	</style>
 </svelte:head>
 
 <main>
