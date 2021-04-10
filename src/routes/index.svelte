@@ -65,18 +65,24 @@
 <style lang="postcss">
 	main {
 		display: grid;
-		grid-template:
-			'header header header' max-content
-			'. . .' max-content / auto auto auto;
+		grid-template-columns: 1fr;
 		gap: 5rem 3rem;
 		min-height: 100vh;
 		align-content: center;
 		justify-items: center;
 		justify-content: center;
+
+		@media (min-width: 48rem) {
+			grid-template:
+				'header header header' max-content
+				'. . .' max-content / auto auto auto;
+		}
 	}
 
 	header {
-		grid-area: header;
+		@media (min-width: 48rem) {
+			grid-area: header;
+		}
 	}
 
 	h1 {
@@ -92,7 +98,6 @@
 		font-weight: 300;
 		text-align: center;
 		text-transform: lowercase;
-		white-space: nowrap;
 		line-height: 1.5;
 		color: var(--color-text-lc);
 	}
