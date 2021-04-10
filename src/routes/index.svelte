@@ -16,73 +16,65 @@
 <main>
 	<header>
 		<h1>Matt Turco</h1>
-		<h2>front end engineer &amp; design enthusiast</h2>
+		<h2>front end engineer <span class="mobile-break">&amp; design enthusiast</span></h2>
 	</header>
 
-	<Section title="Code">
-		<div class="flex">
-			<ProfileLink external href="https://github.com/mturco">
-				<GithubIcon slot="icon" />
-				<svelte:fragment slot="label">GitHub</svelte:fragment>
-			</ProfileLink>
+	<div class="links">
+		<Section title="Code">
+			<div class="link-group">
+				<ProfileLink external href="https://github.com/mturco">
+					<GithubIcon slot="icon" />
+					<svelte:fragment slot="label">GitHub</svelte:fragment>
+				</ProfileLink>
 
-			<ProfileLink external href="https://bitbucket.org/mturco">
-				<BitbucketIcon slot="icon" />
-				<svelte:fragment slot="label">BitBucket</svelte:fragment>
-			</ProfileLink>
-		</div>
-	</Section>
+				<ProfileLink external href="https://bitbucket.org/mturco">
+					<BitbucketIcon slot="icon" />
+					<svelte:fragment slot="label">BitBucket</svelte:fragment>
+				</ProfileLink>
+			</div>
+		</Section>
 
-	<Section title="Contact">
-		<div class="flex">
-			<ProfileLink external href="https://linkedin.com/in/mattturco">
-				<LinkedinIcon slot="icon" />
-				<svelte:fragment slot="label">LinkedIn</svelte:fragment>
-			</ProfileLink>
+		<Section title="Contact">
+			<div class="link-group">
+				<ProfileLink external href="https://linkedin.com/in/mattturco">
+					<LinkedinIcon slot="icon" />
+					<svelte:fragment slot="label">LinkedIn</svelte:fragment>
+				</ProfileLink>
 
-			<ProfileLink external href="mailto:matt.turco@gmail.com">
-				<EmailIcon slot="icon" />
-				<svelte:fragment slot="label">Email</svelte:fragment>
-			</ProfileLink>
-		</div>
-	</Section>
+				<ProfileLink external href="mailto:matt.turco@gmail.com">
+					<EmailIcon slot="icon" />
+					<svelte:fragment slot="label">Email</svelte:fragment>
+				</ProfileLink>
+			</div>
+		</Section>
 
-	<Section title="Other">
-		<div class="flex">
-			<ProfileLink href="/resume">
-				<ResumeIcon slot="icon" />
-				<svelte:fragment slot="label">Resume</svelte:fragment>
-			</ProfileLink>
+		<Section title="Other">
+			<div class="link-group">
+				<ProfileLink href="/resume">
+					<ResumeIcon slot="icon" />
+					<svelte:fragment slot="label">Resume</svelte:fragment>
+				</ProfileLink>
 
-			<!-- <ProfileLink href="/reading-list">
+				<!-- <ProfileLink href="/reading-list">
 				<ReadingListIcon slot="icon" />
 				<svelte:fragment slot="label">Reading List</svelte:fragment>
 			</ProfileLink> -->
-		</div>
-	</Section>
+			</div>
+		</Section>
+	</div>
 </main>
 
 <style lang="postcss">
 	main {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 5rem 3rem;
-		min-height: 100vh;
-		align-content: center;
-		justify-items: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		justify-content: center;
-
-		@media (min-width: 48rem) {
-			grid-template:
-				'header header header' max-content
-				'. . .' max-content / auto auto auto;
-		}
+		min-height: 100vh;
 	}
 
 	header {
-		@media (min-width: 48rem) {
-			grid-area: header;
-		}
+		margin-bottom: 3rem;
 	}
 
 	h1 {
@@ -102,7 +94,25 @@
 		color: var(--color-text-lc);
 	}
 
-	.flex {
+	.mobile-break {
+		display: block;
+
+		@media (min-width: 30rem) {
+			display: inline;
+		}
+	}
+
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		& > :global(*) {
+			margin: 1.5rem;
+		}
+	}
+
+	.link-group {
 		display: flex;
 	}
 </style>
