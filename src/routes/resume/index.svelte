@@ -46,15 +46,15 @@
 
 			<div class="flex baseline">
 				<Subheading>Senior Front End Engineer, Tech Lead</Subheading>
-				<span class="time-span slash">Mar 2019 – Present</span>
+				<div class="time-span slash">Mar 2019 – Present</div>
 			</div>
 
 			<div class="flex baseline">
 				<Subheading>Front End Engineer</Subheading>
-				<span class="time-span slash">May 2018 – Mar 2019</span>
+				<div class="time-span slash">May 2018 – Mar 2019</div>
 			</div>
 
-			<!-- <ul>
+			<ul hidden>
 				<li>
 					<p>
 						<strong>Engineering</strong>
@@ -104,8 +104,9 @@
 					<ul>
 						<li>
 							Strove to share knowledge and level up the team as a whole. Frequently presented new
-							ideas and technologies and compiled weekly reading lists. Created proof-of-concepts to
-							demonstrate feasibility of new ideas.
+							ideas and technologies and compiled <Link href="/reading-list"
+								>weekly reading lists</Link
+							>. Created proof-of-concepts to demonstrate feasibility of new ideas.
 						</li>
 						<li>
 							Identified common patterns in application code and developed encompassing solutions at
@@ -113,7 +114,7 @@
 						</li>
 					</ul>
 				</li>
-			</ul> -->
+			</ul>
 		</div>
 
 		<div class="subsection">
@@ -121,7 +122,7 @@
 
 			<div class="flex baseline">
 				<Subheading>Front End Engineer</Subheading>
-				<span class="time-span slash">Feb 2015 – Apr 2018</span>
+				<div class="time-span slash">Feb 2015 – Apr 2018</div>
 			</div>
 
 			<ul>
@@ -150,7 +151,7 @@
 
 			<div class="flex baseline">
 				<Subheading>Software Engineer</Subheading>
-				<span class="time-span slash">Nov 2012 – Feb 2015</span>
+				<div class="time-span slash">Nov 2012 – Feb 2015</div>
 			</div>
 
 			<ul>
@@ -232,33 +233,29 @@
 
 		display: grid;
 		grid-template:
-			'header header header' max-content
-			'experience divider education' max-content
-			'experience divider technologies' max-content
-			'experience divider talks' max-content
-			'experience divider interests' max-content
-			'experience divider .' max-content
-			/ 1fr min-content 26ch;
+			'header' max-content
+			'experience' max-content
+			'education' max-content
+			'technologies' max-content
+			'talks' max-content
+			'interests' max-content
+			/ 1fr;
 		gap: 2rem;
 		align-content: start;
 		line-height: 1.5;
 		margin: 0 auto;
-		padding: 1.5rem;
+		padding: 10vh 5vw;
 		max-width: 64rem;
 
-		@media (min-width: 30rem) {
-			padding-right: 1.5rem;
-			padding-left: 1.5rem;
-		}
-
-		@media (min-width: 40rem) {
-			padding-right: 3rem;
-			padding-left: 3rem;
-		}
-
-		@media (min-width: 48rem) {
-			padding-top: 5rem;
-			padding-bottom: 5rem;
+		@media print, (min-width: 60rem) {
+			grid-template:
+				'header header header' max-content
+				'experience divider education' max-content
+				'experience divider technologies' max-content
+				'experience divider talks' max-content
+				'experience divider interests' max-content
+				'experience divider .' max-content
+				/ 1fr min-content 26ch;
 		}
 
 		@media print {
@@ -273,25 +270,37 @@
 	header {
 		grid-area: header;
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 		align-items: baseline;
+
+		@media print, (min-width: 60rem) {
+			flex-direction: row;
+		}
 	}
 
 	.name {
 		font: 700 2.5rem var(--font-heading);
 		letter-spacing: 0.03em;
-		margin: 0;
+		margin: 0 0 1rem;
 		line-height: 1;
 		white-space: nowrap;
+
+		@media print, (min-width: 60rem) {
+			margin-bottom: 0;
+		}
 	}
 
 	.contact {
-		display: inline-flex;
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		align-items: baseline;
-		flex-wrap: wrap;
+
+		@media print, (min-width: 38rem) {
+			display: inline-flex;
+			align-items: baseline;
+			flex-wrap: wrap;
+		}
 
 		& li {
 			margin: 0;
@@ -301,20 +310,27 @@
 
 	.slash::before {
 		content: '';
-		margin: 0 0.5rem 0 1.25rem;
-		color: var(--color-primary);
-		font-weight: 700;
-		transform: rotateZ(30deg);
-		height: 1.375rem;
-		border-left: 2px solid var(--color-primary);
-		display: inline-flex;
-		vertical-align: middle;
-		transform-origin: top;
+
+		@media print, (min-width: 38rem) {
+			content: '';
+			display: inline-flex;
+			vertical-align: middle;
+			margin: 0 0.5rem 0 1.25rem;
+			transform: rotateZ(30deg);
+			height: 1.375rem;
+			border-left: 2px solid var(--color-primary);
+			transform-origin: top;
+		}
 	}
 
 	.divider {
 		grid-area: divider;
+		display: none;
 		border-left: 2px solid var(--color-divider-lc);
+
+		@media print, (min-width: 60rem) {
+			display: block;
+		}
 	}
 
 	.subsection:not(:last-child) {
@@ -323,10 +339,17 @@
 
 	.time-span {
 		color: var(--color-text-lc);
+		margin-bottom: 0.5rem;
+
+		@media print, (min-width: 38rem) {
+			margin-bottom: 0;
+		}
 	}
 
 	.flex {
-		display: flex;
+		@media print, (min-width: 38rem) {
+			display: flex;
+		}
 	}
 
 	.baseline {
