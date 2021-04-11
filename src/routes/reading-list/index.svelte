@@ -32,8 +32,9 @@
 	<header>
 		<h1>Reading List</h1>
 		<p>
-			Weekly list of articles, blog posts, tweets, talks, etc that I found interesting and/or
-			learned something from. Here's the most recent reading list — enjoy!
+			Weekly-ish list of articles, blog posts, tweets, talks, etc that I found interesting and/or
+			learned something from. Not all content is necessarily fresh—I share them as I find them! With
+			that said, here's the most recent reading list. Enjoy!
 		</p>
 	</header>
 
