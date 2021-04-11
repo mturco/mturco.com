@@ -61,12 +61,14 @@
 					</p>
 					<ul>
 						<li>
-							Built much of Namely&apos;s design system, focusing on composability and
-							accessibility. Emphasized the importance of semantic and predictable component APIs.
+							Built 27% of Namely&apos;s design system (55 of 202 components), focusing on
+							composability and accessibility. Emphasized the importance of semantic and predictable
+							component APIs.
 						</li>
 						<li>
 							Developed a state management library that greatly simplified building complex forms
-							with branching logic, multi-page flows, input validation, and inline editing.
+							with branching logic, multi-page flows, input validation, and inline editing. It now
+							drives half of all forms at Namely (96 of 199 forms).
 						</li>
 						<li>
 							Migrated monorepo CI system from Jenkins to Drone, reducing CI time by 67% (36 min →
