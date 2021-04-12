@@ -61,7 +61,7 @@
 					</p>
 					<ul>
 						<li>
-							Built 27% of Namely&apos;s design system (55 of 202 components), focusing on
+							Built 30% of Namely&apos;s design system (55 of 183 components), focusing on
 							composability and accessibility. Emphasized the importance of semantic and predictable
 							component APIs.
 						</li>
