@@ -67,8 +67,7 @@
 						</li>
 						<li>
 							Developed a state management library that greatly simplified building complex forms
-							with branching logic, multi-page flows, input validation, and inline editing. It now
-							drives half of all forms at Namely (96 of 199 forms).
+							with branching logic, multi-page flows, input validation, and inline editing.
 						</li>
 						<li>
 							Migrated monorepo CI system from Jenkins to Drone, reducing CI time by 67% (36 min →
