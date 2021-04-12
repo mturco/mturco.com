@@ -111,8 +111,8 @@
 							>. Created proof-of-concepts to demonstrate feasibility of new ideas.
 						</li>
 						<li>
-							Identified common patterns in application code and developed encompassing solutions at
-							the platform level.
+							Interviewed, hired, and mentored Namely&apos;s most diverse team of engineers. Helped
+							establish a strong front end engineering culture.
 						</li>
 					</ul>
 				</li>
