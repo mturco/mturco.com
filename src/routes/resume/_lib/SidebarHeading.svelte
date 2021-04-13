@@ -5,5 +5,6 @@
 		font-size: 1.125rem;
 		font-weight: 700;
 		margin: 0 0 0.125em 0;
+		white-space: nowrap;
 	}
 </style>

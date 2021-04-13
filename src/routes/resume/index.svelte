@@ -209,7 +209,7 @@
 
 	<Section title="Talks">
 		<div class="subsection">
-			<p>
+			<p class="nowrap">
 				<Link external href="https://cross-component-communication.mturco.com/"
 					>Cross Component Communication</Link
 				>
@@ -256,7 +256,7 @@
 				'experience divider talks' max-content
 				'experience divider interests' max-content
 				'experience divider .' max-content
-				/ 1fr min-content 26ch;
+				/ 1fr min-content min-content;
 		}
 
 		@media print {
@@ -355,6 +355,10 @@
 
 	.baseline {
 		align-items: baseline;
+	}
+
+	.nowrap {
+		white-space: nowrap;
 	}
 
 	p {
