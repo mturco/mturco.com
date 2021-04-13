@@ -96,15 +96,15 @@
 							address tech debt and prototype new ideas.
 						</li>
 						<li>
-							Defined code standards and best practices. Codified these standards and guidelines as
-							an open source{' '}
+							Established code standards and best practices. Codified these guidelines as an open
+							source{' '}
 							<Link external href="https://www.npmjs.com/package/@namely/eslint-config-namely">
 								ESLint rule set</Link
-							>.
+							> to standardize code across the company.
 						</li>
 						<li>
-							Mentored 4 engineers by guiding them in their work, providing code review, offering
-							role and career advice, and creating opportunities for them to grow.
+							Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
+							role and career advice, and created opportunities for growth.
 						</li>
 					</ul>
 				</li>
@@ -114,10 +114,10 @@
 					</p>
 					<ul>
 						<li>
-							Strove to share knowledge and level up the team as a whole. Frequently presented new
-							ideas and technologies and compiled <Link href="/reading-list"
+							Leveled up the team as a whole by compiling <Link href="/reading-list"
 								>weekly reading lists</Link
-							>. Created proof-of-concepts to demonstrate feasibility of new ideas.
+							>, presenting new technologies, and performing team code reviews. Created
+							proof-of-concepts to demonstrate the feasibility of new ideas.
 						</li>
 						<li>
 							Interviewed, hired, and mentored Namely&apos;s most diverse team of engineers. Helped
