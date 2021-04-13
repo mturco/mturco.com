@@ -55,10 +55,10 @@
 					<svelte:fragment slot="label">Resume</svelte:fragment>
 				</ProfileLink>
 
-				<!-- <ProfileLink href="/reading-list">
-				<ReadingListIcon slot="icon" />
-				<svelte:fragment slot="label">Reading List</svelte:fragment>
-			</ProfileLink> -->
+				<ProfileLink href="/reading-list">
+					<ReadingListIcon slot="icon" />
+					<svelte:fragment slot="label">Reading List</svelte:fragment>
+				</ProfileLink>
 			</div>
 		</Section>
 	</div>
