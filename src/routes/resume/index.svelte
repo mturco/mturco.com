@@ -8,16 +8,26 @@
 
 <svelte:head>
 	<title>Resume | Matt Turco</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet"
+	/>
 	<style>
+		body {
+			font-family: 'Lato', var(--font-base);
+		}
+
 		@media print {
 			:root {
 				height: 0;
 				margin: 0.75cm 1cm;
 				padding: 0;
 				font-size: 9.5pt;
+				color-adjust: exact;
 			}
 
 			@page {
+				size: A4;
 				margin: 0;
 			}
 		}
