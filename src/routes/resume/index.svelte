@@ -270,9 +270,6 @@
 		}
 
 		@media print {
-			--section-item-gap: 1.25rem;
-
-			gap: 2rem 1.5rem;
 			padding: 0;
 			height: calc(11in - 1.5cm);
 		}
@@ -386,7 +383,7 @@
 	}
 
 	li {
-		margin-bottom: 0.5em;
+		margin-bottom: 0.75em;
 
 		&:last-child {
 			margin-bottom: 0;
