@@ -83,7 +83,7 @@
 					<ul>
 						<li>
 							Defined the vision and roadmap for the frontend platform. Led quarterly workshops to
-							address tech debt or prototype new ideas.
+							address tech debt and prototype new ideas.
 						</li>
 						<li>
 							Defined code standards and best practices. Codified these standards and guidelines as
@@ -129,7 +129,7 @@
 			<ul>
 				<li>
 					Created the charting library that renders all of Gallup&apos;s line chart graphics using
-					JavaScript and SVG. Using that library, created an interactive data visualization for{' '}
+					JavaScript and SVG. Used that library to create an interactive data visualization for{' '}
 					<Link
 						external
 						href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
@@ -221,8 +221,8 @@
 
 	<Section title="Interests">
 		<p>
-			Here are some things I love to chat about: tech, basketball, design, the web, photography, and
-			of course, building cool things with code.
+			Here are some things I love to chat about: tech, basketball, design, the web, photography,
+			and, of course, building cool things with code.
 		</p>
 	</Section>
 </main>
