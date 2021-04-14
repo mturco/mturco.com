@@ -129,4 +129,19 @@
 		height: 3px;
 		margin: 2em 0;
 	}
+
+	div :global(summary) {
+		cursor: pointer;
+		width: fit-content;
+		font-size: 0.875em;
+		font-weight: bold;
+
+		&:hover {
+			color: var(--color-primary);
+		}
+	}
+
+	div :global(del) {
+		text-decoration-thickness: 2px;
+	}
 </style>
