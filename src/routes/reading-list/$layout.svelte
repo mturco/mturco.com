@@ -1,27 +1,24 @@
 <script lang="ts">
-	import Logo from '$lib/Logo.svelte';
+	import Header from '$lib/Header.svelte';
 </script>
 
-<header>
-	<a href="/"><Logo /></a>
-</header>
+<div class="wrapper">
+	<Header />
 
-<div>
-	<slot />
+	<div class="content">
+		<slot />
+	</div>
 </div>
 
-<style>
-	header {
-		display: flex;
-		justify-content: center;
-		padding: 0.5rem;
-		border-bottom: 1px solid var(--color-divider-lc);
+<style lang="postcss">
+	.wrapper {
+		--page-max-width: 46rem;
 	}
 
-	div {
+	.content {
 		margin: 10vh auto;
 		padding: 0 1rem;
-		max-width: 60ch;
+		max-width: var(--page-max-width);
 		font-size: 1.125rem;
 		line-height: 1.7;
 	}
