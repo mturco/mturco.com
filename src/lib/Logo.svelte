@@ -3,6 +3,7 @@
 </script>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class={size}>
+	<title>Matt Turco</title>
 	<defs>
 		<mask id="m">
 			<rect width="100" height="100" x="0" y="0" fill="#fff" />

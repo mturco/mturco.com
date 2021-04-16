@@ -18,14 +18,26 @@
 
 <script lang="ts">
 	import type { IPost } from './_lib/types';
+	import { formatPostDate } from './_lib/utils';
 	import Post from './_lib/Post.svelte';
 	import Link from '$lib/Link.svelte';
 
 	export let latest: IPost;
+	export const title = `Reading List ${latest.title} — ${formatPostDate(latest.date)}`;
 </script>
 
 <svelte:head>
 	<title>Reading List | Matt Turco</title>
+	<meta
+		name="description"
+		content="Matt Turco's weekly reading list of interesting articles, blog posts, tweets, talk, etc."
+	/>
+	<meta property="og:url" content={latest.url} />
+	<meta property="og:title" content={title} />
+	<meta property="og:type" content="article" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@matt_turco" />
+	<meta name="twitter:creator" content="@matt_turco" />
 </svelte:head>
 
 <main>

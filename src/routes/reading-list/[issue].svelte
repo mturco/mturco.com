@@ -20,10 +20,23 @@
 	import Post from './_lib/Post.svelte';
 
 	export let post: IPost;
+
+	export const title = `Reading List ${post.title} — ${formatPostDate(post.date)}`;
+	console.log(post.url);
 </script>
 
 <svelte:head>
-	<title>Reading List {post.title} | Matt Turco</title>
+	<title>{title} | Matt Turco</title>
+	<meta
+		name="description"
+		content="Matt Turco's weekly reading list of interesting articles, blog posts, tweets, talk, etc."
+	/>
+	<meta property="og:url" content={post.url} />
+	<meta property="og:title" content={title} />
+	<meta property="og:type" content="article" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@matt_turco" />
+	<meta name="twitter:creator" content="@matt_turco" />
 </svelte:head>
 
 <Post {post} />

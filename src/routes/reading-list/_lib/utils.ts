@@ -5,6 +5,6 @@ export function formatPostDate(iso8601: string): string {
 	return format(parseISO(isoDateOnly), 'MMM d, y');
 }
 
-export function getPostUrl(id: number): string {
-	return `/reading-list/${id}`;
+export function getPostUrl(id: number): URL {
+	return new URL(`/reading-list/${id}`, 'https://mturco.com');
 }

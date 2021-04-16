@@ -11,6 +11,10 @@
 
 <svelte:head>
 	<title>Matt Turco</title>
+	<meta
+		name="description"
+		content="Matt Turco is a front end engineer & design enthusiast in Denver, Colorado."
+	/>
 </svelte:head>
 
 <main>

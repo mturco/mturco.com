@@ -24,7 +24,7 @@ export function get({ params }: Request): Response {
 			body: data.body,
 			html,
 			id,
-			url: getPostUrl(id)
+			url: getPostUrl(id).href
 		};
 		return { body: { post } };
 	}

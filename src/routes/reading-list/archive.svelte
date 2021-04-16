@@ -23,6 +23,10 @@
 
 <svelte:head>
 	<title>Reading List Archive | Matt Turco</title>
+	<meta
+		name="description"
+		content="Archive Matt Turco's weekly reading lists of interesting articles, blog posts, tweets, talk, etc."
+	/>
 </svelte:head>
 
 <div>

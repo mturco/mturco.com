@@ -25,7 +25,7 @@ export function get(): Response {
 				body: data.body,
 				html: marked(content, { renderer }),
 				id,
-				url: getPostUrl(id)
+				url: getPostUrl(id).href
 			};
 
 			return post;

@@ -8,6 +8,11 @@
 
 <svelte:head>
 	<title>Resume | Matt Turco</title>
+	<meta
+		name="description"
+		content="Matt Turco's resume. Matt Turco is a front end engineer & design enthusiast in Denver, Colorado."
+	/>
+
 	<link
 		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
 		rel="stylesheet"
