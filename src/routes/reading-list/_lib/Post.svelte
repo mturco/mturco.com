@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Content from '$lib/Content.svelte';
 	import PostHeader from './PostHeader.svelte';
-	import type { Post } from './types';
+	import type { IPost } from './types';
 
-	export let post: Post;
+	export let post: IPost;
 </script>
 
 <article>

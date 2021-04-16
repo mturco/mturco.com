@@ -4,6 +4,9 @@ import fs from 'fs';
 import grayMatter from 'gray-matter';
 import marked from 'marked';
 
+import { getPostUrl } from './_lib/utils';
+import type { IPost } from './_lib/types';
+
 export function get({ params }: Request): Response {
 	const { issue } = params;
 
@@ -14,14 +17,15 @@ export function get({ params }: Request): Response {
 	const html = marked(content, { renderer });
 
 	if (html) {
-		return {
-			body: {
-				post: {
-					...data,
-					html,
-					id: Number(issue)
-				}
-			}
+		const id = Number(issue);
+		const post: IPost = {
+			title: data.title,
+			date: data.date,
+			body: data.body,
+			html,
+			id,
+			url: getPostUrl(id)
 		};
+		return { body: { post } };
 	}
 }

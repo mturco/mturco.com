@@ -15,10 +15,11 @@
 </script>
 
 <script lang="ts">
-	import type { Post as PostType } from './_lib/types';
+	import { formatPostDate } from './_lib/utils';
+	import type { IPost } from './_lib/types';
 	import Post from './_lib/Post.svelte';
 
-	export let post: PostType;
+	export let post: IPost;
 </script>
 
 <svelte:head>

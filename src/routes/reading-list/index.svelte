@@ -17,11 +17,11 @@
 </script>
 
 <script lang="ts">
-	import type { Post as PostType } from './_lib/types';
+	import type { IPost } from './_lib/types';
 	import Post from './_lib/Post.svelte';
 	import Link from '$lib/Link.svelte';
 
-	export let latest: PostType;
+	export let latest: IPost;
 </script>
 
 <svelte:head>

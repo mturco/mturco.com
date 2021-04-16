@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { format, parseISO } from 'date-fns';
 	import Link from '$lib/Link.svelte';
-	import type { Post } from './types';
+	import type { IPost } from './types';
+	import { formatPostDate, getPostUrl } from './utils';
 
-	export let post: Post;
+	export let post: IPost;
 	export let standalone = false;
 </script>
 
@@ -11,12 +11,10 @@
 	{#if standalone}
 		{post.title}
 	{:else}
-		<Link href="/reading-list/{post.id}">{post.title}</Link>
+		<Link href={getPostUrl(post.id)}>{post.title}</Link>
 	{/if}
 	<span class="slash">/</span>
-	<span class="date"
-		>{format(parseISO(post.date.slice(0, post.date.indexOf('T'))), 'MMM d, y')}</span
-	>
+	<span class="date">{formatPostDate(post.date)}</span>
 </h1>
 
 <style lang="postcss">
