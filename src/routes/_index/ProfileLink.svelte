@@ -20,9 +20,7 @@
 		text-decoration: none;
 		flex-direction: column;
 		align-items: center;
-		transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-		transition-duration: 0.4s;
-		transition-property: transform, background-color;
+		transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 
 		&:hover {
 			color: var(--color-primary);
@@ -38,6 +36,7 @@
 			z-index: -1;
 			content: '';
 			border-radius: 50%;
+			transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 			transform: scale3d(1.15, 1.15, 1);
 		}
 

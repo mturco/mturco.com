@@ -38,7 +38,7 @@
 			/>
 		</mask>
 	</defs>
-	<circle cx="50" cy="50" r="50" fill="#007ab8" mask="url(#m)" />
+	<circle cx="50" cy="50" r="50" fill="currentColor" mask="url(#m)" />
 </svg>
 
 <style lang="postcss">

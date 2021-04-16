@@ -24,13 +24,22 @@
 	}
 
 	.logo {
-		color: var(--color-text-lc);
-		font: 700 1.75em Montserrat, var(--font-base);
-		letter-spacing: 0.03em;
-		text-decoration-color: transparent;
+		position: relative;
+		display: inline-flex;
+		color: var(--color-primary);
 
-		&:hover {
-			color: var(--color-primary);
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			border-radius: 50%;
+			transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+			transform: scale(1.75);
+		}
+
+		&:hover::after {
+			background-color: hsla(200, 100%, 36%, 0.15);
+			transform: scale(1.5);
 		}
 	}
 </style>
