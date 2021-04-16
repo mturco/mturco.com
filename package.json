@@ -7,7 +7,8 @@
 		"start": "svelte-kit start",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write .",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^1.0.0-next.0",
