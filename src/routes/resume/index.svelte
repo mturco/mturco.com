@@ -208,7 +208,7 @@
 
 		<div class="subsection">
 			<SidebarHeading>App frameworks</SidebarHeading>
-			<p>Gatsby, CRA, SvelteKit</p>
+			<p>Gatsby, CRA, SvelteKit, Next.js, Nuxt.js</p>
 		</div>
 
 		<div class="subsection">
