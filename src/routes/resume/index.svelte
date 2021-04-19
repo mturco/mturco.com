@@ -69,7 +69,7 @@
 				<div class="time-span slash">May 2018 – Mar 2019</div>
 			</div>
 
-			<ul hidden>
+			<ul>
 				<li>
 					<p>
 						<strong>Engineering</strong>
