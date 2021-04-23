@@ -45,9 +45,12 @@
 		<h1>Reading List</h1>
 		<p>
 			Weekly-ish list of articles, blog posts, tweets, talks, etc that I found interesting and/or
-			learned something from. Not all content is necessarily fresh—I share them as I find them! With
-			that said, here's the most recent reading list. Enjoy!
+			learned something from. Usually related to web development, software, or design in some way
+			but occasionally general interest. Not all content is necessarily fresh—I share things as I
+			find them!
 		</p>
+
+		<p>With that said, here's the most recent reading list. Enjoy!</p>
 	</header>
 
 	<Post post={latest} />
