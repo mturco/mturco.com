@@ -32,7 +32,7 @@
 		name="description"
 		content="Matt Turco's weekly reading list of interesting articles, blog posts, tweets, talk, etc."
 	/>
-	<meta property="og:url" content={latest.url} />
+	<meta property="og:url" content={latest.permalink} />
 	<meta property="og:title" content={title} />
 	<meta property="og:type" content="article" />
 	<meta name="twitter:card" content="summary" />

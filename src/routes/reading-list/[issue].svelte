@@ -22,7 +22,6 @@
 	export let post: IPost;
 
 	export const title = `Reading List ${post.title} — ${formatPostDate(post.date)}`;
-	console.log(post.url);
 </script>
 
 <svelte:head>
@@ -31,7 +30,7 @@
 		name="description"
 		content="Matt Turco's weekly reading list of interesting articles, blog posts, tweets, talk, etc."
 	/>
-	<meta property="og:url" content={post.url} />
+	<meta property="og:url" content={post.permalink} />
 	<meta property="og:title" content={title} />
 	<meta property="og:type" content="article" />
 	<meta name="twitter:card" content="summary" />

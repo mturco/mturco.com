@@ -5,4 +5,5 @@ export interface IPost {
 	body: string;
 	html: string;
 	url: string;
+	permalink: string;
 }

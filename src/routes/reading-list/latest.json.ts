@@ -29,7 +29,8 @@ export function get(): Response {
 			body: data.body,
 			html,
 			id: latest,
-			url: getPostUrl(latest).href
+			url: getPostUrl(latest),
+			permalink: getPostUrl(latest, true)
 		};
 		return { body: { post } };
 	}

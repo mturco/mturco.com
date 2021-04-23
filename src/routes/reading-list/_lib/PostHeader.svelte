@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Link from '$lib/Link.svelte';
 	import type { IPost } from './types';
-	import { formatPostDate, getPostUrl } from './utils';
+	import { formatPostDate } from './utils';
 
 	export let post: IPost;
 	export let standalone = false;
@@ -11,7 +11,7 @@
 	{#if standalone}
 		{post.title}
 	{:else}
-		<Link href={getPostUrl(post.id)}>{post.title}</Link>
+		<Link href={post.url}>{post.title}</Link>
 	{/if}
 	<span class="slash">/</span>
 	<span class="date">{formatPostDate(post.date)}</span>
