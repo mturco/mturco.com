@@ -33,13 +33,13 @@
 			position: absolute;
 			inset: 0;
 			border-radius: 50%;
-			transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+			transition: background-color 0.4s var(--ease-out-quint), transform 0.4s var(--ease-out-quint);
 			transform: scale(1.75);
 		}
 
 		&:hover::after {
 			background-color: hsla(200, 100%, 36%, 0.15);
-			transform: scale(1.5);
+			transform: scale3d(1.5, 1.5, 1);
 		}
 	}
 </style>
