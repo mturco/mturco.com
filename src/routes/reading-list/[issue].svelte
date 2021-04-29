@@ -62,7 +62,7 @@
 <style lang="postcss">
 	nav {
 		display: flex;
-		margin-top: 2rem;
+		margin-top: 5rem;
 	}
 
 	.flex-1 {
