@@ -1,10 +1,10 @@
 <script context="module" lang="ts">
 	export async function load({ page, fetch }) {
 		const res = await fetch(`/reading-list/${page.params.issue}.json`);
-		const { post } = await res.json();
+		const { post, next, prev } = await res.json();
 
 		if (res.ok) {
-			return { props: { post } };
+			return { props: { post, next, prev } };
 		}
 
 		return {
@@ -15,11 +15,14 @@
 </script>
 
 <script lang="ts">
+	import NavLink from '$lib/NavLink.svelte';
 	import { formatPostDate } from './_lib/utils';
 	import type { IPost } from './_lib/types';
 	import Post from './_lib/Post.svelte';
 
 	export let post: IPost;
+	export let next: number | null;
+	export let prev: number | null;
 
 	export const title = `Reading List ${post.title} — ${formatPostDate(post.date)}`;
 </script>
@@ -39,3 +42,38 @@
 </svelte:head>
 
 <Post {post} />
+
+<nav>
+	<div class="flex-1">
+		{#if prev}
+			<NavLink href="/reading-list/{prev}">← Previous</NavLink>
+		{/if}
+	</div>
+	<div class="flex-1 center">
+		<NavLink href="/reading-list/archive">All Reading Lists</NavLink>
+	</div>
+	<div class="flex-1 end">
+		{#if next}
+			<NavLink href="/reading-list/{next}">Next →</NavLink>
+		{/if}
+	</div>
+</nav>
+
+<style lang="postcss">
+	nav {
+		display: flex;
+		margin-top: 2rem;
+	}
+
+	.flex-1 {
+		flex: 1;
+	}
+
+	.center {
+		text-align: center;
+	}
+
+	.end {
+		text-align: end;
+	}
+</style>

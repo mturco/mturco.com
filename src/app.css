@@ -14,7 +14,7 @@ body {
 	background-color: var(--color-selection);
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	:root:not(.light) {
 		--color-primary: var(--color-dark-primary);
 		--color-accent: var(--color-dark-accent);
@@ -27,4 +27,4 @@ body {
 		--color-text-hc: var(--color-dark-text-hc);
 		--color-selection: var(--color-dark-selection);
 	}
-} */
+}
