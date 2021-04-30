@@ -7,7 +7,12 @@
 		line-height: 1.7;
 	}
 
-	div :global(h1, h2, h3, h4, h5, h6) {
+	div :global(h1),
+	div :global(h2),
+	div :global(h3),
+	div :global(h4),
+	div :global(h5),
+	div :global(h6) {
 		margin: 1.5em 0 0.5em;
 		font-weight: 700;
 	}
@@ -78,15 +83,18 @@
 		border-bottom: 1px solid var(--color-divider-lc);
 	}
 
-	div :global(td, th) {
+	div :global(td),
+	div :global(th) {
 		padding: 0.25em 0.75em;
 	}
 
-	div :global(td:first-of-type, th:first-of-type) {
+	div :global(td:first-of-type),
+	div :global(th:first-of-type) {
 		padding-left: 0;
 	}
 
-	div :global(td:last-of-type, th:last-of-type) {
+	div :global(td:last-of-type),
+	div :global(th:last-of-type) {
 		padding-right: 0;
 	}
 
