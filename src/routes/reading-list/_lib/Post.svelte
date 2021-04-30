@@ -4,23 +4,26 @@
 	import type { IPost } from './types';
 
 	export let post: IPost;
+	export let linkHeading = false;
 </script>
 
 <article>
-	<PostHeader {post} standalone />
+	<PostHeader {post} {linkHeading} standalone />
 
-	<Content>
-		{@html post.html}
-	</Content>
+	<div class="content">
+		<Content>
+			{@html post.html}
+		</Content>
+	</div>
 </article>
 
 <style lang="postcss">
-	article :global(h1) {
+	.content :global(h1) {
 		font-size: 1.25em;
 		line-height: 1.5;
 	}
 
-	article :global(h2) {
+	.content :global(h2) {
 		font-size: 1em;
 		line-height: 1.5;
 	}
