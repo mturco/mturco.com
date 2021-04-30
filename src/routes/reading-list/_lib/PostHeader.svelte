@@ -5,13 +5,16 @@
 
 	export let post: IPost;
 	export let standalone = false;
+	export let linkHeading = false;
 </script>
 
 <h1 class:standalone>
-	{#if standalone}
-		{post.title}
-	{:else}
+	{#if !standalone}
 		<Link href={post.url}>{post.title}</Link>
+	{:else if linkHeading}
+		<Link inheritColor href={post.url}>{post.title}</Link>
+	{:else}
+		{post.title}
 	{/if}
 	<span class="slash">/</span>
 	<span class="date">{formatPostDate(post.date)}</span>

@@ -53,7 +53,7 @@
 		<p>With that said, here's the most recent reading list. Enjoy!</p>
 	</header>
 
-	<Post post={latest} />
+	<Post post={latest} linkHeading />
 
 	<footer>
 		<h1>Need more to read?</h1>
