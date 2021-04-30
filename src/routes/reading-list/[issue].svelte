@@ -44,15 +44,15 @@
 <Post {post} />
 
 <nav>
-	<div class="flex-1">
+	<div class="nav-item">
 		{#if prev}
 			<NavLink href="/reading-list/{prev}">← Previous</NavLink>
 		{/if}
 	</div>
-	<div class="flex-1 center">
+	<div class="nav-item">
 		<NavLink href="/reading-list/archive">All Reading Lists</NavLink>
 	</div>
-	<div class="flex-1 end">
+	<div class="nav-item">
 		{#if next}
 			<NavLink href="/reading-list/{next}">Next →</NavLink>
 		{/if}
@@ -61,19 +61,19 @@
 
 <style lang="postcss">
 	nav {
-		display: flex;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-items: center;
 		margin-top: 5rem;
 	}
 
-	.flex-1 {
-		flex: 1;
-	}
+	.nav-item {
+		&:first-child {
+			justify-self: start;
+		}
 
-	.center {
-		text-align: center;
-	}
-
-	.end {
-		text-align: end;
+		&:last-child {
+			justify-self: end;
+		}
 	}
 </style>
