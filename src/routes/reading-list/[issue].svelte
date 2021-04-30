@@ -41,8 +41,6 @@
 	<meta name="twitter:creator" content="@matt_turco" />
 </svelte:head>
 
-<Post {post} />
-
 <nav>
 	<div class="nav-item">
 		{#if prev}
@@ -59,12 +57,14 @@
 	</div>
 </nav>
 
+<Post {post} />
+
 <style lang="postcss">
 	nav {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		justify-items: center;
-		margin-top: 5rem;
+		margin-bottom: 2rem;
 	}
 
 	.nav-item {
