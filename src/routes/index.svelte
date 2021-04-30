@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ThemeToggle from '$lib/ThemeToggle.svelte';
 	import BitbucketIcon from './_index/BitbucketIcon.svelte';
 	import EmailIcon from './_index/EmailIcon.svelte';
 	import GithubIcon from './_index/GithubIcon.svelte';
@@ -16,6 +17,10 @@
 		content="Matt Turco is a front end engineer & design enthusiast in Denver, Colorado."
 	/>
 </svelte:head>
+
+<span class="theme-toggle">
+	<ThemeToggle />
+</span>
 
 <main>
 	<header>
@@ -69,6 +74,13 @@
 </main>
 
 <style lang="postcss">
+	.theme-toggle {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 1rem;
+	}
+
 	main {
 		display: flex;
 		flex-direction: column;

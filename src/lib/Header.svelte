@@ -1,26 +1,26 @@
 <script lang="ts">
 	import Logo from '$lib/Logo.svelte';
+	import ThemeToggle from '$lib/ThemeToggle.svelte';
 </script>
 
 <header>
-	<div>
-		<a class="logo" href="/"><Logo /></a>
-	</div>
+	<a class="logo" href="/"><Logo /></a>
+
+	<span class="theme-toggle">
+		<ThemeToggle />
+	</span>
 </header>
 
 <style lang="postcss">
 	header {
-		border-bottom: 1px solid var(--color-divider-lc);
-	}
-
-	div {
-		max-width: var(--page-max-width);
-		margin: 0 auto;
-		padding: 0 1rem;
-		display: flex;
-		justify-content: center;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas: 'left center right';
+		justify-items: center;
 		align-items: center;
+		padding: 0 1rem;
 		height: 3.5rem;
+		border-bottom: 1px solid var(--color-divider-lc);
 	}
 
 	.logo {
@@ -28,6 +28,7 @@
 		display: inline-flex;
 		color: var(--color-primary);
 		border-radius: 50%;
+		grid-area: center;
 
 		&::after {
 			content: '';
@@ -43,5 +44,10 @@
 			background-color: var(--color-highlight);
 			transform: scale3d(1.5, 1.5, 1);
 		}
+	}
+
+	.theme-toggle {
+		justify-self: end;
+		grid-area: right;
 	}
 </style>
