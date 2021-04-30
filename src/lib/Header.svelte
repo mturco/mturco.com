@@ -27,18 +27,20 @@
 		position: relative;
 		display: inline-flex;
 		color: var(--color-primary);
+		border-radius: 50%;
 
 		&::after {
 			content: '';
 			position: absolute;
 			inset: 0;
-			border-radius: 50%;
-			transition: background-color 0.4s var(--ease-out-quint), transform 0.4s var(--ease-out-quint);
-			transform: scale(1.75);
+			border-radius: inherit;
+			transition: background-color 0.5s var(--ease-out-quint), transform 0.5s var(--ease-out-quint);
+			transform: scale3d(2, 2, 1);
+			pointer-events: none;
 		}
 
 		&:hover::after {
-			background-color: hsla(200, 100%, 36%, 0.15);
+			background-color: var(--color-highlight);
 			transform: scale3d(1.5, 1.5, 1);
 		}
 	}
