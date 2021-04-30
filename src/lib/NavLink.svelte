@@ -22,7 +22,7 @@
 		outline: 0;
 
 		&:hover,
-		&:focus {
+		&:focus-visible {
 			color: var(--color-primary);
 			background-color: var(--color-highlight);
 		}
@@ -39,7 +39,7 @@
 		}
 
 		&:hover::after,
-		&:focus::after {
+		&:focus-visible::after {
 			border-color: var(--color-primary);
 			transform: none;
 		}
