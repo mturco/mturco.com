@@ -87,7 +87,7 @@
 		align-items: center;
 		justify-content: center;
 		min-height: 100vh;
-		margin: 10vh 0;
+		padding: 10vh 0;
 	}
 
 	header {
