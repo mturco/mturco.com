@@ -1,13 +1,15 @@
 import { browser } from '$app/env';
 
-type Theme = 'light' | 'dark';
+type Theme = 'light' | 'dark' | null;
 const storageKey = 'prefersDark';
 
 export function getThemePreference(): Theme {
 	try {
-		return JSON.parse(window.localStorage.getItem(storageKey)) ? 'dark' : 'light';
+		const stored = JSON.parse(window.localStorage.getItem(storageKey));
+		if (stored === null) return null;
+		return stored ? 'dark' : 'light';
 	} catch {
-		return 'light';
+		return null;
 	}
 }
 
@@ -21,7 +23,6 @@ export function saveThemePreference(theme: Theme): void {
 
 export function applyThemePreference(theme = getThemePreference()): void {
 	if (!browser) return;
-
-	document.documentElement.classList.remove(`theme-${theme === 'light' ? 'dark' : 'light'}`);
-	document.documentElement.classList.add(`theme-${theme}`);
+	document.documentElement.classList.toggle('theme-light', theme === 'light');
+	document.documentElement.classList.toggle('theme-dark', theme === 'dark');
 }

@@ -16,40 +16,17 @@
 	--gray-900: hsl(240, 6%, 10%);
 
 	/* aliases */
-	--color-primary: var(--color-light-primary);
-	--color-accent: var(--color-light-accent);
-	--color-background: var(--color-light-background);
-	--color-background-alt: var(--color-light-background-alt);
-	--color-divider-lc: var(--color-light-divider-lc);
-	--color-divider-hc: var(--color-light-divider-hc);
-	--color-selection: var(--color-light-selection);
-	--color-text: var(--color-light-text);
-	--color-text-lc: var(--color-light-text-lc);
-	--color-text-hc: var(--color-light-text-hc);
+	--color-primary: var(--blue-500);
+	--color-accent: var(--red-500);
+	--color-background: white;
+	--color-background-alt: var(--gray-100);
+	--color-divider-lc: var(--gray-200);
+	--color-divider-hc: var(--gray-600);
+	--color-text: var(--gray-600); /* 7.72 c/r */
+	--color-text-lc: var(--gray-500); /* 4.83 c/r */
+	--color-text-hc: var(--gray-700); /* 10.44 c/r */
+	--color-selection: var(--color-accent);
 	--color-highlight: hsla(200, 100%, 44%, 0.12);
-
-	/* themes */
-	--color-light-primary: var(--blue-500);
-	--color-light-accent: var(--red-500);
-	--color-light-background: white;
-	--color-light-background-alt: var(--gray-100);
-	--color-light-divider-lc: var(--gray-200);
-	--color-light-divider-hc: var(--gray-600);
-	--color-light-text: var(--gray-600); /* 7.72 c/r */
-	--color-light-text-lc: var(--gray-500); /* 4.83 c/r */
-	--color-light-text-hc: var(--gray-700); /* 10.44 c/r */
-	--color-light-selection: var(--color-light-accent);
-
-	--color-dark-primary: var(--blue-400);
-	--color-dark-accent: var(--red-500);
-	--color-dark-background: var(--gray-800);
-	--color-dark-background-alt: var(--gray-700);
-	--color-dark-divider-lc: var(--gray-600);
-	--color-dark-divider-hc: var(--gray-200);
-	--color-dark-text: var(--gray-300); /* 10.07 c/r */
-	--color-dark-text-lc: var(--gray-400); /* 5.81 c/r */
-	--color-dark-text-hc: var(--gray-300); /* 10.07 c/r */
-	--color-dark-selection: var(--color-dark-accent);
 
 	/* typography */
 	--font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
@@ -61,4 +38,32 @@
 	/* animation */
 	--ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
 	--ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.theme-dark {
+	--color-primary: var(--blue-400);
+	--color-accent: var(--red-500);
+	--color-background: var(--gray-800);
+	--color-background-alt: var(--gray-700);
+	--color-divider-lc: var(--gray-600);
+	--color-divider-hc: var(--gray-200);
+	--color-text: var(--gray-300); /* 10.07 c/r */
+	--color-text-lc: var(--gray-400); /* 5.81 c/r */
+	--color-text-hc: var(--gray-300); /* 10.07 c/r */
+	--color-selection: var(--color-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not(.theme-light) {
+		--color-primary: var(--blue-400);
+		--color-accent: var(--red-500);
+		--color-background: var(--gray-800);
+		--color-background-alt: var(--gray-700);
+		--color-divider-lc: var(--gray-600);
+		--color-divider-hc: var(--gray-200);
+		--color-text: var(--gray-300); /* 10.07 c/r */
+		--color-text-lc: var(--gray-400); /* 5.81 c/r */
+		--color-text-hc: var(--gray-300); /* 10.07 c/r */
+		--color-selection: var(--color-accent);
+	}
 }

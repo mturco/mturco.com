@@ -14,21 +14,6 @@ body {
 	background-color: var(--color-selection);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root:not(.theme-light) {
-		--color-primary: var(--color-dark-primary);
-		--color-accent: var(--color-dark-accent);
-		--color-background: var(--color-dark-background);
-		--color-background-alt: var(--color-dark-background-alt);
-		--color-divider-lc: var(--color-dark-divider-lc);
-		--color-divider-hc: var(--color-dark-divider-hc);
-		--color-text: var(--color-dark-text);
-		--color-text-lc: var(--color-dark-text-lc);
-		--color-text-hc: var(--color-dark-text-hc);
-		--color-selection: var(--color-dark-selection);
-	}
-}
-
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,

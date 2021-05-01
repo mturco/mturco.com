@@ -1,7 +1,14 @@
 <script lang="ts">
+	import { browser } from '$app/env';
 	import { applyThemePreference, getThemePreference, saveThemePreference } from './theme';
 
-	let theme = getThemePreference();
+	function getSystemPreference() {
+		if (!browser) return 'light';
+		const { matches } = window.matchMedia('(prefers-color-scheme: dark)');
+		return matches ? 'dark' : 'light';
+	}
+
+	let theme = getThemePreference() ?? getSystemPreference();
 	function toggleTheme() {
 		theme = theme === 'light' ? 'dark' : 'light';
 		applyThemePreference(theme);

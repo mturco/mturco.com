@@ -18,7 +18,7 @@
 		grid-template-areas: 'left center right';
 		justify-items: center;
 		align-items: center;
-		padding: 0 1rem;
+		padding: 0 0.5rem;
 		height: 3.5rem;
 		border-bottom: 1px solid var(--color-divider-lc);
 	}

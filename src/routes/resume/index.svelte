@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ThemeToggle from '$lib/ThemeToggle.svelte';
+	import Header from '$lib/Header.svelte';
 	import Link from '$lib/Link.svelte';
 	import Section from './_lib/Section.svelte';
 	import Heading from './_lib/Heading.svelte';
@@ -40,9 +40,9 @@
 	</style>
 </svelte:head>
 
-<span class="theme-toggle">
-	<ThemeToggle />
-</span>
+<div class="header">
+	<Header />
+</div>
 
 <main>
 	<header>
@@ -248,12 +248,7 @@
 </main>
 
 <style lang="postcss">
-	.theme-toggle {
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding: 1rem;
-
+	.header {
 		@media print {
 			display: none;
 		}
