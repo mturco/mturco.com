@@ -110,7 +110,7 @@
 	}
 
 	div :global(code) {
-		background-color: var(--gray-200);
+		background-color: var(--color-background-alt);
 		border-radius: 3px;
 		color: var(--color-accent);
 		padding: 0.125rem 0.25rem;
