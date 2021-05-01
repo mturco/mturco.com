@@ -46,11 +46,11 @@
 <nav>
 	<div class="nav-item">
 		{#if prev}
-			<NavLink href="/reading-list/{prev}">← Previous</NavLink>
+			<NavLink href="/reading-list/{prev}">← Prev</NavLink>
 		{/if}
 	</div>
 	<div class="nav-item">
-		<NavLink href="/reading-list/archive">All Reading Lists</NavLink>
+		<NavLink href="/reading-list/archive">View All</NavLink>
 	</div>
 	<div class="nav-item">
 		{#if next}

@@ -20,6 +20,7 @@
 		background-color: var(--color-background-alt);
 		border-radius: 5px;
 		outline: 0;
+		white-space: nowrap;
 
 		&:hover,
 		&:focus-visible {
