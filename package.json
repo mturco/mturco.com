@@ -26,7 +26,7 @@
 		"gray-matter": "^4.0.2",
 		"husky": "^6.0.0",
 		"marked": "^2.0.1",
-		"postcss": "^8.2.9",
+		"postcss": "^8.2.13",
 		"postcss-load-config": "^3.0.1",
 		"postcss-nesting": "^7.0.1",
 		"prettier": "~2.2.1",
