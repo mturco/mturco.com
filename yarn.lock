@@ -1674,10 +1674,10 @@ postcss-minify-selectors@^5.0.0:
     alphanum-sort "^1.0.2"
     postcss-selector-parser "^3.1.2"
 
-postcss-nesting@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-8.0.0.tgz#94645b3e6e261f00581bc23c5ae7070220704829"
-  integrity sha512-zxxjODoplKlNhUG+B+FjhYliNv52dGnAjb06b6PQjTbNGY24hwqxHmRtTQkcl9pEr2W4+BB09GzMPFNerrOvcw==
+postcss-nesting@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-8.0.1.tgz#4a8ab3c540a0f138fd3f5d2ee65e4a24d1888024"
+  integrity sha512-cHPNhW5VvRQjszFDxmy16mis9qFQqQLBNw6KVmueLqqE3M182ZAk9+QoxGqbGVryzLVhannw2B5Yhosqq522fA==
 
 postcss-normalize-charset@^5.0.0:
   version "5.0.0"
