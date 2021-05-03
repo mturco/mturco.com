@@ -21,7 +21,7 @@
 		"cssnano": "^5.0.2",
 		"date-fns": "^2.21.1",
 		"eslint": "^7.25.0",
-		"eslint-config-prettier": "^8.1.0",
+		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.0",
 		"gray-matter": "^4.0.3",
 		"husky": "^6.0.0",
