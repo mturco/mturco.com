@@ -51,10 +51,11 @@
 		text-decoration-thickness: 2px;
 		text-underline-offset: 0.15em;
 		transition: text-decoration-color 0.2s ease-out;
+	}
 
-		&:hover {
-			text-decoration-color: currentColor;
-		}
+	div :global(a:hover),
+	div :global(a:focus) {
+		text-decoration-color: currentColor;
 	}
 
 	div :global(ul) {
@@ -143,10 +144,10 @@
 		width: fit-content;
 		font-size: 0.875em;
 		font-weight: bold;
+	}
 
-		&:hover {
-			color: var(--color-primary);
-		}
+	div :global(summary:hover) {
+		color: var(--color-primary);
 	}
 
 	div :global(del) {
