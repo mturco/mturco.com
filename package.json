@@ -1,20 +1,18 @@
 {
-	"name": "mturco.com-svelte",
+	"name": "mturco.com",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
-		"start": "svelte-kit start",
+		"preview": "svelte-kit preview",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write .",
 		"prepare": "husky install",
 		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.0-next.0",
-		"@sveltejs/adapter-node": "1.0.0-next.0",
-		"@sveltejs/adapter-static": "^1.0.0-next.0",
-		"@sveltejs/kit": "next",
+		"@sveltejs/adapter-static": "^1.0.0-next.8",
+		"@sveltejs/kit": "^1.0.0-next.99",
 		"@typescript-eslint/eslint-plugin": "^4.22.0",
 		"@typescript-eslint/parser": "^4.22.0",
 		"autoprefixer": "^10.2.5",
