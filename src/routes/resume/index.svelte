@@ -46,7 +46,7 @@
 
 <main>
 	<header>
-		<h1 class="name"><Link href="/">Matt Turco</Link></h1>
+		<h1 class="name">Matt Turco</h1>
 
 		<ul class="contact">
 			<li>Denver, CO</li>
@@ -309,6 +309,7 @@
 		margin: 0 0 1rem;
 		line-height: 1;
 		white-space: nowrap;
+		color: var(--color-primary);
 
 		@media print, (min-width: 60rem) {
 			margin-bottom: 0;
