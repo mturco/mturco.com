@@ -6,6 +6,7 @@
 	import LinkedinIcon from './_index/LinkedinIcon.svelte';
 	import ReadingListIcon from './_index/ReadingListIcon.svelte';
 	import ResumeIcon from './_index/ResumeIcon.svelte';
+	import TwitterIcon from './_index/TwitterIcon.svelte';
 	import ProfileLink from './_index/ProfileLink.svelte';
 	import Section from './_index/Section.svelte';
 </script>
@@ -45,14 +46,19 @@
 
 		<Section title="Contact">
 			<div class="link-group">
-				<ProfileLink external href="https://linkedin.com/in/mattturco">
-					<LinkedinIcon slot="icon" />
-					<svelte:fragment slot="label">LinkedIn</svelte:fragment>
+				<ProfileLink external href="https://twitter.com/matt_turco">
+					<TwitterIcon slot="icon" />
+					<svelte:fragment slot="label">Twitter</svelte:fragment>
 				</ProfileLink>
 
 				<ProfileLink external href="mailto:matt.turco@gmail.com">
 					<EmailIcon slot="icon" />
 					<svelte:fragment slot="label">Email</svelte:fragment>
+				</ProfileLink>
+
+				<ProfileLink external href="https://linkedin.com/in/mattturco">
+					<LinkedinIcon slot="icon" />
+					<svelte:fragment slot="label">LinkedIn</svelte:fragment>
 				</ProfileLink>
 			</div>
 		</Section>
