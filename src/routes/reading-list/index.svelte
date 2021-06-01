@@ -2,11 +2,10 @@
 	export async function load({ fetch }) {
 		const res = await fetch(`/reading-list/all.json`);
 		const { posts } = await res.json();
-
-		const latest = posts.reduce((max, post) => (post.id > max.id ? post : max), posts[0]);
+		const [latest, ...previousPosts] = posts;
 
 		if (res.ok) {
-			return { props: { latest } };
+			return { props: { latest, previousPosts } };
 		}
 
 		return {
@@ -18,26 +17,18 @@
 
 <script lang="ts">
 	import type { IPost } from './_lib/types';
-	import { formatPostDate } from './_lib/utils';
-	import Post from './_lib/Post.svelte';
-	import Link from '$lib/Link.svelte';
+	import PostPreview from './_lib/PostPreview.svelte';
 
 	export let latest: IPost;
-	export const title = `Reading List ${latest.title} — ${formatPostDate(latest.date)}`;
+	export let previousPosts: IPost[];
 </script>
 
 <svelte:head>
 	<title>Reading List | Matt Turco</title>
 	<meta
 		name="description"
-		content="Matt Turco's weekly reading list of interesting articles, blog posts, tweets, talk, etc."
+		content="Matt Turco's weekly reading list of interesting articles, blog posts, tweets, talks, etc."
 	/>
-	<meta property="og:url" content={latest.permalink} />
-	<meta property="og:title" content={title} />
-	<meta property="og:type" content="article" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="@matt_turco" />
-	<meta name="twitter:creator" content="@matt_turco" />
 </svelte:head>
 
 <main>
@@ -53,29 +44,37 @@
 		<p>With that said, here's the most recent reading list. Enjoy!</p>
 	</header>
 
-	<Post post={latest} linkHeading />
+	<div class="latest">
+		<PostPreview post={latest} latest />
+	</div>
 
-	<footer>
-		<h1>Need more to read?</h1>
-		<p>Give some <Link href="/reading-list/archive">previous reading lists</Link> a look.</p>
-	</footer>
+	<h2>Previous Reading Lists</h2>
+
+	<div class="previous">
+		{#each previousPosts as post}
+			<PostPreview {post} />
+		{/each}
+	</div>
 </main>
 
 <style>
-	header {
-		padding-bottom: 1rem;
-		border-bottom: 1px solid var(--color-divider-lc);
-		margin-bottom: 5rem;
-	}
-
 	h1 {
 		font: 700 1.25em Montserrat, var(--font-base);
 		margin: 0.5em 0;
 	}
 
-	footer {
-		padding-top: 1rem;
-		border-top: 1px solid var(--color-divider-lc);
-		margin-top: 6rem;
+	h2 {
+		font: 700 0.75em Montserrat, var(--font-base);
+		margin: 0.5em 0;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	.latest {
+		margin: 3rem 0 7rem;
+	}
+
+	.previous {
+		margin: 1rem -1.5rem;
 	}
 </style>
