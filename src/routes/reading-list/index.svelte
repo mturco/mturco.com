@@ -27,7 +27,7 @@
 	<title>Reading List | Matt Turco</title>
 	<meta
 		name="description"
-		content="Matt Turco's weekly reading list of interesting articles, blog posts, tweets, talks, etc."
+		content="Matt Turco's weekly reading list of articles, blog posts, tweets, talks, etc."
 	/>
 </svelte:head>
 
