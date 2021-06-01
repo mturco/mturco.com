@@ -59,12 +59,12 @@
 
 <style>
 	h1 {
-		font: 700 1.25em Montserrat, var(--font-base);
+		font: 700 1.5em Montserrat, var(--font-base);
 		margin: 0.5em 0;
 	}
 
 	h2 {
-		font: 700 0.75em Montserrat, var(--font-base);
+		font: 700 1em Montserrat, var(--font-base);
 		margin: 0.5em 0;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
