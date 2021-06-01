@@ -24,8 +24,8 @@
 	export let next: number | null;
 	export let prev: number | null;
 
-	export const title = `Reading List ${post.title} — ${formatPostDate(post.date)}`;
-	export const description = `Matt Turco's weekly reading list of articles, blog posts, tweets, talks, etc. ${post.description}`;
+	$: title = `Reading List ${post.title} — ${formatPostDate(post.date)}`;
+	$: description = `Matt Turco's weekly reading list of articles, blog posts, tweets, talks, etc. ${post.description}`;
 </script>
 
 <svelte:head>
