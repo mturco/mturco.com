@@ -22,6 +22,7 @@
 
 <style lang="postcss">
 	h1 {
+		font-weight: 700;
 		font-weight: 800;
 		font-size: 3rem;
 		margin: 0 0 0.5em;

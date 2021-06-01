@@ -34,6 +34,7 @@
 	}
 
 	h1 {
+		font-weight: 700;
 		font-weight: 800;
 		font-size: 2rem;
 		margin: 0;
