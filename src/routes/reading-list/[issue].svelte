@@ -24,56 +24,50 @@
 	export let next: number | null;
 	export let prev: number | null;
 
-	export const title = `Reading List ${post.title} — ${formatPostDate(post.date)}`;
+	$: title = `Reading List ${post.title} — ${formatPostDate(post.date)}`;
+	$: description = `Matt Turco's weekly reading list of articles, blog posts, tweets, talks, etc. ${post.description}`;
 </script>
 
 <svelte:head>
 	<title>{title} | Matt Turco</title>
-	<meta
-		name="description"
-		content="Matt Turco's weekly reading list of interesting articles, blog posts, tweets, talk, etc."
-	/>
+	<meta name="description" content={description} />
 	<meta property="og:url" content={post.permalink} />
 	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
 	<meta property="og:type" content="article" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@matt_turco" />
 	<meta name="twitter:creator" content="@matt_turco" />
 </svelte:head>
 
+<nav class="top-nav">
+	<NavLink href="/reading-list">← Reading Lists</NavLink>
+</nav>
+
 <Post {post} />
 
-<nav>
-	<div class="nav-item">
-		{#if prev}
-			<NavLink href="/reading-list/{prev}">← Prev</NavLink>
-		{/if}
-	</div>
-	<div class="nav-item">
-		<NavLink href="/reading-list/archive">View All</NavLink>
-	</div>
-	<div class="nav-item">
-		{#if next}
+<nav class="bottom-nav">
+	{#if prev}
+		<NavLink href="/reading-list/{prev}">← Prev</NavLink>
+	{/if}
+	{#if next}
+		<span class="right">
 			<NavLink href="/reading-list/{next}">Next →</NavLink>
-		{/if}
-	</div>
+		</span>
+	{/if}
 </nav>
 
 <style lang="postcss">
-	nav {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		justify-items: center;
+	.top-nav {
+		margin-bottom: 2rem;
+	}
+
+	.bottom-nav {
+		display: flex;
 		margin-top: 5rem;
 	}
 
-	.nav-item {
-		&:first-child {
-			justify-self: start;
-		}
-
-		&:last-child {
-			justify-self: end;
-		}
+	.right {
+		margin-left: auto;
 	}
 </style>
