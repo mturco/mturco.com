@@ -45,7 +45,7 @@
 	</header>
 
 	<div class="latest">
-		<PostPreview post={latest} latest />
+		<PostPreview post={latest} highlight size="large" tag="Most Recent" />
 	</div>
 
 	<h2>Previous Reading Lists</h2>

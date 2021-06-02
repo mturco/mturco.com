@@ -1,6 +1,22 @@
+<script context="module" lang="ts">
+	export async function load({ fetch }) {
+		const res = await fetch(`/reading-list/all.json`);
+		const { posts } = await res.json();
+		const [latestPost] = posts;
+
+		if (res.ok) {
+			return { props: { latestPost } };
+		}
+
+		return {
+			status: res.status,
+			error: new Error('Failed to load post')
+		};
+	}
+</script>
+
 <script lang="ts">
 	import ThemeToggle from '$lib/ThemeToggle.svelte';
-	import BitbucketIcon from './_index/BitbucketIcon.svelte';
 	import EmailIcon from './_index/EmailIcon.svelte';
 	import GithubIcon from './_index/GithubIcon.svelte';
 	import LinkedinIcon from './_index/LinkedinIcon.svelte';
@@ -9,6 +25,9 @@
 	import TwitterIcon from './_index/TwitterIcon.svelte';
 	import ProfileLink from './_index/ProfileLink.svelte';
 	import Section from './_index/Section.svelte';
+	import PostPreview from './reading-list/_lib/PostPreview.svelte';
+
+	export let latestPost;
 </script>
 
 <svelte:head>
@@ -30,16 +49,16 @@
 	</header>
 
 	<div class="links">
-		<Section title="Code">
+		<Section title="Dev">
 			<div class="link-group">
 				<ProfileLink external href="https://github.com/mturco">
 					<GithubIcon slot="icon" />
 					<svelte:fragment slot="label">GitHub</svelte:fragment>
 				</ProfileLink>
 
-				<ProfileLink external href="https://bitbucket.org/mturco">
-					<BitbucketIcon slot="icon" />
-					<svelte:fragment slot="label">BitBucket</svelte:fragment>
+				<ProfileLink href="/reading-list">
+					<ReadingListIcon slot="icon" />
+					<svelte:fragment slot="label">Reading List</svelte:fragment>
 				</ProfileLink>
 			</div>
 		</Section>
@@ -55,6 +74,15 @@
 					<EmailIcon slot="icon" />
 					<svelte:fragment slot="label">Email</svelte:fragment>
 				</ProfileLink>
+			</div>
+		</Section>
+
+		<Section title="Career">
+			<div class="link-group">
+				<ProfileLink href="/resume">
+					<ResumeIcon slot="icon" />
+					<svelte:fragment slot="label">Resume</svelte:fragment>
+				</ProfileLink>
 
 				<ProfileLink external href="https://linkedin.com/in/mattturco">
 					<LinkedinIcon slot="icon" />
@@ -62,19 +90,11 @@
 				</ProfileLink>
 			</div>
 		</Section>
+	</div>
 
-		<Section title="Other">
-			<div class="link-group">
-				<ProfileLink href="/resume">
-					<ResumeIcon slot="icon" />
-					<svelte:fragment slot="label">Resume</svelte:fragment>
-				</ProfileLink>
-
-				<ProfileLink href="/reading-list">
-					<ReadingListIcon slot="icon" />
-					<svelte:fragment slot="label">Reading List</svelte:fragment>
-				</ProfileLink>
-			</div>
+	<div class="recent">
+		<Section title="Recent">
+			<PostPreview post={latestPost} highlight tag="Reading List" />
 		</Section>
 	</div>
 </main>
@@ -93,11 +113,7 @@
 		align-items: center;
 		justify-content: center;
 		min-height: 100vh;
-		padding: 10vh 0;
-	}
-
-	header {
-		margin-bottom: 3rem;
+		padding: 10vh 1rem;
 	}
 
 	h1 {
@@ -126,16 +142,22 @@
 	}
 
 	.links {
+		margin-top: 3rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 
 		& > :global(*) {
-			margin: 1.5rem;
+			margin: 2rem;
 		}
 	}
 
 	.link-group {
 		display: flex;
+		margin-top: -1rem;
+	}
+
+	.recent {
+		margin-top: 4rem;
 	}
 </style>

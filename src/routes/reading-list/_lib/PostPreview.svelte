@@ -2,12 +2,16 @@
 	import type { IPost } from './types';
 	import { formatPostDate } from './utils';
 
+	type Size = 'normal' | 'large';
+
 	export let post: IPost;
-	export let latest = false;
+	export let highlight = false;
+	export let size: Size = 'normal';
+	export let tag: string = undefined;
 </script>
 
-<article class:latest>
-	<a href={post.url}>
+<article class:highlight class={size} class:has-tag={tag}>
+	<a href={post.url} data-tag={tag}>
 		<h1>
 			<span class="title">{post.title}</span>
 			<span class="slash">/</span>
@@ -24,6 +28,7 @@
 		display: block;
 		color: unset;
 		text-decoration: unset;
+		line-height: 1.6;
 		padding: 0.75rem 1.5rem;
 		border-radius: 8px;
 		transition: background-color 0.5s var(--ease-out-quint);
@@ -60,7 +65,7 @@
 		margin: 0.25rem 0 0.5rem;
 	}
 
-	.latest {
+	.highlight {
 		& a {
 			position: relative;
 			padding: 1rem 1.5rem;
@@ -71,9 +76,13 @@
 				border-color: var(--color-primary);
 				background-color: transparent;
 			}
+		}
+	}
 
+	.has-tag {
+		& a {
 			&::after {
-				content: 'Most Recent';
+				content: attr(data-tag);
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -93,7 +102,9 @@
 				color: white;
 			}
 		}
+	}
 
+	.large {
 		& h1 {
 			font-size: 3rem;
 		}
