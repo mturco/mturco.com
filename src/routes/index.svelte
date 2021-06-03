@@ -126,13 +126,12 @@
 	}
 
 	.links {
-		margin-top: 3rem;
 		display: flex;
 		flex-wrap: wrap;
-		margin: 4rem -0.75rem -0.75rem;
+		margin: 3rem -0.75rem -0.75rem;
 	}
 
 	.recent {
-		margin-top: 10rem;
+		margin-top: 11rem;
 	}
 </style>
