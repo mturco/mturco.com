@@ -1,33 +1,33 @@
 :root {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-	font-family: var(--font-base);
-	background-color: var(--color-background);
-	color: var(--color-text);
+  font-family: var(--font-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 ::selection {
-	color: #fff;
-	text-shadow: none;
-	background-color: var(--color-selection);
+  color: #fff;
+  text-shadow: none;
+  background-color: var(--color-selection);
 }
 
 [data-focus-visible-added] {
-	outline: 2px solid var(--red-400);
-	outline-offset: 1px;
+  outline: 2px solid var(--red-400);
+  outline-offset: 1px;
 }
 
 [data-js-focus-visible] :focus:not([data-focus-visible-added]) {
-	outline: none;
+  outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	*,
-	*::before,
-	*::after {
-		animation: none !important;
-		transition: none !important;
-	}
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

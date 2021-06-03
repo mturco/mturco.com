@@ -1,11 +1,11 @@
 <script lang="ts">
-	import 'focus-visible';
-	import { applyThemePreference } from '$lib/theme';
-	import '../normalize.css';
-	import '../variables.css';
-	import '../app.css';
+  import 'focus-visible';
+  import { applyThemePreference } from '$lib/theme';
+  import '../normalize.css';
+  import '../variables.css';
+  import '../app.css';
 
-	applyThemePreference();
+  applyThemePreference();
 </script>
 
 <slot />

@@ -1,70 +1,70 @@
 :root {
-	/* colors */
-	--blue-300: hsl(200, 100%, 52%);
-	--blue-400: hsl(200, 100%, 44%);
-	--blue-500: hsl(200, 100%, 36%);
-	--red-400: hsl(354, 65%, 69%);
-	--red-500: hsl(354, 65%, 59%);
-	--gray-50: hsl(0, 0%, 98%);
-	--gray-100: hsl(240, 5%, 96%);
-	--gray-200: hsl(240, 6%, 90%);
-	--gray-300: hsl(240, 5%, 84%);
-	--gray-400: hsl(240, 5%, 65%);
-	--gray-500: hsl(240, 4%, 46%);
-	--gray-600: hsl(240, 5%, 34%);
-	--gray-700: hsl(240, 5%, 26%);
-	--gray-800: hsl(240, 4%, 16%);
-	--gray-900: hsl(240, 6%, 10%);
+  /* colors */
+  --blue-300: hsl(200, 100%, 52%);
+  --blue-400: hsl(200, 100%, 44%);
+  --blue-500: hsl(200, 100%, 36%);
+  --red-400: hsl(354, 65%, 69%);
+  --red-500: hsl(354, 65%, 59%);
+  --gray-50: hsl(0, 0%, 98%);
+  --gray-100: hsl(240, 5%, 96%);
+  --gray-200: hsl(240, 6%, 90%);
+  --gray-300: hsl(240, 5%, 84%);
+  --gray-400: hsl(240, 5%, 65%);
+  --gray-500: hsl(240, 4%, 46%);
+  --gray-600: hsl(240, 5%, 34%);
+  --gray-700: hsl(240, 5%, 26%);
+  --gray-800: hsl(240, 4%, 16%);
+  --gray-900: hsl(240, 6%, 10%);
 
-	/* aliases */
-	--color-primary: var(--blue-500);
-	--color-accent: var(--red-500);
-	--color-background: white;
-	--color-background-alt: var(--gray-100);
-	--color-divider-lc: var(--gray-200);
-	--color-divider-hc: var(--gray-600);
-	--color-text: var(--gray-600); /* 7.72 c/r */
-	--color-text-lc: var(--gray-500); /* 4.83 c/r */
-	--color-text-hc: var(--gray-700); /* 10.44 c/r */
-	--color-selection: var(--color-accent);
-	--color-highlight: hsla(200, 100%, 64%, 0.23);
+  /* aliases */
+  --color-primary: var(--blue-500);
+  --color-accent: var(--red-500);
+  --color-background: white;
+  --color-background-alt: var(--gray-100);
+  --color-divider-lc: var(--gray-200);
+  --color-divider-hc: var(--gray-600);
+  --color-text: var(--gray-600); /* 7.72 c/r */
+  --color-text-lc: var(--gray-500); /* 4.83 c/r */
+  --color-text-hc: var(--gray-700); /* 10.44 c/r */
+  --color-selection: var(--color-accent);
+  --color-highlight: hsla(200, 100%, 64%, 0.23);
 
-	/* typography */
-	--font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-	--font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
-		monospace;
-	--font-heading: Montserrat, var(--font-base);
+  /* typography */
+  --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+    monospace;
+  --font-heading: Montserrat, var(--font-base);
 
-	/* animation */
-	--ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-	--ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  /* animation */
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .theme-dark {
-	--color-primary: var(--blue-400);
-	--color-accent: var(--red-500);
-	--color-background: var(--gray-800);
-	--color-background-alt: var(--gray-700);
-	--color-divider-lc: var(--gray-600);
-	--color-divider-hc: var(--gray-200);
-	--color-text: var(--gray-300); /* 10.07 c/r */
-	--color-text-lc: var(--gray-400); /* 5.81 c/r */
-	--color-text-hc: var(--gray-300); /* 10.07 c/r */
-	--color-selection: var(--color-accent);
+  --color-primary: var(--blue-400);
+  --color-accent: var(--red-500);
+  --color-background: var(--gray-800);
+  --color-background-alt: var(--gray-700);
+  --color-divider-lc: var(--gray-600);
+  --color-divider-hc: var(--gray-200);
+  --color-text: var(--gray-300); /* 10.07 c/r */
+  --color-text-lc: var(--gray-400); /* 5.81 c/r */
+  --color-text-hc: var(--gray-300); /* 10.07 c/r */
+  --color-selection: var(--color-accent);
 }
 
 @media (prefers-color-scheme: dark) {
-	:root:not(.theme-light) {
-		--color-primary: var(--blue-400);
-		--color-accent: var(--red-500);
-		--color-background: var(--gray-800);
-		--color-background-alt: var(--gray-700);
-		--color-divider-lc: var(--gray-600);
-		--color-divider-hc: var(--gray-200);
-		--color-text: var(--gray-300); /* 10.07 c/r */
-		--color-text-lc: var(--gray-400); /* 5.81 c/r */
-		--color-text-hc: var(--gray-300); /* 10.07 c/r */
-		--color-selection: var(--color-accent);
-	}
+  :root:not(.theme-light) {
+    --color-primary: var(--blue-400);
+    --color-accent: var(--red-500);
+    --color-background: var(--gray-800);
+    --color-background-alt: var(--gray-700);
+    --color-divider-lc: var(--gray-600);
+    --color-divider-hc: var(--gray-200);
+    --color-text: var(--gray-300); /* 10.07 c/r */
+    --color-text-lc: var(--gray-400); /* 5.81 c/r */
+    --color-text-hc: var(--gray-300); /* 10.07 c/r */
+    --color-selection: var(--color-accent);
+  }
 }

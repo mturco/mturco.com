@@ -6,13 +6,13 @@ const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
 module.exports = {
-	plugins: [
-		autoprefixer,
-		nesting,
+  plugins: [
+    autoprefixer,
+    nesting,
 
-		!dev &&
-			cssnano({
-				preset: 'default'
-			})
-	]
+    !dev &&
+      cssnano({
+        preset: 'default',
+      }),
+  ],
 };
