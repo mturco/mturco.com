@@ -49,51 +49,39 @@
 	</header>
 
 	<div class="links">
-		<Section title="Dev">
-			<div class="link-group">
-				<ProfileLink external href="https://github.com/mturco">
-					<GithubIcon slot="icon" />
-					<svelte:fragment slot="label">GitHub</svelte:fragment>
-				</ProfileLink>
+		<ProfileLink external href="https://github.com/mturco">
+			<GithubIcon slot="icon" />
+			<span slot="label">GitHub</span>
+		</ProfileLink>
 
-				<ProfileLink href="/reading-list">
-					<ReadingListIcon slot="icon" />
-					<svelte:fragment slot="label">Reading List</svelte:fragment>
-				</ProfileLink>
-			</div>
-		</Section>
+		<ProfileLink external href="https://twitter.com/matt_turco">
+			<TwitterIcon slot="icon" />
+			<span slot="label">Twitter</span>
+		</ProfileLink>
 
-		<Section title="Contact">
-			<div class="link-group">
-				<ProfileLink external href="https://twitter.com/matt_turco">
-					<TwitterIcon slot="icon" />
-					<svelte:fragment slot="label">Twitter</svelte:fragment>
-				</ProfileLink>
+		<ProfileLink external href="https://linkedin.com/in/mattturco">
+			<LinkedinIcon slot="icon" />
+			<span slot="label">LinkedIn</span>
+		</ProfileLink>
 
-				<ProfileLink external href="mailto:matt.turco@gmail.com">
-					<EmailIcon slot="icon" />
-					<svelte:fragment slot="label">Email</svelte:fragment>
-				</ProfileLink>
-			</div>
-		</Section>
+		<ProfileLink external href="mailto:matt.turco@gmail.com">
+			<EmailIcon slot="icon" />
+			<span slot="label">Email</span>
+		</ProfileLink>
 
-		<Section title="Career">
-			<div class="link-group">
-				<ProfileLink href="/resume">
-					<ResumeIcon slot="icon" />
-					<svelte:fragment slot="label">Resume</svelte:fragment>
-				</ProfileLink>
+		<ProfileLink href="/reading-list">
+			<ReadingListIcon slot="icon" />
+			<span slot="label">Reading List</span>
+		</ProfileLink>
 
-				<ProfileLink external href="https://linkedin.com/in/mattturco">
-					<LinkedinIcon slot="icon" />
-					<svelte:fragment slot="label">LinkedIn</svelte:fragment>
-				</ProfileLink>
-			</div>
-		</Section>
+		<ProfileLink href="/resume">
+			<ResumeIcon slot="icon" />
+			<span slot="label">Resume</span>
+		</ProfileLink>
 	</div>
 
 	<div class="recent">
-		<Section title="Recent">
+		<Section title="Recent Posts">
 			<PostPreview post={latestPost} highlight tag="Reading List" />
 		</Section>
 	</div>
@@ -108,26 +96,22 @@
 	}
 
 	main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 		min-height: 100vh;
-		padding: 10vh 1rem;
+		padding: 18vh 5vw;
+		margin: 0 auto;
+		max-width: 50rem;
 	}
 
 	h1 {
 		color: var(--color-primary);
 		font: 700 3em Montserrat, var(--font-base);
 		letter-spacing: 0.03em;
-		margin: 0 0 0.5rem;
-		text-align: center;
+		margin: 0 0 0.5rem -0.1ch;
 	}
 
 	h2 {
 		font-size: 1.5em;
 		font-weight: 300;
-		text-align: center;
 		text-transform: lowercase;
 		line-height: 1.5;
 		color: var(--color-text-lc);
@@ -145,19 +129,10 @@
 		margin-top: 3rem;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-
-		& > :global(*) {
-			margin: 2rem;
-		}
-	}
-
-	.link-group {
-		display: flex;
-		margin-top: -1rem;
+		margin: 4rem -0.75rem -0.75rem;
 	}
 
 	.recent {
-		margin-top: 4rem;
+		margin-top: 10rem;
 	}
 </style>

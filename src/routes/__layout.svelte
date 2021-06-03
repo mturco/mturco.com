@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'focus-visible';
 	import { applyThemePreference } from '$lib/theme';
 	import '../normalize.css';
 	import '../variables.css';

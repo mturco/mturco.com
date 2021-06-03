@@ -13,7 +13,6 @@
 		font-size: 0.8125em;
 		font-weight: 700;
 		color: var(--color-text);
-		text-align: center;
 		text-transform: uppercase;
 		letter-spacing: 0.15em;
 		margin: 0 0 2rem;
@@ -25,7 +24,7 @@
 			display: block;
 			border: 2px solid var(--color-primary);
 			border-radius: 4px;
-			margin: 0.75rem auto 0;
+			margin-top: 0.75rem;
 		}
 	}
 </style>
