@@ -27,7 +27,7 @@
   --color-text-lc: var(--gray-500); /* 4.83 c/r */
   --color-text-hc: var(--gray-700); /* 10.44 c/r */
   --color-selection: var(--color-accent);
-  --color-highlight: hsla(200, 100%, 64%, 0.23);
+  --color-highlight: hsla(200, 100%, 64%, 0.2);
 
   /* typography */
   --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
