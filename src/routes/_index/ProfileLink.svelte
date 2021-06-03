@@ -1,61 +1,49 @@
 <script lang="ts">
+	let labelWidth: number;
+
 	export let href: string;
 	export let external: boolean = false;
 </script>
 
-<a {href} rel={external ? 'external' : undefined}>
+<a {href} rel={external ? 'external' : undefined} style="--label-width: {labelWidth}px">
 	<slot name="icon" />
-	<span><slot name="label" /></span>
+	<span bind:clientWidth={labelWidth}><slot name="label" /></span>
 </a>
 
 <style lang="postcss">
 	a {
-		display: flex;
-		justify-content: center;
-		position: relative;
-		width: 100px;
-		height: 100px;
-		font-size: 0.875em;
 		color: var(--color-text);
-		text-decoration: none;
-		flex-direction: column;
+		padding: 0.5rem;
+		display: inline-flex;
+		justify-content: start;
 		align-items: center;
-		transition: all 0.4s var(--ease-out-quint);
+		margin: 0.75rem;
+		border: 2px solid var(--color-divider-lc);
+		border-radius: 3.25rem;
+		transition: border-color 0.5s var(--ease-out-quint), max-width 0.5s var(--ease-out-quint);
+		text-decoration: none;
+		overflow: hidden;
+		max-width: 3.25rem;
 
 		&:hover {
-			color: var(--color-primary);
-			transform: translateY(-7px);
+			border-color: var(--color-primary);
 		}
 
-		&::after {
-			position: absolute;
-			top: -5px;
-			right: -5px;
-			bottom: -5px;
-			left: -5px;
-			z-index: -1;
-			content: '';
-			border-radius: 50%;
-			transition: all 0.4s var(--ease-out-quint);
-			transform: scale3d(1.15, 1.15, 1);
-			pointer-events: none;
-		}
-
-		&:hover::after {
-			background-color: var(--color-background-alt);
-			transform: none;
+		&:hover,
+		&:focus {
+			max-width: calc(3.25rem + 0.5rem + var(--label-width));
 		}
 	}
 
 	span {
-		margin-top: 5px;
-		text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+		margin-left: 0.5rem;
+		white-space: nowrap;
 	}
 
 	a :global(svg) {
-		width: 48px;
-		height: 48px;
+		flex: 0 0 2rem;
+		width: 2rem;
+		height: 2rem;
 		fill: currentColor;
-		filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.15));
 	}
 </style>

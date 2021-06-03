@@ -19,11 +19,9 @@
 		transition: color 0.5s var(--ease-out-quint), background-color 0.5s var(--ease-out-quint);
 		background-color: var(--color-background-alt);
 		border-radius: 5px;
-		outline: 0;
 		white-space: nowrap;
 
-		&:hover,
-		&:focus-visible {
+		&:hover {
 			color: var(--color-primary);
 			background-color: var(--color-highlight);
 		}
@@ -39,8 +37,7 @@
 			transition: border-color 0.5s var(--ease-out-quint), transform 0.5s var(--ease-out-quint);
 		}
 
-		&:hover::after,
-		&:focus-visible::after {
+		&:hover::after {
 			border-color: var(--color-primary);
 			transform: none;
 		}

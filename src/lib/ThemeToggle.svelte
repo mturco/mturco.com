@@ -39,10 +39,8 @@
 		background-color: var(--color-background-alt);
 		border-radius: 50%;
 		border: 0;
-		outline: 0;
 
-		&:hover,
-		&:focus-visible {
+		&:hover {
 			color: var(--color-primary);
 			background-color: var(--color-highlight);
 		}
@@ -58,8 +56,7 @@
 			transition: border-color 0.5s var(--ease-out-quint), transform 0.5s var(--ease-out-quint);
 		}
 
-		&:hover::after,
-		&:focus-visible::after {
+		&:hover::after {
 			border-color: var(--color-primary);
 			transform: none;
 		}
