@@ -26,6 +26,9 @@ collections:
         time_format: false
         format: YYYY-MM-DD
         picker_utc: true
+      - name: description
+        label: Description
+        widget: string
       - name: body
         label: Body
         widget: markdown
