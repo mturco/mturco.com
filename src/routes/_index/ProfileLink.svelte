@@ -13,7 +13,7 @@
 <style lang="postcss">
   a {
     color: var(--color-text);
-    padding: 0.5rem;
+    padding: 0.625rem;
     display: inline-flex;
     justify-content: start;
     align-items: center;
@@ -33,17 +33,24 @@
     &:focus {
       max-width: calc(3.25rem + 0.5rem + var(--label-width));
     }
+
+    &:hover span,
+    &:focus span {
+      opacity: 1;
+    }
   }
 
   span {
     margin-left: 0.5rem;
     white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out-quint);
   }
 
   a :global(svg) {
-    flex: 0 0 2rem;
-    width: 2rem;
-    height: 2rem;
+    flex: 0 0 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
     fill: currentColor;
   }
 </style>
