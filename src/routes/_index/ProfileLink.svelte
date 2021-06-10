@@ -15,7 +15,7 @@
     color: var(--color-text);
     padding: 0.625rem;
     display: inline-flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     margin: 0.75rem;
     border: 2px solid var(--color-divider-lc);
