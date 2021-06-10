@@ -12,7 +12,7 @@
 
 <style lang="postcss">
   .wrapper {
-    --page-max-width: 46rem;
+    --page-max-width: 45rem;
   }
 
   .content {
