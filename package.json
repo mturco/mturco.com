@@ -27,7 +27,7 @@
     "focus-visible": "^5.2.0",
     "gray-matter": "^4.0.3",
     "husky": "^6.0.0",
-    "marked": "^2.0.7",
+    "marked": "^2.1.0",
     "netlify-cli": "^3.35.1",
     "postcss": "^8.3.0",
     "postcss-load-config": "^3.0.1",
