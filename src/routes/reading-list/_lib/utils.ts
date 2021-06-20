@@ -31,12 +31,30 @@ export const getAllPosts = (): IPost[] => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };
 
-export function formatPostDate(iso8601: string): string {
+export const formatPostDate = (iso8601: string): string => {
   const isoDateOnly = iso8601.replace(/T.*/, '');
   return format(parseISO(isoDateOnly), 'MMM d, y');
-}
+};
 
-export function getPostUrl(id: number, permalink = false): string {
+export const getPostUrl = (id: number, permalink = false): string => {
   const path = `/reading-list/${id}`;
   return permalink ? new URL(path, 'https://mturco.com').href : path;
-}
+};
+
+const getPostIds = (): number[] =>
+  fs
+    .readdirSync(postsBasePath)
+    .map((file) => {
+      const [, id] = file.match(/([0-9]+)\.md$/);
+      return Number(id);
+    })
+    .filter((id) => !Number.isNaN(id))
+    .sort();
+
+export const getPreviousPostId = (fromId: number): number | null =>
+  getPostIds()
+    .reverse()
+    .find((id) => id < fromId);
+
+export const getNextPostId = (fromId: number): number | null =>
+  getPostIds().find((id) => id > fromId);
