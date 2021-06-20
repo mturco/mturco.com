@@ -7,7 +7,7 @@
   --red-500: hsl(354, 65%, 59%);
   --gray-50: hsl(0, 0%, 98%);
   --gray-100: hsl(240, 5%, 96%);
-  --gray-200: hsl(240, 6%, 90%);
+  --gray-200: hsl(240, 6%, 89%);
   --gray-300: hsl(240, 5%, 84%);
   --gray-400: hsl(240, 5%, 65%);
   --gray-500: hsl(240, 4%, 46%);
@@ -24,10 +24,21 @@
   --color-divider-lc: var(--gray-200);
   --color-divider-hc: var(--gray-600);
   --color-text: var(--gray-600); /* 7.72 c/r */
-  --color-text-lc: var(--gray-500); /* 4.83 c/r */
+  --color-text-lc: hsl(240, 4%, 48%); /* 4.52 c/r */
   --color-text-hc: var(--gray-700); /* 10.44 c/r */
   --color-selection: var(--color-accent);
   --color-highlight: hsla(200, 100%, 64%, 0.2);
+
+  --dark-primary: var(--blue-400);
+  --dark-accent: var(--red-500);
+  --dark-background: var(--gray-800);
+  --dark-background-alt: var(--gray-700);
+  --dark-divider-lc: var(--gray-600);
+  --dark-divider-hc: var(--gray-200);
+  --dark-text: var(--gray-300); /* 10.07 c/r */
+  --dark-text-lc: hsl(240, 5%, 57.25%); /* 4.5 c/r */
+  --dark-text-hc: var(--gray-300); /* 10.07 c/r */
+  --dark-selection: var(--color-accent);
 
   /* typography */
   --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
@@ -42,29 +53,29 @@
 }
 
 .theme-dark {
-  --color-primary: var(--blue-400);
-  --color-accent: var(--red-500);
-  --color-background: var(--gray-800);
-  --color-background-alt: var(--gray-700);
-  --color-divider-lc: var(--gray-600);
-  --color-divider-hc: var(--gray-200);
-  --color-text: var(--gray-300); /* 10.07 c/r */
-  --color-text-lc: var(--gray-400); /* 5.81 c/r */
-  --color-text-hc: var(--gray-300); /* 10.07 c/r */
-  --color-selection: var(--color-accent);
+  --color-primary: var(--dark-primary);
+  --color-accent: var(--dark-accent);
+  --color-background: var(--dark-background);
+  --color-background-alt: var(--dark-background-alt);
+  --color-divider-lc: var(--dark-divider-lc);
+  --color-divider-hc: var(--dark-divider-hc);
+  --color-text: var(--dark-text);
+  --color-text-lc: var(--dark-text-lc);
+  --color-text-hc: var(--dark-text-hc);
+  --color-selection: var(--dark-selection);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.theme-light) {
-    --color-primary: var(--blue-400);
-    --color-accent: var(--red-500);
-    --color-background: var(--gray-800);
-    --color-background-alt: var(--gray-700);
-    --color-divider-lc: var(--gray-600);
-    --color-divider-hc: var(--gray-200);
-    --color-text: var(--gray-300); /* 10.07 c/r */
-    --color-text-lc: var(--gray-400); /* 5.81 c/r */
-    --color-text-hc: var(--gray-300); /* 10.07 c/r */
-    --color-selection: var(--color-accent);
+    --color-primary: var(--dark-primary);
+    --color-accent: var(--dark-accent);
+    --color-background: var(--dark-background);
+    --color-background-alt: var(--dark-background-alt);
+    --color-divider-lc: var(--dark-divider-lc);
+    --color-divider-hc: var(--dark-divider-hc);
+    --color-text: var(--dark-text);
+    --color-text-lc: var(--dark-text-lc);
+    --color-text-hc: var(--dark-text-hc);
+    --color-selection: var(--dark-selection);
   }
 }

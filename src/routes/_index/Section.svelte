@@ -24,7 +24,7 @@
       display: block;
       border: 2px solid var(--color-primary);
       border-radius: 4px;
-      margin-top: 0.75rem;
+      margin-top: 1rem;
     }
   }
 </style>

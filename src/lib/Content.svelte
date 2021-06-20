@@ -104,10 +104,20 @@
   }
 
   div :global(blockquote) {
+    position: relative;
     margin: 1em;
-    border-left: 4px solid var(--color-divider-lc);
     padding: 0 1em;
     color: var(--color-text-lc);
+  }
+
+  div :global(blockquote::after) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border: 2px solid var(--color-divider-lc);
+    border-radius: 4px;
   }
 
   div :global(code) {
