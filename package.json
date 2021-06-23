@@ -28,7 +28,7 @@
     "gray-matter": "^4.0.3",
     "husky": "^6.0.0",
     "marked": "^2.1.1",
-    "netlify-cli": "^3.37.37",
+    "netlify-cli": "^3.38.7",
     "postcss": "^8.3.5",
     "postcss-load-config": "^3.1.0",
     "postcss-nesting": "^8.0.1",
