@@ -42,7 +42,7 @@
   }
 
   div :global(p) {
-    margin: 0.75em 0;
+    margin: 0.875em 0;
   }
 
   div :global(a) {
