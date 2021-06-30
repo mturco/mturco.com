@@ -1,22 +1,16 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import path from 'path';
-import fs from 'fs';
 
-import { getPost } from './_lib/utils';
+import { getPost, getPreviousPostId, getNextPostId } from './_lib/utils';
 
 export const get: RequestHandler = ({ params }) => {
   const id = Number(params.issue);
   const post = getPost(id);
+  if (!post) return;
 
-  const hasNext = fs.existsSync(path.resolve('static/posts/reading-list/', `${id + 1}.md`));
+  const prev = getPreviousPostId(id);
+  const next = getNextPostId(id);
 
-  if (post) {
-    return {
-      body: {
-        post,
-        next: hasNext ? id + 1 : null,
-        prev: id > 1 ? id - 1 : null,
-      },
-    };
-  }
+  return {
+    body: { post, next, prev },
+  };
 };
