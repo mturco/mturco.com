@@ -14,7 +14,7 @@
   "devDependencies": {
     "@netlify/functions": "^0.7.2",
     "@sveltejs/adapter-static": "1.0.0-next.13",
-    "@sveltejs/kit": "1.0.0-next.118",
+    "@sveltejs/kit": "1.0.0-next.119",
     "@types/marked": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
     "@typescript-eslint/parser": "^4.27.0",
