@@ -93,10 +93,10 @@
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.13.tgz#5cba8f2905a5a7b956c2663d73ac02f7eb6da7c4"
   integrity sha512-zaXJlWK9JfrjrE6nG5etB8kf4DSkbE3H8Ql6gmCk3WjdvpY85a60TMYBU9OK2iunkqpHnPYiMUGEnOGYmWlLYA==
 
-"@sveltejs/kit@1.0.0-next.120":
-  version "1.0.0-next.120"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.120.tgz#9fe1f0c87615ff835722f04f208ef7d6cb9d0958"
-  integrity sha512-1sVhlF9zea9Er6abAjqRefQ1mIE9AjtYdRek3ilUTQ44FM2w/e8VgZCo5XXbnz9M564OaZnihyS9XjINlu4Chg==
+"@sveltejs/kit@1.0.0-next.121":
+  version "1.0.0-next.121"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.121.tgz#76fc3260cadc285a8d96e95df1a6572086f8577f"
+  integrity sha512-I8vUK3uZsX/IXmW6mUzPip7/WMIbxpDmcUR0d24kz38Fv8WIDeIoqOQTtg0y2JrxhD6P2H3/GMcCNcBS8bUWtw==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.11"
     cheap-watch "^1.0.3"
@@ -1711,7 +1711,7 @@ postcss-value-parser@^4.0.2, postcss-value-parser@^4.1.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
-postcss@^8.3.4, postcss@^8.3.5:
+postcss@^8.3.5:
   version "8.3.5"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.3.5.tgz#982216b113412bc20a86289e91eb994952a5b709"
   integrity sha512-NxTuJocUhYGsMiMFHDUkmjSKT3EdH4/WbGF6GCi1NDGk+vbcUTun4fpbOqaPtD8IIsztA2ilZm2DhYCuyN58gA==
@@ -2095,25 +2095,13 @@ vendors@^1.0.3:
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
 
-vite@^2.3.7:
+vite@^2.3.7, vite@^2.3.8:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.4.1.tgz#2e48b8dbfc69e4edbf7f4d1c0798d621585cb8da"
   integrity sha512-4BpKRis9uxIqPfIEcJ18LTBsamqnDFxTx45CXwagHjNltHa6PFEvf8Pe6OpgIHb0OyWT30OXOSSQvdOaX4OBiQ==
   dependencies:
     esbuild "^0.12.8"
     postcss "^8.3.5"
-    resolve "^1.20.0"
-    rollup "^2.38.5"
-  optionalDependencies:
-    fsevents "~2.3.2"
-
-vite@^2.3.8:
-  version "2.3.8"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.3.8.tgz#42e3e03953859fd410e4e6ab3d1cca0aab2adc3c"
-  integrity sha512-QiEx+iqNnJntSgSF2fWRQvRey9pORIrtNJzNyBJXwc+BdzWs83FQolX84cTBo393cfhObrtWa6180dAa4NLDiQ==
-  dependencies:
-    esbuild "^0.12.8"
-    postcss "^8.3.4"
     resolve "^1.20.0"
     rollup "^2.38.5"
   optionalDependencies:
