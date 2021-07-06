@@ -49,7 +49,7 @@ const getPostIds = (): number[] =>
       return Number(id);
     })
     .filter((id) => !Number.isNaN(id))
-    .sort();
+    .sort((a, b) => a - b);
 
 export const getPreviousPostId = (fromId: number): number | null =>
   getPostIds()
