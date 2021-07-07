@@ -93,15 +93,15 @@
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-static/-/adapter-static-1.0.0-next.13.tgz#5cba8f2905a5a7b956c2663d73ac02f7eb6da7c4"
   integrity sha512-zaXJlWK9JfrjrE6nG5etB8kf4DSkbE3H8Ql6gmCk3WjdvpY85a60TMYBU9OK2iunkqpHnPYiMUGEnOGYmWlLYA==
 
-"@sveltejs/kit@1.0.0-next.121":
-  version "1.0.0-next.121"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.121.tgz#76fc3260cadc285a8d96e95df1a6572086f8577f"
-  integrity sha512-I8vUK3uZsX/IXmW6mUzPip7/WMIbxpDmcUR0d24kz38Fv8WIDeIoqOQTtg0y2JrxhD6P2H3/GMcCNcBS8bUWtw==
+"@sveltejs/kit@1.0.0-next.122":
+  version "1.0.0-next.122"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.122.tgz#e0e11a81d1fe220a68e1b1bfd767652a89d66523"
+  integrity sha512-HwyYcbLMN2q7HuO561CD01RZ8ZPEdZgwdTKmyvMYrTZehH9WPJI2VF+7bI84mNxWiQiLnc2gg+Y0klVHXJO+Yw==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.11"
     cheap-watch "^1.0.3"
     sade "^1.7.4"
-    vite "^2.3.8"
+    vite "^2.4.1"
 
 "@sveltejs/vite-plugin-svelte@^1.0.0-next.11":
   version "1.0.0-next.11"
@@ -125,9 +125,9 @@
   integrity sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==
 
 "@types/marked@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-2.0.3.tgz#c8ea93684e530cc3b667d3e7226556dd0844ad1f"
-  integrity sha512-lbhSN1rht/tQ+dSWxawCzGgTfxe9DB31iLgiT1ZVT5lshpam/nyOA1m3tKHRoNPctB2ukSL22JZI5Fr+WI/zYg==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-2.0.4.tgz#34a0ea548afe6e0c01095229d47b48b2af650613"
+  integrity sha512-L9VRSe0Id8xbPL99mUo/4aKgD7ZoRwFZqUQScNKHi2pFjF9ZYSMNShUHD6VlMT6J/prQq0T1mxuU25m3R7dFzg==
 
 "@types/minimatch@^3.0.3":
   version "3.0.4"
@@ -2095,7 +2095,7 @@ vendors@^1.0.3:
   resolved "https://registry.yarnpkg.com/vendors/-/vendors-1.0.4.tgz#e2b800a53e7a29b93506c3cf41100d16c4c4ad8e"
   integrity sha512-/juG65kTL4Cy2su4P8HjtkTxk6VmJDiOPBufWniqQ6wknac6jNiXS9vU+hO3wgusiyqWlzTbVHi0dyJqRONg3w==
 
-vite@^2.3.7, vite@^2.3.8:
+vite@^2.3.7, vite@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.4.1.tgz#2e48b8dbfc69e4edbf7f4d1c0798d621585cb8da"
   integrity sha512-4BpKRis9uxIqPfIEcJ18LTBsamqnDFxTx45CXwagHjNltHa6PFEvf8Pe6OpgIHb0OyWT30OXOSSQvdOaX4OBiQ==
