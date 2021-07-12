@@ -105,8 +105,8 @@
 
   div :global(blockquote) {
     position: relative;
-    margin: 1em;
-    padding: 0 1em;
+    margin: 1.25rem 1rem;
+    padding: 0 1rem 0 1.5rem;
     color: var(--color-text-lc);
   }
 
@@ -116,8 +116,9 @@
     top: 0;
     left: 0;
     bottom: 0;
-    border: 2px solid var(--color-divider-lc);
-    border-radius: 4px;
+    width: 5px;
+    background-color: var(--color-divider-lc);
+    border-radius: 5px;
   }
 
   div :global(code) {
