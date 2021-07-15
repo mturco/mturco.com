@@ -9,13 +9,15 @@ export const createBreadcrumbsStore = () => {
   const { subscribe, update } = writable<Set<Breadcrumb>>(new Set());
   return {
     subscribe,
-    toggle: (item: Breadcrumb) => {
+    add: (item: Breadcrumb) => {
       update((value) => {
-        if (value.has(item)) {
-          value.delete(item);
-        } else {
-          value.add(item);
-        }
+        value.add(item);
+        return value;
+      });
+    },
+    remove: (item: Breadcrumb) => {
+      update((value) => {
+        value.delete(item);
         return value;
       });
     },

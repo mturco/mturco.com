@@ -5,9 +5,14 @@
   export let title: string;
   export let href: string;
 
-  const breadcrumb = { title, href };
+  let breadcrumb = { title, href };
   const { breadcrumbs } = getContext(breadcrumbsContext);
 
-  onMount(() => breadcrumbs.toggle(breadcrumb));
-  onDestroy(() => breadcrumbs.toggle(breadcrumb));
+  $: {
+    breadcrumbs.remove(breadcrumb);
+    breadcrumb = { title, href };
+    breadcrumbs.add(breadcrumb);
+  }
+
+  onDestroy(() => breadcrumbs.remove(breadcrumb));
 </script>
