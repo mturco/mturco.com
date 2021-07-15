@@ -1,10 +1,13 @@
 <script lang="ts">
   import Logo from '$lib/Logo.svelte';
   import ThemeToggle from '$lib/ThemeToggle.svelte';
+  import Breadcrumbs from '$lib/Breadcrumbs.svelte';
 </script>
 
 <header>
   <a class="logo" href="/"><Logo /></a>
+
+  <Breadcrumbs />
 
   <span class="theme-toggle">
     <ThemeToggle />
@@ -13,12 +16,9 @@
 
 <style lang="postcss">
   header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 'left center right';
-    justify-items: center;
+    display: flex;
     align-items: center;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     height: 3.5rem;
     border-bottom: 1px solid var(--color-divider-lc);
   }
@@ -28,7 +28,6 @@
     display: inline-flex;
     color: var(--color-primary);
     border-radius: 50%;
-    grid-area: center;
 
     &::after {
       content: '';
@@ -47,7 +46,6 @@
   }
 
   .theme-toggle {
-    justify-self: end;
-    grid-area: right;
+    margin-left: auto;
   }
 </style>

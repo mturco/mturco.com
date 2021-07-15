@@ -15,6 +15,7 @@
 </script>
 
 <script lang="ts">
+  import Breadcrumb from '$lib/Breadcrumb.svelte';
   import NavLink from '$lib/NavLink.svelte';
   import { formatPostDate } from './_lib/utils';
   import type { IPost } from './_lib/types';
@@ -40,13 +41,11 @@
   <meta name="twitter:creator" content="@matt_turco" />
 </svelte:head>
 
-<nav class="top-nav">
-  <NavLink href="/reading-list">← Reading Lists</NavLink>
-</nav>
+<Breadcrumb title={`#${post.id}`} href={post.url} />
 
 <Post {post} />
 
-<nav class="bottom-nav">
+<nav class="pagination">
   {#if prev}
     <NavLink href="/reading-list/{prev}">← Prev</NavLink>
   {/if}
@@ -58,11 +57,7 @@
 </nav>
 
 <style lang="postcss">
-  .top-nav {
-    margin-bottom: 2rem;
-  }
-
-  .bottom-nav {
+  .pagination {
     display: flex;
     margin-top: 5rem;
   }

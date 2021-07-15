@@ -1,6 +1,9 @@
 <script lang="ts">
   import Header from '$lib/Header.svelte';
+  import Breadcrumb from '$lib/Breadcrumb.svelte';
 </script>
+
+<Breadcrumb title="Reading List" href="/reading-list" />
 
 <div class="wrapper">
   <Header />

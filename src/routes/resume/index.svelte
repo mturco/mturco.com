@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Breadcrumb from '$lib/Breadcrumb.svelte';
   import Header from '$lib/Header.svelte';
   import Link from '$lib/Link.svelte';
   import Section from './_lib/Section.svelte';
@@ -39,6 +40,8 @@
     }
   </style>
 </svelte:head>
+
+<Breadcrumb title="Resume" href="/resume" />
 
 <div class="header">
   <Header />
