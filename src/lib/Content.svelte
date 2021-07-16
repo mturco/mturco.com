@@ -13,7 +13,7 @@
   div :global(h4),
   div :global(h5),
   div :global(h6) {
-    margin: 1.5em 0 0.5em;
+    margin: 1.75em 0 0.5em;
     font-weight: 700;
   }
 
