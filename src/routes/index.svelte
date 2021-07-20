@@ -34,7 +34,7 @@
   <title>Matt Turco</title>
   <meta
     name="description"
-    content="Matt Turco is a front end engineer & design enthusiast in Denver, Colorado."
+    content="Matt Turco is a software engineer & design enthusiast in Denver, Colorado."
   />
 </svelte:head>
 
@@ -45,7 +45,7 @@
 <main>
   <header>
     <h1>Matt Turco</h1>
-    <h2>front end engineer <span class="mobile-break">&amp; design enthusiast</span></h2>
+    <h2>software engineer <span class="mobile-break">&amp; design enthusiast</span></h2>
   </header>
 
   <div class="links">

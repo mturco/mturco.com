@@ -12,7 +12,7 @@
   <title>Resume | Matt Turco</title>
   <meta
     name="description"
-    content="Matt Turco's resume. Matt Turco is a front end engineer & design enthusiast in Denver, Colorado."
+    content="Matt Turco's resume. Matt Turco is a software engineer & design enthusiast in Denver, Colorado."
   />
 
   <link
@@ -68,12 +68,12 @@
       <Heading>Namely</Heading>
 
       <div class="flex baseline">
-        <Subheading>Senior Front End Engineer, Tech Lead</Subheading>
+        <Subheading>Senior Software Engineer, Tech Lead</Subheading>
         <div class="time-span slash">Mar 2019 – Present</div>
       </div>
 
       <div class="flex baseline">
-        <Subheading>Front End Engineer</Subheading>
+        <Subheading>Software Engineer</Subheading>
         <div class="time-span slash">May 2018 – Mar 2019</div>
       </div>
 
@@ -84,9 +84,8 @@
           </p>
           <ul>
             <li>
-              Built 30% of Namely&apos;s design system (55 of 183 components), focusing on
-              composability and accessibility. Emphasized the importance of semantic and predictable
-              component APIs.
+              Built design system components, focusing on composability and accessibility.
+              Emphasized the importance of semantic and predictable component APIs.
             </li>
             <li>
               Developed a state management library that greatly simplified building complex forms
@@ -94,8 +93,7 @@
             </li>
             <li>
               Migrated monorepo CI system from Jenkins to Drone, reducing CI time by 67% (36 min →
-              12 min). This increased team velocity and enabled other engineers to confidently make
-              CI changes.
+              12 min). This increased team velocity and made CI configuration more approachable.
             </li>
           </ul>
         </li>
@@ -133,7 +131,7 @@
               proof-of-concepts to demonstrate the feasibility of new ideas.
             </li>
             <li>
-              Interviewed, hired, and mentored Namely&apos;s most diverse team of engineers. Helped
+              Interviewed, hired, and mentored an exceptional and diverse team of engineers. Helped
               establish a strong front end engineering culture.
             </li>
           </ul>
@@ -216,7 +214,7 @@
 
     <div class="subsection">
       <SidebarHeading>App frameworks</SidebarHeading>
-      <p>Gatsby, CRA, SvelteKit, Next.js, Nuxt.js</p>
+      <p>Next.js, SvelteKit, Nuxt.js, CRA, Gatsby</p>
     </div>
 
     <div class="subsection">
@@ -226,7 +224,7 @@
 
     <div class="subsection">
       <SidebarHeading>Tooling</SidebarHeading>
-      <p>Webpack, Babel, PostCSS, ESLint, Stylelint</p>
+      <p>Webpack, Babel, PostCSS, ESLint, Stylelint, Prettier</p>
     </div>
   </Section>
 
@@ -244,7 +242,7 @@
 
   <Section title="Interests">
     <p>
-      Here are some things I love to chat about: tech, basketball, design, the web, photography,
+      Here are some things I love to chat about: tech, the web, design, basketball, photography,
       and, of course, building cool things with code.
     </p>
   </Section>
