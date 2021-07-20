@@ -56,9 +56,6 @@
       <li class="slash">
         <Link inheritColor external href="mailto:matt.turco@gmail.com">matt.turco@gmail.com</Link>
       </li>
-      <li class="slash">
-        <Link inheritColor external href="tel:4026305866">(402) 630-5866</Link>
-      </li>
       <li class="slash"><Link inheritColor href="/">mturco.com</Link></li>
     </ul>
   </header>
