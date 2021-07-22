@@ -34,7 +34,7 @@
   <title>Matt Turco</title>
   <meta
     name="description"
-    content="Matt Turco is a software engineer & design enthusiast in Denver, Colorado."
+    content="Matt Turco is a software engineer & design enthusiast in Boulder, Colorado."
   />
 </svelte:head>
 

@@ -12,7 +12,7 @@
   <title>Resume | Matt Turco</title>
   <meta
     name="description"
-    content="Matt Turco's resume. Matt Turco is a software engineer & design enthusiast in Denver, Colorado."
+    content="Matt Turco's resume. Matt Turco is a software engineer & design enthusiast in Boulder, Colorado."
   />
 
   <link
@@ -52,7 +52,7 @@
     <h1 class="name">Matt Turco</h1>
 
     <ul class="contact">
-      <li>Denver, CO</li>
+      <li>Boulder, CO</li>
       <li class="slash">
         <Link inheritColor external href="mailto:matt.turco@gmail.com">matt.turco@gmail.com</Link>
       </li>
