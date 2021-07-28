@@ -184,15 +184,6 @@
 
   <div class="divider" aria-hidden="true" />
 
-  <Section title="Education">
-    <SidebarHeading>Creighton University</SidebarHeading>
-    <p>
-      B.S. in Business Administration
-      <br />
-      Business Intelligence &amp; Analytics
-    </p>
-  </Section>
-
   <Section title="Technologies">
     <div class="subsection">
       <SidebarHeading>Web platform</SidebarHeading>
@@ -223,6 +214,15 @@
       <SidebarHeading>Tooling</SidebarHeading>
       <p>Webpack, Babel, PostCSS, ESLint, Stylelint, Prettier</p>
     </div>
+  </Section>
+
+  <Section title="Education">
+    <SidebarHeading>Creighton University</SidebarHeading>
+    <p>
+      B.S. in Business Administration
+      <br />
+      Business Intelligence &amp; Analytics
+    </p>
   </Section>
 
   <Section title="Talks">
