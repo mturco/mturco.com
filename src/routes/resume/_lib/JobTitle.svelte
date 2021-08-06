@@ -1,7 +1,7 @@
-<h3><slot /></h3>
+<p><slot /></p>
 
 <style lang="postcss">
-  h3 {
+  p {
     margin: 0 0 0.25rem;
     font-size: 1.125rem;
     font-weight: 400;

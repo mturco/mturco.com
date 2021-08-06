@@ -3,8 +3,8 @@
   import Header from '$lib/Header.svelte';
   import Link from '$lib/Link.svelte';
   import Section from './_lib/Section.svelte';
-  import Heading from './_lib/Heading.svelte';
-  import Subheading from './_lib/Subheading.svelte';
+  import CompanyTitle from './_lib/CompanyTitle.svelte';
+  import JobTitle from './_lib/JobTitle.svelte';
   import SidebarHeading from './_lib/SidebarHeading.svelte';
 </script>
 
@@ -27,7 +27,7 @@
     @media print {
       :root {
         height: 0;
-        margin: 0.75cm 1cm;
+        margin: 0.875cm 1cm;
         padding: 0;
         font-size: 9.5pt;
         color-adjust: exact;
@@ -61,16 +61,25 @@
   </header>
 
   <Section title="Experience" primary>
-    <div class="subsection">
-      <Heading>Namely</Heading>
+    <div class="subsection" hidden>
+      <CompanyTitle>Google</CompanyTitle>
 
-      <div class="flex baseline">
-        <Subheading>Senior Software Engineer, Tech Lead</Subheading>
-        <div class="time-span slash">Mar 2019 – Present</div>
+      <div class="role">
+        <JobTitle>Senior Software Engineer</JobTitle>
+        <div class="time-span slash">Aug 2021 – Present</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <CompanyTitle>Namely</CompanyTitle>
+
+      <div class="role">
+        <JobTitle>Senior Software Engineer, Tech Lead</JobTitle>
+        <div class="time-span slash">Mar 2019 – Aug 2021</div>
       </div>
 
-      <div class="flex baseline">
-        <Subheading>Software Engineer</Subheading>
+      <div class="role">
+        <JobTitle>Software Engineer</JobTitle>
         <div class="time-span slash">May 2018 – Mar 2019</div>
       </div>
 
@@ -88,10 +97,6 @@
               Developed a state management library that greatly simplified building complex forms
               with branching logic, multi-page flows, input validation, and inline editing.
             </li>
-            <li>
-              Migrated monorepo CI system from Jenkins to Drone, reducing CI time by 67% (36 min →
-              12 min). This increased team velocity and made CI configuration more approachable.
-            </li>
           </ul>
         </li>
         <li>
@@ -100,15 +105,9 @@
           </p>
           <ul>
             <li>
-              Defined the vision and roadmap for the frontend platform. Led quarterly workshops to
-              address tech debt and prototype new ideas.
-            </li>
-            <li>
-              Established code standards and best practices. Codified these guidelines as an open
-              source{' '}
-              <Link external href="https://www.npmjs.com/package/@namely/eslint-config-namely">
-                ESLint rule set</Link
-              > to standardize code across the company.
+              Defined the vision and roadmap for the frontend platform. Established code standards
+              and best practices. Led quarterly workshops to address tech debt and prototype new
+              ideas.
             </li>
             <li>
               Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
@@ -122,10 +121,8 @@
           </p>
           <ul>
             <li>
-              Leveled up the team as a whole by compiling <Link href="/reading-list"
-                >weekly reading lists</Link
-              >, presenting new technologies, and performing team code reviews. Created
-              proof-of-concepts to demonstrate the feasibility of new ideas.
+              Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
+              technologies, and led group code review sessions
             </li>
             <li>
               Interviewed, hired, and mentored an exceptional and diverse team of engineers. Helped
@@ -137,39 +134,33 @@
     </div>
 
     <div class="subsection">
-      <Heading>Gallup</Heading>
+      <CompanyTitle>Gallup</CompanyTitle>
 
-      <div class="flex baseline">
-        <Subheading>Front End Engineer</Subheading>
+      <div class="role">
+        <JobTitle>Front End Engineer</JobTitle>
         <div class="time-span slash">Feb 2015 – Apr 2018</div>
       </div>
 
       <ul>
         <li>
           Created the charting library that renders all of Gallup&apos;s line chart graphics using
-          JavaScript and SVG. Used that library to create an interactive data visualization for{' '}
-          <Link
+          JavaScript and SVG. Using that library, created an <Link
             external
             href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
-          >
-            exploring presidential approval ratings</Link
+            >interactive data visualization</Link
           >.
         </li>
         <li>Developed a component library that unifies Gallup&apos;s apps and marketing sites.</li>
-        <li>
-          Improved site performance by optimizing the critical rendering path, defering scripts,
-          compressing assets, and reducing dependencies.
-        </li>
+        <li>Improved site performance by optimizing the critical rendering path.</li>
         <li>Enhanced keyboard and screen reader accessibility to meet WCAG2 standard.</li>
-        <li>Conducted user tests and presented findings to stakeholders.</li>
       </ul>
     </div>
 
     <div class="subsection">
-      <Heading>Optimum Data</Heading>
+      <CompanyTitle>Optimum Data</CompanyTitle>
 
-      <div class="flex baseline">
-        <Subheading>Software Engineer</Subheading>
+      <div class="role">
+        <JobTitle>Software Engineer</JobTitle>
         <div class="time-span slash">Nov 2012 – Feb 2015</div>
       </div>
 
@@ -265,7 +256,7 @@
       'talks' max-content
       'interests' max-content
       / 1fr;
-    gap: 2rem;
+    gap: 2rem 2.5rem;
     align-content: start;
     line-height: 1.5;
     margin: 0 auto;
@@ -275,9 +266,9 @@
     @media print, (min-width: 60rem) {
       grid-template:
         'header header header' max-content
-        'experience divider education' max-content
         'experience divider technologies' max-content
         'experience divider talks' max-content
+        'experience divider education' max-content
         'experience divider interests' max-content
         'experience divider .' max-content
         / 1fr min-content min-content;
@@ -369,14 +360,12 @@
     }
   }
 
-  .flex {
+  .role {
+    align-items: baseline;
+
     @media print, (min-width: 38rem) {
       display: flex;
     }
-  }
-
-  .baseline {
-    align-items: baseline;
   }
 
   .nowrap {
@@ -393,8 +382,12 @@
 
   ul {
     padding-left: 1.5rem;
-    margin: 0.25rem 0 0;
+    margin: 0.5rem 0 0;
     list-style-type: circle;
+  }
+
+  ul ul {
+    margin-top: 0.25rem;
   }
 
   li {
