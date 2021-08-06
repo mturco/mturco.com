@@ -275,9 +275,9 @@
     @media print, (min-width: 60rem) {
       grid-template:
         'header header header' max-content
-        'experience divider education' max-content
         'experience divider technologies' max-content
         'experience divider talks' max-content
+        'experience divider education' max-content
         'experience divider interests' max-content
         'experience divider .' max-content
         / 1fr min-content min-content;
