@@ -20,10 +20,10 @@
   import EmailIcon from './_index/EmailIcon.svelte';
   import GithubIcon from './_index/GithubIcon.svelte';
   import LinkedinIcon from './_index/LinkedinIcon.svelte';
-  import ReadingListIcon from './_index/ReadingListIcon.svelte';
   import ResumeIcon from './_index/ResumeIcon.svelte';
   import TwitterIcon from './_index/TwitterIcon.svelte';
   import ProfileLink from './_index/ProfileLink.svelte';
+  import CodepenIcon from './_index/CodepenIcon.svelte';
   import Section from './_index/Section.svelte';
   import PostPreview from './reading-list/_lib/PostPreview.svelte';
 
@@ -54,6 +54,11 @@
       <span slot="label">GitHub</span>
     </ProfileLink>
 
+    <ProfileLink external href="https://codepen.io/mturco">
+      <CodepenIcon slot="icon" />
+      <span slot="label">CodePen</span>
+    </ProfileLink>
+
     <ProfileLink external href="https://twitter.com/matt_turco">
       <TwitterIcon slot="icon" />
       <span slot="label">Twitter</span>
@@ -67,11 +72,6 @@
     <ProfileLink external href="mailto:matt.turco@gmail.com">
       <EmailIcon slot="icon" />
       <span slot="label">Email</span>
-    </ProfileLink>
-
-    <ProfileLink href="/reading-list">
-      <ReadingListIcon slot="icon" />
-      <span slot="label">Reading List</span>
     </ProfileLink>
 
     <ProfileLink href="/resume">
