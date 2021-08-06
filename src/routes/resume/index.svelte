@@ -27,7 +27,7 @@
     @media print {
       :root {
         height: 0;
-        margin: 0.75cm 1cm;
+        margin: 0.875cm 1cm;
         padding: 0;
         font-size: 9.5pt;
         color-adjust: exact;
@@ -265,7 +265,7 @@
       'talks' max-content
       'interests' max-content
       / 1fr;
-    gap: 2rem;
+    gap: 2rem 2.5rem;
     align-content: start;
     line-height: 1.5;
     margin: 0 auto;
@@ -393,8 +393,12 @@
 
   ul {
     padding-left: 1.5rem;
-    margin: 0.25rem 0 0;
+    margin: 0.5rem 0 0;
     list-style-type: circle;
+  }
+
+  ul ul {
+    margin-top: 0.25rem;
   }
 
   li {
