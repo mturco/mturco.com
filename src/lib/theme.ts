@@ -1,6 +1,6 @@
 import { browser } from '$app/env';
 
-type Theme = 'light' | 'dark' | null;
+export type Theme = 'light' | 'dark' | null;
 const storageKey = 'prefersDark';
 
 export function getThemePreference(): Theme {
