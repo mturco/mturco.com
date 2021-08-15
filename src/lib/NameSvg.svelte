@@ -9,7 +9,7 @@
 
 <style>
   svg {
-    height: 2.25rem;
+    height: 100%;
     fill: var(--color-primary);
   }
 </style>

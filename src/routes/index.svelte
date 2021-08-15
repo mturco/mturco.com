@@ -17,6 +17,7 @@
 
 <script lang="ts">
   import ThemeToggle from '$lib/ThemeToggle.svelte';
+  import NameSvg from '$lib/NameSvg.svelte';
   import EmailIcon from './_index/EmailIcon.svelte';
   import GithubIcon from './_index/GithubIcon.svelte';
   import LinkedinIcon from './_index/LinkedinIcon.svelte';
@@ -24,7 +25,6 @@
   import TwitterIcon from './_index/TwitterIcon.svelte';
   import ProfileLink from './_index/ProfileLink.svelte';
   import CodepenIcon from './_index/CodepenIcon.svelte';
-  import NameSvg from './_index/NameSvg.svelte';
   import Section from './_index/Section.svelte';
   import PostPreview from './reading-list/_lib/PostPreview.svelte';
 
@@ -106,6 +106,7 @@
   }
 
   .name {
+    height: 2.25rem;
     margin-bottom: 0.5rem;
   }
 

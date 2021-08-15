@@ -2,6 +2,7 @@
   import Breadcrumb from '$lib/Breadcrumb.svelte';
   import Header from '$lib/Header.svelte';
   import Link from '$lib/Link.svelte';
+  import NameSvg from '$lib/NameSvg.svelte';
   import Section from './_lib/Section.svelte';
   import CompanyTitle from './_lib/CompanyTitle.svelte';
   import JobTitle from './_lib/JobTitle.svelte';
@@ -49,7 +50,9 @@
 
 <main>
   <header>
-    <h1 class="name">Matt Turco</h1>
+    <div class="name">
+      <NameSvg />
+    </div>
 
     <ul class="contact">
       <li>Boulder, CO</li>
@@ -293,12 +296,8 @@
   }
 
   .name {
-    font: 700 2.5rem var(--font-heading);
-    letter-spacing: 0.03em;
-    margin: 0 0 1rem;
-    line-height: 1;
-    white-space: nowrap;
-    color: var(--color-primary);
+    height: 1.75rem;
+    margin-bottom: 1rem;
 
     @media print, (min-width: 60rem) {
       margin-bottom: 0;
