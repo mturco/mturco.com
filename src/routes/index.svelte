@@ -104,7 +104,7 @@
 
   h1 {
     color: var(--color-primary);
-    font: 700 3em Montserrat, var(--font-base);
+    font: 800 3em var(--font-name);
     margin: 0 0 0.5rem -0.1ch;
   }
 
