@@ -293,7 +293,7 @@
   }
 
   .name {
-    font: 700 2.5rem var(--font-heading);
+    font: 800 2.5rem var(--font-name);
     letter-spacing: 0.03em;
     margin: 0 0 1rem;
     line-height: 1;

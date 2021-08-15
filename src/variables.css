@@ -45,7 +45,7 @@
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
     monospace;
-  --font-heading: Montserrat, var(--font-base);
+  --font-name: Montserrat, var(--font-base);
 
   /* animation */
   --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
