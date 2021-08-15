@@ -24,6 +24,7 @@
   import TwitterIcon from './_index/TwitterIcon.svelte';
   import ProfileLink from './_index/ProfileLink.svelte';
   import CodepenIcon from './_index/CodepenIcon.svelte';
+  import NameSvg from './_index/NameSvg.svelte';
   import Section from './_index/Section.svelte';
   import PostPreview from './reading-list/_lib/PostPreview.svelte';
 
@@ -44,8 +45,10 @@
 
 <main>
   <header>
-    <h1>Matt Turco</h1>
-    <h2>software engineer <span class="mobile-break">&amp; design enthusiast</span></h2>
+    <div class="name">
+      <NameSvg />
+    </div>
+    <h2>Software engineer <span class="mobile-break">&amp; design enthusiast</span></h2>
   </header>
 
   <div class="links">
@@ -102,10 +105,8 @@
     max-width: 50rem;
   }
 
-  h1 {
-    color: var(--color-primary);
-    font: 700 3em Montserrat, var(--font-base);
-    margin: 0 0 0.5rem -0.1ch;
+  .name {
+    margin-bottom: 0.5rem;
   }
 
   h2 {
