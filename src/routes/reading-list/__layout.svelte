@@ -22,7 +22,8 @@
     margin: 10vh auto;
     padding: 0 1rem;
     max-width: var(--page-max-width);
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
+    letter-spacing: -0.013em;
     line-height: 1.7;
   }
 </style>

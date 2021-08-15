@@ -104,13 +104,17 @@
 
   h1 {
     color: var(--color-primary);
-    font: 700 3em Montserrat, var(--font-base);
-    margin: 0 0 0.5rem -0.1ch;
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 1.375em;
     font-weight: 300;
+    letter-spacing: -0.019em;
     text-transform: lowercase;
     line-height: 1.5;
     color: var(--color-text-lc);

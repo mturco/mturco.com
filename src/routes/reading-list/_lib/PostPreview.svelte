@@ -91,7 +91,7 @@
         background-color: var(--color-divider-lc);
         border-bottom-left-radius: 8px;
         font-size: 0.625rem;
-        letter-spacing: 0.15em;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
         font-weight: 600;
         transition: background-color 0.5s var(--ease-out-quint), color 0.5s var(--ease-out-quint);
