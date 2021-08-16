@@ -25,10 +25,7 @@
 
 <svelte:head>
   <title>Reading List | Matt Turco</title>
-  <meta
-    name="description"
-    content="Matt Turco's weekly reading list of articles, blog posts, tweets, talks, etc."
-  />
+  <meta name="description" content="Matt Turco's weekly reading list on software and design." />
 </svelte:head>
 
 <main>
