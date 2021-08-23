@@ -61,7 +61,7 @@
   </header>
 
   <Section title="Experience" primary>
-    <div class="subsection" hidden>
+    <div class="subsection">
       <CompanyTitle>Google</CompanyTitle>
 
       <div class="role">
