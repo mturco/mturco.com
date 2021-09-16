@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.17",
+    "@sveltejs/adapter-static": "1.0.0-next.19",
     "@sveltejs/kit": "1.0.0-next.156",
     "@types/marked": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^4.27.0",
