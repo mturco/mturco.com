@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getContext, onDestroy, onMount } from 'svelte';
+  import { getContext, onDestroy } from 'svelte';
   import { breadcrumbsContext } from '$lib/context';
 
   export let title: string;
