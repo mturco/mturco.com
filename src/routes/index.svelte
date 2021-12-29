@@ -80,7 +80,7 @@
     </ProfileLink>
   </div>
 
-  <div class="recent">
+  <div class="recent" hidden>
     <Section title="Recent Posts">
       <PostPreview post={latestPost} highlight tag="Reading List" />
     </Section>
@@ -96,6 +96,9 @@
   }
 
   main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 100vh;
     padding: 18vh 5vw;
     margin: 0 auto;
@@ -127,7 +130,7 @@
   .links {
     display: flex;
     flex-wrap: wrap;
-    margin: 3rem -0.75rem -0.75rem;
+    margin: 2rem -0.75rem -0.75rem;
   }
 
   .recent {
