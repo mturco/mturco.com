@@ -1,7 +1,7 @@
 import { format, parseISO } from 'date-fns';
 import fs from 'fs';
 import grayMatter from 'gray-matter';
-import marked from 'marked';
+import { marked } from 'marked';
 
 import type { IPost } from './types';
 
