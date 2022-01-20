@@ -67,13 +67,12 @@
   dependencies:
     tiny-glob "^0.2.9"
 
-"@sveltejs/kit@1.0.0-next.206":
-  version "1.0.0-next.206"
-  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.206.tgz#c7f0efc6bcb6eefa0741498c2494a78ceabaa9f9"
-  integrity sha512-AQEOKZLG1GKkuBfWUKKxMs9A3AzE9tSHYc4Lu+AL/4BAs4erIFdOei2ldsxak2ICxxeaCloqVRPvIOtj7UEacg==
+"@sveltejs/kit@1.0.0-next.234":
+  version "1.0.0-next.234"
+  resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.234.tgz#49adec37dcd49ff0905bdb880132321475e27f6e"
+  integrity sha512-vnXLkk4GakytCM+TxFVVXfvJaXq/vY6AWpaUAKr1ZsQD2LSKteoaBlca1qI7fCRwccaPSkI+DOc+bNdgGiBBSQ==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.0-next.32"
-    cheap-watch "^1.0.4"
     sade "^1.7.4"
     vite "^2.7.2"
 
@@ -353,11 +352,6 @@ chalk@^4.0.0:
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
-
-cheap-watch@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/cheap-watch/-/cheap-watch-1.0.4.tgz#0bcb4a3a8fbd9d5327936493f6b56baa668d8fef"
-  integrity sha512-QR/9FrtRL5fjfUJBhAKCdi0lSRQ3rVRRum3GF9wDKp2TJbEIMGhUEr2yU8lORzm9Isdjx7/k9S0DFDx+z5VGtw==
 
 color-convert@^2.0.1:
   version "2.0.1"
