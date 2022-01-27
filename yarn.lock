@@ -1227,10 +1227,10 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.4"
 
-marked@^4.0.8:
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.8.tgz#ef127626ac65786460f9420d57cc8d5ffdcacbed"
-  integrity sha512-dkpJMIlJpc833hbjjg8jraw1t51e/eKDoG8TFOgc5O0Z77zaYKigYekTDop5AplRoKFGIaoazhYEhGkMtU3IeA==
+marked@^4.0.11:
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.0.11.tgz#dcd1a65b2639eb2e71f0222d00f4860ba09d7e24"
+  integrity sha512-xL2aJ5JDggqToKOqKHJWIDXaYk24XoGm1mNlhSPFP+0OKRCcKx+/hH7hlAr5LYqBKUzqCANylALgwNstVRgtCw==
 
 mdn-data@2.0.14:
   version "2.0.14"
