@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
-  export async function load({ page, fetch }) {
-    const res = await fetch(`/reading-list/${page.params.issue}.json`);
+  export async function load({ params, fetch }) {
+    const res = await fetch(`/reading-list/${params.issue}.json`);
     const { post, next, prev } = await res.json();
 
     if (res.ok) {
