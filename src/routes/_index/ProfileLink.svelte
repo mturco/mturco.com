@@ -2,7 +2,7 @@
   let labelWidth: number;
 
   export let href: string;
-  export let external: boolean = false;
+  export let external = false;
 </script>
 
 <a {href} rel={external ? 'external' : undefined} style="--label-width: {labelWidth}px">

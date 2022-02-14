@@ -1,7 +1,7 @@
 <script lang="ts">
   export let href: string;
-  export let external: boolean = false;
-  export let inheritColor: boolean = false;
+  export let external = false;
+  export let inheritColor = false;
 </script>
 
 <a {href} rel={external ? 'external' : undefined} class:inherit-color={inheritColor}>

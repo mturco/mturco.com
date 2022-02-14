@@ -1,6 +1,6 @@
 <script lang="ts">
   export let title: string;
-  export let primary: boolean = false;
+  export let primary = false;
 </script>
 
 <section class:primary style="--grid-area: {title.toLowerCase()}">
