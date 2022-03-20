@@ -6,7 +6,23 @@
   import CompanyTitle from './_lib/CompanyTitle.svelte';
   import JobTitle from './_lib/JobTitle.svelte';
   import SidebarHeading from './_lib/SidebarHeading.svelte';
+
+  function handleBeforePrint() {
+    Array.from(document.querySelectorAll('details')).forEach((el) => {
+      el.setAttribute('open', '');
+      el.querySelector('summary')?.setAttribute('hidden', '');
+    });
+  }
+
+  function handleAfterPrint() {
+    Array.from(document.querySelectorAll('details')).forEach((el) => {
+      el.removeAttribute('open');
+      el.querySelector('summary')?.removeAttribute('hidden');
+    });
+  }
 </script>
+
+<svelte:window on:beforeprint={handleBeforePrint} on:afterprint={handleAfterPrint} />
 
 <svelte:head>
   <title>Resume | Matt Turco</title>
@@ -83,54 +99,57 @@
         <div class="time-span slash">May 2018 – Mar 2019</div>
       </div>
 
-      <ul>
-        <li>
-          <p>
-            <strong>Engineering</strong>
-          </p>
-          <ul>
-            <li>
-              Built design system components, focusing on composability and accessibility.
-              Emphasized the importance of semantic and predictable component APIs.
-            </li>
-            <li>
-              Developed a state management library that greatly simplified building complex forms
-              with branching logic, multi-page flows, input validation, and inline editing.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            <strong>Leadership</strong>
-          </p>
-          <ul>
-            <li>
-              Defined the vision and roadmap for the frontend platform. Established code standards
-              and best practices. Led quarterly workshops to address tech debt and prototype new
-              ideas.
-            </li>
-            <li>
-              Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
-              role and career advice, and created opportunities for growth.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <p>
-            <strong>Impact</strong>
-          </p>
-          <ul>
-            <li>
-              Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
-              technologies, and led group code review sessions
-            </li>
-            <li>
-              Interviewed, hired, and mentored an exceptional and diverse team of engineers. Helped
-              establish a strong front end engineering culture.
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>
+            <p>
+              <strong>Engineering</strong>
+            </p>
+            <ul>
+              <li>
+                Built design system components, focusing on composability and accessibility.
+                Emphasized the importance of semantic and predictable component APIs.
+              </li>
+              <li>
+                Developed a state management library that greatly simplified building complex forms
+                with branching logic, multi-page flows, input validation, and inline editing.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              <strong>Leadership</strong>
+            </p>
+            <ul>
+              <li>
+                Defined the vision and roadmap for the frontend platform. Established code standards
+                and best practices. Led quarterly workshops to address tech debt and prototype new
+                ideas.
+              </li>
+              <li>
+                Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
+                role and career advice, and created opportunities for growth.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              <strong>Impact</strong>
+            </p>
+            <ul>
+              <li>
+                Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
+                technologies, and led group code review sessions
+              </li>
+              <li>
+                Interviewed, hired, and mentored an exceptional and diverse team of engineers.
+                Helped establish a strong front end engineering culture.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </details>
     </div>
 
     <div class="subsection">
@@ -141,19 +160,24 @@
         <div class="time-span slash">Feb 2015 – Apr 2018</div>
       </div>
 
-      <ul>
-        <li>
-          Created the charting library that renders all of Gallup&apos;s line chart graphics using
-          JavaScript and SVG. Using that library, created an <Link
-            external
-            href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
-            >interactive data visualization</Link
-          >.
-        </li>
-        <li>Developed a component library that unifies Gallup&apos;s apps and marketing sites.</li>
-        <li>Improved site performance by optimizing the critical rendering path.</li>
-        <li>Enhanced keyboard and screen reader accessibility to meet WCAG2 standard.</li>
-      </ul>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>
+            Created the charting library that renders all of Gallup&apos;s line chart graphics using
+            JavaScript and SVG. Using that library, created an <Link
+              external
+              href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
+              >interactive data visualization</Link
+            >.
+          </li>
+          <li>
+            Developed a component library that unifies Gallup&apos;s apps and marketing sites.
+          </li>
+          <li>Improved site performance by optimizing the critical rendering path.</li>
+          <li>Enhanced keyboard and screen reader accessibility to meet WCAG2 standard.</li>
+        </ul>
+      </details>
     </div>
 
     <div class="subsection">
@@ -164,12 +188,15 @@
         <div class="time-span slash">Nov 2012 – Feb 2015</div>
       </div>
 
-      <ul>
-        <li>
-          Designed and developed a web app to surface critical order and inventory information from
-          Microsoft Dynamics NAV. The app dramatically sped up order fulfillment time.
-        </li>
-      </ul>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>
+            Designed and developed a web app to surface critical order and inventory information
+            from Microsoft Dynamics NAV. The app dramatically sped up order fulfillment time.
+          </li>
+        </ul>
+      </details>
     </div>
   </Section>
 
@@ -178,22 +205,22 @@
   <Section title="Technologies">
     <div class="subsection">
       <SidebarHeading>Web platform</SidebarHeading>
-      <p>HTML, JavaScript, TypeScript, CSS, SVG</p>
+      <p>JS/TS, CSS, HTML, SVG</p>
     </div>
 
     <div class="subsection">
       <SidebarHeading>Other languages</SidebarHeading>
-      <p>C#, PHP, SQL</p>
+      <p>Java, C#, PHP, SQL</p>
     </div>
 
     <div class="subsection">
       <SidebarHeading>Component frameworks</SidebarHeading>
-      <p>React, Svelte, Vue</p>
+      <p>React, Svelte, Lit, Vue</p>
     </div>
 
     <div class="subsection">
       <SidebarHeading>App frameworks</SidebarHeading>
-      <p>Next.js, SvelteKit, Nuxt.js, CRA, Gatsby</p>
+      <p>Next, SvelteKit, Astro, Nuxt, CRA</p>
     </div>
 
     <div class="subsection">
@@ -228,12 +255,12 @@
     </div>
   </Section>
 
-  <Section title="Interests">
+  <!-- <Section title="Interests">
     <p>
       Here are some things I love to chat about: tech, the web, design, basketball, photography,
       and, of course, building cool things with code.
     </p>
-  </Section>
+  </Section> -->
 </main>
 
 <style lang="postcss">
@@ -254,7 +281,7 @@
       'education' max-content
       'technologies' max-content
       'talks' max-content
-      'interests' max-content
+      /* 'interests' max-content */
       / 1fr;
     gap: 2rem 2.5rem;
     align-content: start;
@@ -269,7 +296,7 @@
         'experience divider technologies' max-content
         'experience divider talks' max-content
         'experience divider education' max-content
-        'experience divider interests' max-content
+        /* 'experience divider interests' max-content */
         'experience divider .' max-content
         / 1fr min-content min-content;
     }
@@ -396,5 +423,21 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  details {
+    @media print {
+      display: block;
+    }
+  }
+
+  summary {
+    cursor: pointer;
+    user-select: none;
+    color: var(--color-primary);
+  }
+
+  :global([hidden]) {
+    display: none;
   }
 </style>
