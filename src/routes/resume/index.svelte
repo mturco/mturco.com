@@ -103,50 +103,24 @@
         <summary>Details</summary>
         <ul>
           <li>
-            <p>
-              <strong>Engineering</strong>
-            </p>
-            <ul>
-              <li>
-                Built design system components, focusing on composability and accessibility.
-                Emphasized the importance of semantic and predictable component APIs.
-              </li>
-              <li>
-                Developed a state management library that greatly simplified building complex forms
-                with branching logic, multi-page flows, input validation, and inline editing.
-              </li>
-            </ul>
+            Defined the vision and roadmap for the frontend platform. Established code standards and
+            best practices. Led quarterly workshops to address tech debt and prototype new ideas.
           </li>
           <li>
-            <p>
-              <strong>Leadership</strong>
-            </p>
-            <ul>
-              <li>
-                Defined the vision and roadmap for the frontend platform. Established code standards
-                and best practices. Led quarterly workshops to address tech debt and prototype new
-                ideas.
-              </li>
-              <li>
-                Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
-                role and career advice, and created opportunities for growth.
-              </li>
-            </ul>
+            Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
+            technologies, and led group code review sessions.
           </li>
           <li>
-            <p>
-              <strong>Impact</strong>
-            </p>
-            <ul>
-              <li>
-                Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
-                technologies, and led group code review sessions
-              </li>
-              <li>
-                Interviewed, hired, and mentored an exceptional and diverse team of engineers.
-                Helped establish a strong front end engineering culture.
-              </li>
-            </ul>
+            Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
+            role and career advice, and created opportunities for growth.
+          </li>
+          <li>
+            Built design system components, focusing on composability and accessibility. Emphasized
+            the importance of semantic and predictable component APIs.
+          </li>
+          <li>
+            Developed a state management library that greatly simplified building complex forms with
+            branching logic, multi-page flows, input validation, and inline editing.
           </li>
         </ul>
       </details>
@@ -165,17 +139,19 @@
         <ul>
           <li>
             Created the charting library that renders all of Gallup&apos;s line chart graphics using
-            JavaScript and SVG. Using that library, created an <Link
+            JavaScript and SVG. Built an <Link
               external
               href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
               >interactive data visualization</Link
-            >.
+            > on top of it.
           </li>
           <li>
-            Developed a component library that unifies Gallup&apos;s apps and marketing sites.
+            Developed a UI library and integrated it into Gallup's custom CMS to enable dynamic
+            content on marketing pages.
           </li>
-          <li>Improved site performance by optimizing the critical rendering path.</li>
-          <li>Enhanced keyboard and screen reader accessibility to meet WCAG2 standard.</li>
+          <li>
+            Improved keyboard navigation and screen reader accessibility to meet WCAG2 standard.
+          </li>
         </ul>
       </details>
     </div>
@@ -234,16 +210,16 @@
     </div>
   </Section>
 
-  <Section title="Education">
+  <!-- <Section title="Education">
     <SidebarHeading>Creighton University</SidebarHeading>
     <p>
       B.S. in Business Administration
       <br />
       Business Intelligence &amp; Analytics
     </p>
-  </Section>
+  </Section> -->
 
-  <Section title="Talks">
+  <!-- <Section title="Talks">
     <div class="subsection">
       <p class="nowrap">
         <Link external href="https://cross-component-communication.mturco.com/"
@@ -253,7 +229,7 @@
         React NYC &middot; 2020
       </p>
     </div>
-  </Section>
+  </Section> -->
 
   <!-- <Section title="Interests">
     <p>
@@ -278,9 +254,9 @@
     grid-template:
       'header' max-content
       'experience' max-content
-      'education' max-content
+      /* 'education' max-content */
       'technologies' max-content
-      'talks' max-content
+      /* 'talks' max-content */
       /* 'interests' max-content */
       / 1fr;
     gap: 2rem 2.5rem;
@@ -294,11 +270,11 @@
       grid-template:
         'header header header' max-content
         'experience divider technologies' max-content
-        'experience divider talks' max-content
-        'experience divider education' max-content
+        /* 'experience divider talks' max-content */
+        /* 'experience divider education' max-content */
         /* 'experience divider interests' max-content */
         'experience divider .' max-content
-        / 1fr min-content min-content;
+        / 1fr min-content 26ch;
     }
 
     @media print {
