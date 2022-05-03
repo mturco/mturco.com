@@ -16,7 +16,7 @@
     "@types/marked": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
-    "autoprefixer": "^10.4.5",
+    "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.7",
     "date-fns": "^2.22.1",
     "eslint": "^8.14.0",
