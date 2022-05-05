@@ -20,7 +20,20 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet"
   />
+
+  <style>
+    @media print {
+      :root {
+        margin: 0;
+        padding: 0;
+        font-size: 9.5pt;
+        color-adjust: exact;
+      }
+    }
+  </style>
 </svelte:head>
+
+<svelte:body class="body" />
 
 <Breadcrumb title="Resume" href="/resume" />
 
@@ -171,16 +184,7 @@
 </main>
 
 <style lang="postcss">
-  :global(:root) {
-    @media print {
-      margin: 0;
-      padding: 0;
-      font-size: 9.5pt;
-      color-adjust: exact;
-    }
-  }
-
-  :global(body) {
+  .body {
     font-family: 'Lato', var(--font-base);
   }
 
