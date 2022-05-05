@@ -171,6 +171,15 @@
 </main>
 
 <style lang="postcss">
+  :global(:root) {
+    @media print {
+      margin: 0;
+      padding: 0;
+      font-size: 9.5pt;
+      color-adjust: exact;
+    }
+  }
+
   :global(body) {
     font-family: 'Lato', var(--font-base);
   }
@@ -303,14 +312,5 @@
 
   :global([hidden]) {
     display: none;
-  }
-
-  @media print {
-    :root {
-      margin: 0;
-      padding: 0;
-      font-size: 9.5pt;
-      color-adjust: exact;
-    }
   }
 </style>
