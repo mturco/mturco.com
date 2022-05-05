@@ -1,8 +1,3 @@
 [build]
   command = "yarn build"
   publish = "build/"
-
-[[plugins]]
-  package = "netlify-plugin-visual-diff"
-  [plugins.inputs]
-    failBuildOnDiff = false
