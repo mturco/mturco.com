@@ -345,10 +345,6 @@
     }
   }
 
-  .nowrap {
-    white-space: nowrap;
-  }
-
   p {
     margin: 0;
 
@@ -361,10 +357,6 @@
     padding-left: 1.5rem;
     margin: 0.5rem 0 0;
     list-style-type: circle;
-  }
-
-  ul ul {
-    margin-top: 0.25rem;
   }
 
   li {
