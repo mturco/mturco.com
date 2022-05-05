@@ -3,7 +3,7 @@
   export let primary = false;
 </script>
 
-<section class:primary style="--grid-area: {title.toLowerCase()}">
+<section class:primary style="--grid-area: {title.replace(' ', '-').toLowerCase()}">
   <header>
     <h1>{title}</h1>
   </header>

@@ -6,6 +6,7 @@
   import CompanyTitle from './_lib/CompanyTitle.svelte';
   import JobTitle from './_lib/JobTitle.svelte';
   import SidebarHeading from './_lib/SidebarHeading.svelte';
+  import TimeSpan from './_lib/TimeSpan.svelte';
 
   function handleBeforePrint() {
     Array.from(document.querySelectorAll('details')).forEach((el) => {
@@ -36,10 +37,6 @@
     rel="stylesheet"
   />
   <style>
-    body {
-      font-family: 'Lato', var(--font-base);
-    }
-
     @media print {
       :root {
         height: 0;
@@ -82,7 +79,7 @@
 
       <div class="role">
         <JobTitle>Senior Software Engineer</JobTitle>
-        <div class="time-span slash">Aug 2021 – Present</div>
+        <TimeSpan from="2021-08" />
       </div>
     </div>
 
@@ -91,12 +88,12 @@
 
       <div class="role">
         <JobTitle>Senior Software Engineer, Tech Lead</JobTitle>
-        <div class="time-span slash">Mar 2019 – Aug 2021</div>
+        <TimeSpan from="2019-03" to="2021-08" />
       </div>
 
       <div class="role">
         <JobTitle>Software Engineer</JobTitle>
-        <div class="time-span slash">May 2018 – Mar 2019</div>
+        <TimeSpan from="2018-05" to="2019-03" />
       </div>
 
       <details>
@@ -108,7 +105,8 @@
           </li>
           <li>
             Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
-            technologies, and led group code review sessions.
+            technologies, and led group code review sessions. Established a strong engineering team
+            culture.
           </li>
           <li>
             Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
@@ -131,7 +129,7 @@
 
       <div class="role">
         <JobTitle>Front End Engineer</JobTitle>
-        <div class="time-span slash">Feb 2015 – Apr 2018</div>
+        <TimeSpan from="2015-02" to="2018-04" />
       </div>
 
       <details>
@@ -150,7 +148,7 @@
             content on marketing pages.
           </li>
           <li>
-            Improved keyboard navigation and screen reader accessibility to meet WCAG2 standard.
+            Improved keyboard navigation and screen reader accessibility for WCAG2 certification.
           </li>
         </ul>
       </details>
@@ -161,7 +159,7 @@
 
       <div class="role">
         <JobTitle>Software Engineer</JobTitle>
-        <div class="time-span slash">Nov 2012 – Feb 2015</div>
+        <TimeSpan from="2012-11" to="2015-02" />
       </div>
 
       <details>
@@ -169,7 +167,8 @@
         <ul>
           <li>
             Designed and developed a web app to surface critical order and inventory information
-            from Microsoft Dynamics NAV. The app dramatically sped up order fulfillment time.
+            from Microsoft Dynamics NAV. Once rolled out, the app dramatically sped up order
+            fulfillment time.
           </li>
         </ul>
       </details>
@@ -210,15 +209,6 @@
     </div>
   </Section>
 
-  <!-- <Section title="Education">
-    <SidebarHeading>Creighton University</SidebarHeading>
-    <p>
-      B.S. in Business Administration
-      <br />
-      Business Intelligence &amp; Analytics
-    </p>
-  </Section> -->
-
   <!-- <Section title="Talks">
     <div class="subsection">
       <p class="nowrap">
@@ -230,16 +220,13 @@
       </p>
     </div>
   </Section> -->
-
-  <!-- <Section title="Interests">
-    <p>
-      Here are some things I love to chat about: tech, the web, design, basketball, photography,
-      and, of course, building cool things with code.
-    </p>
-  </Section> -->
 </main>
 
 <style lang="postcss">
+  :global(body) {
+    font-family: 'Lato', var(--font-base);
+  }
+
   .header {
     @media print {
       display: none;
@@ -254,10 +241,8 @@
     grid-template:
       'header' max-content
       'experience' max-content
-      /* 'education' max-content */
       'technologies' max-content
       /* 'talks' max-content */
-      /* 'interests' max-content */
       / 1fr;
     gap: 2rem 2.5rem;
     align-content: start;
@@ -271,8 +256,6 @@
         'header header header' max-content
         'experience divider technologies' max-content
         /* 'experience divider talks' max-content */
-        /* 'experience divider education' max-content */
-        /* 'experience divider interests' max-content */
         'experience divider .' max-content
         / 1fr min-content 26ch;
     }
@@ -352,15 +335,6 @@
 
   .subsection:not(:last-child) {
     margin-bottom: var(--section-item-gap);
-  }
-
-  .time-span {
-    color: var(--color-text-lc);
-    margin-bottom: 0.5rem;
-
-    @media print, (min-width: 38rem) {
-      margin-bottom: 0;
-    }
   }
 
   .role {
