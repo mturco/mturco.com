@@ -80,7 +80,7 @@
 
       <ul>
         <li>
-          Defined the vision and roadmap for the frontend platform. Established code standards and
+          Defined the vision and roadmap for the front end platform. Established code standards and
           best practices. Led quarterly workshops to address tech debt and prototype new ideas.
         </li>
         <li>
@@ -98,7 +98,7 @@
         </li>
         <li>
           Developed a state management library that greatly simplified building complex forms with
-          branching logic, multi-page flows, input validation, and inline editing.
+          conditional fields, multi-page flows, input validation, and inline editing.
         </li>
       </ul>
     </div>
@@ -151,7 +151,7 @@
   <Section title="Technologies">
     <div class="subsection">
       <SidebarHeading>Web platform</SidebarHeading>
-      <p>JS/TS, CSS, HTML, SVG</p>
+      <p>TypeScript, CSS, HTML, SVG</p>
     </div>
 
     <div class="subsection">
@@ -202,7 +202,7 @@
     align-content: start;
     line-height: 1.5;
     margin: 0 auto;
-    padding: 10vh 0;
+    padding: 8vh 0;
     max-width: 64rem;
     font-family: 'Lato', var(--font-base);
 
@@ -252,6 +252,10 @@
     & li {
       margin: 0;
       padding: 0;
+
+      &::before {
+        display: none;
+      }
     }
   }
 
@@ -291,9 +295,25 @@
 
   li {
     margin-bottom: 0.75em;
+    position: relative;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &::marker {
+      content: '';
+      display: none;
+    }
+
+    &::before {
+      content: '▵';
+      color: var(--color-primary);
+      transform: rotate(90deg);
+      position: absolute;
+      font-size: 0.75em;
+      line-height: 1.5rem;
+      left: -1rem;
     }
   }
 
