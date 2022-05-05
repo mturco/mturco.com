@@ -9,11 +9,12 @@
   $: fromString = format(fromDate, dateFormat);
   $: toDate = to ? parseISO(to) : new Date();
   $: toString = to ? format(toDate, dateFormat) : 'now';
-  $: duration = intervalToDuration({ start: fromDate, end: toDate });
-  $: durationString = formatDuration(duration, { format: ['years', 'months'] });
+  // $: duration = intervalToDuration({ start: fromDate, end: toDate });
+  // $: durationString = formatDuration(duration, { format: ['years', 'months'] });
 </script>
 
-<div>{fromString}–{toString} · {durationString}</div>
+<!-- <div>{fromString}–{toString} · {durationString}</div> -->
+<div>{fromString}–{toString}</div>
 
 <style lang="postcss">
   div {
@@ -31,7 +32,7 @@
       content: '';
       display: inline-flex;
       vertical-align: middle;
-      margin: 0 0.5rem 0 1.25rem;
+      margin: 0 0.375rem 0 1.125rem;
       transform: rotateZ(30deg);
       height: 1.375rem;
       border-left: 2px solid var(--color-primary);
