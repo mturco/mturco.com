@@ -26,14 +26,12 @@
       :root {
         margin: 0;
         padding: 0;
-        font-size: 9.5pt;
+        font-size: 9.5pt !important;
         color-adjust: exact;
       }
     }
   </style>
 </svelte:head>
-
-<svelte:body class="body" />
 
 <Breadcrumb title="Resume" href="/resume" />
 
@@ -184,10 +182,6 @@
 </main>
 
 <style lang="postcss">
-  .body {
-    font-family: 'Lato', var(--font-base);
-  }
-
   .header {
     @media print {
       display: none;
@@ -210,6 +204,7 @@
     margin: 0 auto;
     padding: 10vh 0;
     max-width: 64rem;
+    font-family: 'Lato', var(--font-base);
 
     @media print, (min-width: 60rem) {
       grid-template:
