@@ -13,12 +13,12 @@
     grid-area: var(--grid-area);
 
     @media print, (min-width: 60rem) {
-      padding: 0 var(--section-item-gap);
+      padding: var(--section-item-gap);
     }
   }
 
   h1 {
-    margin: 2.5rem 0 1.25rem 0;
+    margin: 0 0 1.25rem 0;
     font-weight: 700;
     font-size: 0.875rem;
     text-transform: uppercase;
