@@ -28,6 +28,6 @@
     color: var(--grid-line-color);
     line-height: 1;
     padding: 0 0 0.25rem 0;
-    border-bottom: 1.5px solid var(--grid-line-color);
+    border-bottom: 2px solid var(--grid-line-color);
   }
 </style>

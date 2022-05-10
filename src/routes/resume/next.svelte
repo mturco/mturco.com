@@ -203,7 +203,7 @@
     align-content: start;
     line-height: 1.5;
     margin: 0 auto;
-    padding: 8vh 1rem;
+    padding: 4vh 1rem;
     max-width: 40rem;
     font-family: 'Lato', var(--font-base);
 
