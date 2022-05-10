@@ -124,7 +124,7 @@
   div :global(code) {
     background-color: var(--color-background-alt);
     border-radius: 3px;
-    color: var(--color-accent);
+    color: var(--red-500);
     padding: 0.125rem 0.25rem;
     overflow-wrap: break-word;
     word-wrap: break-word;

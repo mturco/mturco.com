@@ -9,13 +9,12 @@ body {
 }
 
 ::selection {
-  color: #fff;
   text-shadow: none;
-  background-color: var(--color-selection);
+  background-color: var(--color-highlight);
 }
 
 [data-focus-visible-added] {
-  outline: 2px solid var(--red-400);
+  outline: 2px solid var(--color-focus-ring);
   outline-offset: 1px;
 }
 
