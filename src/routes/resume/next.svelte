@@ -317,11 +317,10 @@
     }
 
     &::before {
-      content: '▵';
+      content: '❯';
       color: var(--color-primary);
-      transform: rotate(90deg);
       position: absolute;
-      font-size: 0.75em;
+      font-size: 0.875em;
       line-height: 1.5rem;
       left: -1rem;
     }
