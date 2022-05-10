@@ -192,6 +192,7 @@
     --grid-line-color: var(--color-primary);
     --section-item-gap: 2.5rem;
     --sidebar-bg-color: hsl(200, 75%, 95%);
+    --sidebar-bg-color-dark: hsl(200, 10%, 17%);
 
     display: grid;
     grid-template:
@@ -219,6 +220,14 @@
       padding: 0;
       height: 100vh;
     }
+
+    @media (prefers-color-scheme: dark) {
+      --sidebar-bg-color: var(--sidebar-bg-color-dark);
+    }
+  }
+
+  :global(.theme-dark) main {
+    --sidebar-bg-color: var(--sidebar-bg-color-dark);
   }
 
   header {
