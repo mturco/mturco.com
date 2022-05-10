@@ -3,10 +3,10 @@
   import Header from '$lib/Header.svelte';
   import Link from '$lib/Link.svelte';
   import Section from './_lib2/Section.svelte';
+  import TimeSpan from './_lib2/TimeSpan.svelte';
   import CompanyTitle from './_lib/CompanyTitle.svelte';
   import JobTitle from './_lib/JobTitle.svelte';
   import SidebarHeading from './_lib/SidebarHeading.svelte';
-  import TimeSpan from './_lib/TimeSpan.svelte';
 </script>
 
 <svelte:head>
@@ -202,15 +202,16 @@
     align-content: start;
     line-height: 1.5;
     margin: 0 auto;
-    padding: 8vh 0;
-    max-width: 64rem;
+    padding: 8vh 1rem;
+    max-width: 40rem;
     font-family: 'Lato', var(--font-base);
 
-    @media print, (min-width: 60rem) {
+    @media print, (min-width: 50rem) {
       grid-template:
         'header experience' max-content
         'technologies experience' 1fr
         / 20rem 1fr;
+      max-width: 64rem;
     }
 
     @media print {
@@ -226,7 +227,7 @@
     flex-direction: column;
     align-items: baseline;
 
-    @media print, (min-width: 60rem) {
+    @media print, (min-width: 50rem) {
       padding: var(--section-item-gap) var(--section-item-gap) 0;
     }
   }
@@ -260,7 +261,7 @@
   }
 
   .sidebar-bg {
-    @media print, (min-width: 60rem) {
+    @media print, (min-width: 50rem) {
       grid-row: 1 / -1;
       grid-column: 1 / 2;
       background-color: var(--sidebar-bg-color);
@@ -274,7 +275,7 @@
   .role {
     align-items: baseline;
 
-    @media print, (min-width: 38rem) {
+    @media print, (min-width: 32rem) and (max-width: 50rem), (min-width: 60rem) {
       display: flex;
     }
   }
