@@ -326,18 +326,6 @@
     }
   }
 
-  details {
-    @media print {
-      display: block;
-    }
-  }
-
-  summary {
-    cursor: pointer;
-    user-select: none;
-    color: var(--color-primary);
-  }
-
   :global([hidden]) {
     display: none;
   }

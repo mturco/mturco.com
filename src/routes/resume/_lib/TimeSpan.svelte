@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { format, formatDuration, intervalToDuration, parseISO } from 'date-fns';
+  import { format, parseISO } from 'date-fns';
 
   const dateFormat = 'MMM y';
   export let from: string;
