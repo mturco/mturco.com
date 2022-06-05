@@ -6,6 +6,9 @@ body {
   font-family: var(--font-base);
   background-color: var(--color-background);
   color: var(--color-text);
+  transition-property: background-color, color;
+  transition-duration: 0.5s;
+  transition-timing-function: var(--ease-out-quart);
 }
 
 ::selection {
