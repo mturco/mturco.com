@@ -100,8 +100,9 @@
         <summary>Details</summary>
         <ul>
           <li>
-            Defined the vision and roadmap for the frontend platform. Established code standards and
-            best practices. Led quarterly workshops to address tech debt and prototype new ideas.
+            Defined the vision and roadmap for the front end platform. Established code standards
+            and best practices. Led quarterly workshops to address tech debt and prototype new
+            ideas.
           </li>
           <li>
             Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
@@ -118,7 +119,7 @@
           </li>
           <li>
             Developed a state management library that greatly simplified building complex forms with
-            branching logic, multi-page flows, input validation, and inline editing.
+            conditional fields, multi-page flows, input validation, and inline editing.
           </li>
         </ul>
       </details>
@@ -180,7 +181,7 @@
   <Section title="Technologies">
     <div class="subsection">
       <SidebarHeading>Web platform</SidebarHeading>
-      <p>JS/TS, CSS, HTML, SVG</p>
+      <p>TypeScript, CSS, HTML, SVG</p>
     </div>
 
     <div class="subsection">
