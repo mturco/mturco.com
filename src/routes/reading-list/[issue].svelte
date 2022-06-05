@@ -16,7 +16,7 @@
 
 <script lang="ts">
   import Breadcrumb from '$lib/Breadcrumb.svelte';
-  import NavLink from '$lib/NavLink.svelte';
+  import LinkButton from '$lib/LinkButton.svelte';
   import { formatPostDate } from './_lib/utils';
   import type { IPost } from './_lib/types';
   import Post from './_lib/Post.svelte';
@@ -47,11 +47,11 @@
 
 <nav class="pagination">
   {#if prev}
-    <NavLink href="/reading-list/{prev}">← Prev</NavLink>
+    <LinkButton href="/reading-list/{prev}">← Prev</LinkButton>
   {/if}
   {#if next}
     <span class="right">
-      <NavLink href="/reading-list/{next}">Next →</NavLink>
+      <LinkButton href="/reading-list/{next}">Next →</LinkButton>
     </span>
   {/if}
 </nav>
