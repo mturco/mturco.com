@@ -1,7 +1,6 @@
 <script lang="ts">
   import Breadcrumb from '$lib/Breadcrumb.svelte';
   import Header from '$lib/Header.svelte';
-  import Link from '$lib/Link.svelte';
   import Section from './_lib/Section.svelte';
   import CompanyTitle from './_lib/CompanyTitle.svelte';
   import JobTitle from './_lib/JobTitle.svelte';
@@ -67,9 +66,11 @@
     <ul class="contact">
       <li>Boulder, CO</li>
       <li class="slash">
-        <Link inheritColor external href="mailto:matt.turco@gmail.com">matt.turco@gmail.com</Link>
+        <a class="inherit-color" rel="external" href="mailto:matt.turco@gmail.com"
+          >matt.turco@gmail.com</a
+        >
       </li>
-      <li class="slash"><Link inheritColor href="/">mturco.com</Link></li>
+      <li class="slash"><a class="inherit-color" href="/">mturco.com</a></li>
     </ul>
   </header>
 
@@ -105,9 +106,8 @@
             ideas.
           </li>
           <li>
-            Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
-            technologies, and led group code review sessions. Established a strong engineering team
-            culture.
+            Compiled <a href="/reading-list">weekly reading lists</a>, presented new technologies,
+            and led group code review sessions. Established a strong engineering team culture.
           </li>
           <li>
             Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
@@ -138,10 +138,10 @@
         <ul>
           <li>
             Created the charting library that renders all of Gallup&apos;s line chart graphics using
-            JavaScript and SVG. Built an <Link
-              external
+            JavaScript and SVG. Built an <a
+              rel="external"
               href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
-              >interactive data visualization</Link
+              >interactive data visualization</a
             > on top of it.
           </li>
           <li>
@@ -213,8 +213,8 @@
   <!-- <Section title="Talks">
     <div class="subsection">
       <p class="nowrap">
-        <Link external href="https://cross-component-communication.mturco.com/"
-          >Cross Component Communication</Link
+        <a rel="external" href="https://cross-component-communication.mturco.com/"
+          >Cross Component Communication</a
         >
         <br />
         React NYC &middot; 2020
@@ -307,6 +307,10 @@
       margin: 0;
       padding: 0;
     }
+  }
+
+  .inherit-color {
+    color: inherit;
   }
 
   .slash::before {

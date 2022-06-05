@@ -1,6 +1,5 @@
 <script lang="ts">
   import { getContext } from 'svelte';
-  import Link from './Link.svelte';
   import { breadcrumbsContext } from './context';
 
   const { breadcrumbs } = getContext(breadcrumbsContext);
@@ -12,7 +11,7 @@
       {#each Array.from($breadcrumbs.values()) as { title, href }, index}
         {#if index < $breadcrumbs.size - 1}
           <li>
-            <Link {href}>{title}</Link>
+            <a {href}>{title}</a>
           </li>
         {:else}
           <li class="current">

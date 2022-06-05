@@ -1,7 +1,6 @@
 <script lang="ts">
   import Breadcrumb from '$lib/Breadcrumb.svelte';
   import Header from '$lib/Header.svelte';
-  import Link from '$lib/Link.svelte';
   import Section from './_lib2/Section.svelte';
   import TimeSpan from './_lib2/TimeSpan.svelte';
   import CompanyTitle from './_lib/CompanyTitle.svelte';
@@ -48,10 +47,12 @@
 
     <ul class="contact">
       <li>
-        <Link inheritColor external href="mailto:matt.turco@gmail.com">matt.turco@gmail.com</Link>
+        <a class="inherit-color" rel="external" href="mailto:matt.turco@gmail.com"
+          >matt.turco@gmail.com</a
+        >
       </li>
-      <li><Link inheritColor external href="tel:4026305866">(402) 630-5866</Link></li>
-      <li><Link inheritColor href="/">mturco.com</Link></li>
+      <li><a class="inherit-color" rel="external" href="tel:4026305866">(402) 630-5866</a></li>
+      <li><a class="inherit-color" href="/">mturco.com</a></li>
     </ul>
   </header>
 
@@ -84,9 +85,8 @@
           best practices. Led quarterly workshops to address tech debt and prototype new ideas.
         </li>
         <li>
-          Compiled <Link href="/reading-list">weekly reading lists</Link>, presented new
-          technologies, and led group code review sessions. Established a strong engineering team
-          culture.
+          Compiled <a href="/reading-list">weekly reading lists</a>, presented new technologies, and
+          led group code review sessions. Established a strong engineering team culture.
         </li>
         <li>
           Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered role
@@ -114,10 +114,10 @@
       <ul>
         <li>
           Created the charting library that renders all of Gallup&apos;s line chart graphics using
-          JavaScript and SVG. Built an <Link
-            external
+          JavaScript and SVG. Built an <a
+            rel="external"
             href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
-            >interactive data visualization</Link
+            >interactive data visualization</a
           > on top of it.
         </li>
         <li>
@@ -267,6 +267,10 @@
         display: none;
       }
     }
+  }
+
+  .inherit-color {
+    color: inherit;
   }
 
   .sidebar-bg {

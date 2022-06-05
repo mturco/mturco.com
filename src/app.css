@@ -11,6 +11,17 @@ body {
   transition-timing-function: var(--ease-out-quart);
 }
 
+a {
+  color: var(--color-primary);
+  text-decoration-color: transparent;
+  text-underline-offset: 0.1em;
+  transition: text-decoration-color 0.2s ease-out;
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
 ::selection {
   text-shadow: none;
   background-color: var(--color-highlight);

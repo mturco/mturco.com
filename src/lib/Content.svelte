@@ -45,19 +45,6 @@
     margin: 0.875em 0;
   }
 
-  div :global(a) {
-    color: var(--color-primary);
-    text-decoration-color: transparent;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.15em;
-    transition: text-decoration-color 0.2s ease-out;
-  }
-
-  div :global(a:hover),
-  div :global(a:focus) {
-    text-decoration-color: currentColor;
-  }
-
   div :global(ul) {
     margin: 1em 0;
     padding: 0 0 0 2em;
