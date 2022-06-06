@@ -92,7 +92,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 1rem;
+    padding: 16px;
   }
 
   main {
