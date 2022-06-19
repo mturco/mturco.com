@@ -29,7 +29,7 @@
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
     "postcss-nesting": "^10.1.8",
-    "prettier": "^2.6.2",
+    "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
     "pretty-quick": "^3.1.1",
     "svelte": "^3.48.0",
