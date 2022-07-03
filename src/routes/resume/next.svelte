@@ -166,12 +166,12 @@
 
     <div class="subsection">
       <SidebarHeading>App frameworks</SidebarHeading>
-      <p>Next, SvelteKit, Astro, Nuxt, CRA</p>
+      <p>Next, SvelteKit, Astro, Nuxt</p>
     </div>
 
     <div class="subsection">
       <SidebarHeading>Testing</SidebarHeading>
-      <p>Jest, React Testing Library, Cypress, Chromatic, Lighthouse</p>
+      <p>React Testing Library, Cypress, Chromatic, Lighthouse</p>
     </div>
 
     <div class="subsection">
@@ -242,9 +242,9 @@
   }
 
   .name {
-    font: 800 3rem var(--font-name);
+    font: 800 2.5rem var(--font-name);
     letter-spacing: 0.03em;
-    margin: 0 0 2rem;
+    margin: 0.5rem 0 2.5rem;
     line-height: 1;
     color: var(--color-primary);
   }

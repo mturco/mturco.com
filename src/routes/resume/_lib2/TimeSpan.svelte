@@ -8,7 +8,7 @@
   $: fromDate = parseISO(from);
   $: fromString = format(fromDate, dateFormat);
   $: toDate = to ? parseISO(to) : new Date();
-  $: toString = to ? format(toDate, dateFormat) : 'now';
+  $: toString = to ? format(toDate, dateFormat) : 'present';
 </script>
 
 <div>{fromString}–{toString}</div>
@@ -17,7 +17,7 @@
   div {
     color: var(--color-text-lc);
     margin-bottom: 0.5rem;
-    font-size: 0.875em;
+    font-size: 1rem;
 
     @media print, (min-width: 32rem) and (max-width: 50rem), (min-width: 60rem) {
       margin-bottom: 0;
@@ -26,14 +26,10 @@
 
   div::before {
     @media print, (min-width: 32rem) and (max-width: 50rem), (min-width: 60rem) {
-      content: '';
-      display: inline-flex;
-      vertical-align: middle;
-      margin: 0 0.375rem 0 1.125rem;
-      transform: rotateZ(30deg);
-      height: 1.375rem;
-      border-left: 2px solid var(--color-primary);
-      transform-origin: top;
+      content: '—';
+      font-weight: 700;
+      margin: 0 0.25rem;
+      color: var(--color-primary);
     }
   }
 </style>
