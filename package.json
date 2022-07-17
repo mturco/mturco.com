@@ -25,7 +25,7 @@
     "focus-visible": "^5.2.0",
     "gray-matter": "^4.0.3",
     "husky": "^8.0.1",
-    "marked": "^4.0.16",
+    "marked": "^4.0.18",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
     "postcss-nesting": "^10.1.8",
