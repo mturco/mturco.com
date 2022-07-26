@@ -12,6 +12,9 @@
 
 <style lang="postcss">
   a {
+    --anim-duration: 0.5s;
+    --anim-easing: var(--ease-out-quint);
+
     color: var(--color-text);
     padding: 0.625rem;
     display: inline-flex;
@@ -20,7 +23,8 @@
     margin: 0.75rem;
     border: 2px solid var(--color-divider-lc);
     border-radius: 3.25rem;
-    transition: border-color 0.5s var(--ease-out-quint), max-width 0.5s var(--ease-out-quint);
+    transition: border-color var(--anim-duration) var(--anim-easing),
+      max-width var(--anim-duration) var(--anim-easing);
     text-decoration: none;
     overflow: hidden;
     max-width: 3.25rem;
@@ -44,7 +48,7 @@
     margin-left: 0.5rem;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.5s var(--ease-out-quint);
+    transition: opacity var(--anim-duration) var(--anim-easing);
   }
 
   a :global(svg) {
