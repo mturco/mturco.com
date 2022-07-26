@@ -2,7 +2,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 
 import { getPost, getPreviousPostId, getNextPostId } from './_lib/utils';
 
-export const get: RequestHandler = ({ params }) => {
+export const GET: RequestHandler = ({ params }) => {
   const id = Number(params.issue);
   const post = getPost(id);
   if (!post) return;
