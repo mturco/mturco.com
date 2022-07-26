@@ -16,12 +16,7 @@
 <style lang="postcss">
   div {
     color: var(--color-text-lc);
-    margin-bottom: 0.5rem;
     font-size: 1rem;
-
-    @media print, (min-width: 32rem) {
-      margin-bottom: 0;
-    }
   }
 
   div::before {

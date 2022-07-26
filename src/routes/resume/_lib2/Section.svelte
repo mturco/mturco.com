@@ -1,8 +1,9 @@
 <script lang="ts">
   export let title: string;
+  export let className: string = undefined;
 </script>
 
-<section style="--grid-area: {title.replace(' ', '-').toLowerCase()}">
+<section style="--grid-area: {title.replace(' ', '-').toLowerCase()}" class={className}>
   <h1>{title}</h1>
 
   <slot />

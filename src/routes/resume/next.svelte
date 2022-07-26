@@ -4,7 +4,7 @@
   import Header from '$lib/Header.svelte';
   import Section from './_lib2/Section.svelte';
   import TimeSpan from './_lib2/TimeSpan.svelte';
-  import CompanyTitle from './_lib/CompanyTitle.svelte';
+  import ExperienceItem from './_lib2/ExperienceItem.svelte';
   import JobTitle from './_lib/JobTitle.svelte';
   import SidebarHeading from './_lib/SidebarHeading.svelte';
 
@@ -50,8 +50,7 @@
   <div class="sidebar-bg" />
   <header>
     <h1 class="name">Matt Turco</h1>
-
-    <p class="tagline">Software Engineer in Boulder</p>
+    <p class="tagline">Software Engineer in Boulder, CO</p>
 
     <ul class="contact">
       <li>
@@ -66,99 +65,104 @@
     </ul>
   </header>
 
-  <Section title="Experience">
-    <div class="subsection">
-      <CompanyTitle>Google</CompanyTitle>
-
-      <div class="role">
+  <Section title="Experience" className="content">
+    <ExperienceItem company="Google" placeholder>
+      <div class="role" slot="roles">
         <JobTitle>Senior Software Engineer</JobTitle>
         <TimeSpan from="2021-08" />
       </div>
-    </div>
+    </ExperienceItem>
 
-    <div class="subsection">
-      <CompanyTitle>Namely</CompanyTitle>
+    <ExperienceItem company="Namely" open={printing}>
+      <div slot="roles">
+        <div class="role">
+          <JobTitle>Senior Software Engineer, Tech Lead</JobTitle>
+          <TimeSpan from="2019-03" to="2021-08" />
+        </div>
 
-      <div class="role">
-        <JobTitle>Senior Software Engineer, Tech Lead</JobTitle>
-        <TimeSpan from="2019-03" to="2021-08" />
+        <div class="role">
+          <JobTitle>Software Engineer</JobTitle>
+          <TimeSpan from="2018-05" to="2019-03" />
+        </div>
       </div>
 
-      <div class="role">
-        <JobTitle>Software Engineer</JobTitle>
-        <TimeSpan from="2018-05" to="2019-03" />
+      <div slot="content">
+        <ul>
+          <li>
+            Defined the vision and roadmap for the front end platform. Established code standards
+            and best practices. Led quarterly workshops to address tech debt and prototype new
+            ideas.
+          </li>
+          <li>
+            Compiled <a href="/reading-list">weekly reading lists</a>, presented new technologies,
+            and led group code review sessions. Established a strong engineering team culture.
+          </li>
+          <li>
+            Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
+            role and career advice, and created opportunities for growth.
+          </li>
+          <li>
+            Built design system components, focusing on composability and accessibility. Emphasized
+            the importance of semantic and predictable component APIs.
+          </li>
+          <li>
+            Developed a state management library that greatly simplified building complex forms with
+            conditional fields, multi-page flows, input validation, and inline editing.
+          </li>
+        </ul>
+      </div>
+    </ExperienceItem>
+
+    <ExperienceItem company="Gallup" open={printing}>
+      <div slot="roles">
+        <div class="role">
+          <JobTitle>Front End Engineer</JobTitle>
+          <TimeSpan from="2015-02" to="2018-04" />
+        </div>
       </div>
 
-      <ul>
-        <li>
-          Defined the vision and roadmap for the front end platform. Established code standards and
-          best practices. Led quarterly workshops to address tech debt and prototype new ideas.
-        </li>
-        <li>
-          Compiled <a href="/reading-list">weekly reading lists</a>, presented new technologies, and
-          led group code review sessions. Established a strong engineering team culture.
-        </li>
-        <li>
-          Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered role
-          and career advice, and created opportunities for growth.
-        </li>
-        <li>
-          Built design system components, focusing on composability and accessibility. Emphasized
-          the importance of semantic and predictable component APIs.
-        </li>
-        <li>
-          Developed a state management library that greatly simplified building complex forms with
-          conditional fields, multi-page flows, input validation, and inline editing.
-        </li>
-      </ul>
-    </div>
+      <div slot="content">
+        <ul>
+          <li>
+            Created the charting library that renders all of Gallup&apos;s line chart graphics using
+            JavaScript and SVG. Built an <a
+              rel="external"
+              href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
+              >interactive data visualization</a
+            > on top of it.
+          </li>
+          <li>
+            Developed a UI library and integrated it into Gallup's custom CMS to enable dynamic
+            content on marketing pages.
+          </li>
+          <li>
+            Improved keyboard navigation and screen reader accessibility for WCAG2 certification.
+          </li>
+        </ul>
+      </div>
+    </ExperienceItem>
 
-    <div class="subsection">
-      <CompanyTitle>Gallup</CompanyTitle>
-
-      <div class="role">
-        <JobTitle>Front End Engineer</JobTitle>
-        <TimeSpan from="2015-02" to="2018-04" />
+    <ExperienceItem company="Optimum Data" open={printing}>
+      <div slot="roles">
+        <div class="role">
+          <JobTitle>Software Engineer</JobTitle>
+          <TimeSpan from="2012-11" to="2015-02" />
+        </div>
       </div>
 
-      <ul>
-        <li>
-          Created the charting library that renders all of Gallup&apos;s line chart graphics using
-          JavaScript and SVG. Built an <a
-            rel="external"
-            href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
-            >interactive data visualization</a
-          > on top of it.
-        </li>
-        <li>
-          Developed a UI library and integrated it into Gallup's custom CMS to enable dynamic
-          content on marketing pages.
-        </li>
-        <li>
-          Improved keyboard navigation and screen reader accessibility for WCAG2 certification.
-        </li>
-      </ul>
-    </div>
-
-    <div class="subsection">
-      <CompanyTitle>Optimum Data</CompanyTitle>
-
-      <div class="role">
-        <JobTitle>Software Engineer</JobTitle>
-        <TimeSpan from="2012-11" to="2015-02" />
+      <div slot="content">
+        <ul>
+          <li>
+            Designed and developed a web app to surface critical order and inventory information
+            from Microsoft Dynamics NAV. Once rolled out, the app dramatically sped up order
+            fulfillment time.
+          </li>
+        </ul>
       </div>
-
-      <ul>
-        <li>
-          Designed and developed a web app to surface critical order and inventory information from
-          Microsoft Dynamics NAV. Once rolled out, the app dramatically sped up order fulfillment
-          time.
-        </li>
-      </ul>
-    </div>
+    </ExperienceItem>
   </Section>
 
-  <Section title="Technologies">
+  <Section title="Technologies" className="content">
     <div class="subsection">
       <SidebarHeading>Web platform</SidebarHeading>
       <p>TypeScript, CSS, HTML, SVG</p>
@@ -254,11 +258,7 @@
     flex-direction: column;
     align-items: baseline;
 
-    @media screen and (min-width: 60rem) {
-      padding: var(--section-item-gap) var(--section-item-gap) 1rem;
-    }
-
-    @media print {
+    @media print, (min-width: 60rem) {
       padding: var(--section-item-gap) var(--section-item-gap) 0;
     }
   }
@@ -312,7 +312,7 @@
   }
 
   .subsection:not(:last-child) {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .role {
@@ -323,7 +323,7 @@
     }
   }
 
-  .subsection {
+  :global(.content) {
     & p {
       margin: 0 0 0.375em;
 
