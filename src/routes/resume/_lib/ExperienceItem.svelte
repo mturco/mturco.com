@@ -1,6 +1,6 @@
 <script lang="ts">
   import Details from '$lib/Details.svelte';
-  import CompanyTitle from '../_lib/CompanyTitle.svelte';
+  import CompanyTitle from './CompanyTitle.svelte';
 
   export let company: string;
   export let open = false;

@@ -1,28 +1,20 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import Breadcrumb from '$lib/Breadcrumb.svelte';
   import Header from '$lib/Header.svelte';
-  import Section from './_lib/Section.svelte';
-  import CompanyTitle from './_lib/CompanyTitle.svelte';
+  import ExperienceItem from './_lib/ExperienceItem.svelte';
   import JobTitle from './_lib/JobTitle.svelte';
+  import Section from './_lib/Section.svelte';
   import SidebarHeading from './_lib/SidebarHeading.svelte';
   import TimeSpan from './_lib/TimeSpan.svelte';
 
-  function handleBeforePrint() {
-    Array.from(document.querySelectorAll('details')).forEach((el) => {
-      el.setAttribute('open', '');
-      el.querySelector('summary')?.setAttribute('hidden', '');
-    });
-  }
+  let printing = false;
 
-  function handleAfterPrint() {
-    Array.from(document.querySelectorAll('details')).forEach((el) => {
-      el.removeAttribute('open');
-      el.querySelector('summary')?.removeAttribute('hidden');
-    });
-  }
+  onMount(() => {
+    window.addEventListener('beforeprint', () => (printing = true));
+    window.addEventListener('afterprint', () => (printing = false));
+  });
 </script>
-
-<svelte:window on:beforeprint={handleBeforePrint} on:afterprint={handleAfterPrint} />
 
 <svelte:head>
   <title>Resume | Matt Turco</title>
@@ -35,19 +27,14 @@
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet"
   />
+
   <style>
     @media print {
       :root {
-        height: 0;
-        margin: 0.875cm 1cm;
-        padding: 0;
-        font-size: 9.5pt;
-        color-adjust: exact;
-      }
-
-      @page {
-        size: A4;
         margin: 0;
+        padding: 0;
+        font-size: 9.5pt !important;
+        color-adjust: exact;
       }
     }
   </style>
@@ -60,45 +47,46 @@
 </div>
 
 <main>
+  <div class="sidebar-bg" />
   <header>
     <h1 class="name">Matt Turco</h1>
+    <p class="tagline">Software Engineer in Boulder, CO</p>
 
     <ul class="contact">
-      <li>Boulder, CO</li>
-      <li class="slash">
+      <li>
         <a class="inherit-color" rel="external" href="mailto:matt.turco@gmail.com"
           >matt.turco@gmail.com</a
         >
       </li>
-      <li class="slash"><a class="inherit-color" href="/">mturco.com</a></li>
+      {#if printing}
+        <li><a class="inherit-color" rel="external" href="tel:4026305866">(402) 630-5866</a></li>
+        <li><a class="inherit-color" href="/">mturco.com</a></li>
+      {/if}
     </ul>
   </header>
 
-  <Section title="Experience" primary>
-    <div class="subsection">
-      <CompanyTitle>Google</CompanyTitle>
-
-      <div class="role">
+  <Section title="Experience" className="content">
+    <ExperienceItem company="Google" placeholder>
+      <div class="role" slot="roles">
         <JobTitle>Senior Software Engineer</JobTitle>
         <TimeSpan from="2021-08" />
       </div>
-    </div>
+    </ExperienceItem>
 
-    <div class="subsection">
-      <CompanyTitle>Namely</CompanyTitle>
+    <ExperienceItem company="Namely" open={printing}>
+      <div slot="roles">
+        <div class="role">
+          <JobTitle>Senior Software Engineer, Tech Lead</JobTitle>
+          <TimeSpan from="2019-03" to="2021-08" />
+        </div>
 
-      <div class="role">
-        <JobTitle>Senior Software Engineer, Tech Lead</JobTitle>
-        <TimeSpan from="2019-03" to="2021-08" />
+        <div class="role">
+          <JobTitle>Software Engineer</JobTitle>
+          <TimeSpan from="2018-05" to="2019-03" />
+        </div>
       </div>
 
-      <div class="role">
-        <JobTitle>Software Engineer</JobTitle>
-        <TimeSpan from="2018-05" to="2019-03" />
-      </div>
-
-      <details>
-        <summary>Details</summary>
+      <div slot="content">
         <ul>
           <li>
             Defined the vision and roadmap for the front end platform. Established code standards
@@ -122,19 +110,18 @@
             conditional fields, multi-page flows, input validation, and inline editing.
           </li>
         </ul>
-      </details>
-    </div>
+      </div>
+    </ExperienceItem>
 
-    <div class="subsection">
-      <CompanyTitle>Gallup</CompanyTitle>
-
-      <div class="role">
-        <JobTitle>Front End Engineer</JobTitle>
-        <TimeSpan from="2015-02" to="2018-04" />
+    <ExperienceItem company="Gallup" open={printing}>
+      <div slot="roles">
+        <div class="role">
+          <JobTitle>Front End Engineer</JobTitle>
+          <TimeSpan from="2015-02" to="2018-04" />
+        </div>
       </div>
 
-      <details>
-        <summary>Details</summary>
+      <div slot="content">
         <ul>
           <li>
             Created the charting library that renders all of Gallup&apos;s line chart graphics using
@@ -152,19 +139,18 @@
             Improved keyboard navigation and screen reader accessibility for WCAG2 certification.
           </li>
         </ul>
-      </details>
-    </div>
+      </div>
+    </ExperienceItem>
 
-    <div class="subsection">
-      <CompanyTitle>Optimum Data</CompanyTitle>
-
-      <div class="role">
-        <JobTitle>Software Engineer</JobTitle>
-        <TimeSpan from="2012-11" to="2015-02" />
+    <ExperienceItem company="Optimum Data" open={printing}>
+      <div slot="roles">
+        <div class="role">
+          <JobTitle>Software Engineer</JobTitle>
+          <TimeSpan from="2012-11" to="2015-02" />
+        </div>
       </div>
 
-      <details>
-        <summary>Details</summary>
+      <div slot="content">
         <ul>
           <li>
             Designed and developed a web app to surface critical order and inventory information
@@ -172,13 +158,11 @@
             fulfillment time.
           </li>
         </ul>
-      </details>
-    </div>
+      </div>
+    </ExperienceItem>
   </Section>
 
-  <div class="divider" aria-hidden="true" />
-
-  <Section title="Technologies">
+  <Section title="Technologies" className="content">
     <div class="subsection">
       <SidebarHeading>Web platform</SidebarHeading>
       <p>TypeScript, CSS, HTML, SVG</p>
@@ -196,12 +180,12 @@
 
     <div class="subsection">
       <SidebarHeading>App frameworks</SidebarHeading>
-      <p>Next, SvelteKit, Astro, Nuxt, CRA</p>
+      <p>Next, SvelteKit, Astro, Nuxt</p>
     </div>
 
     <div class="subsection">
       <SidebarHeading>Testing</SidebarHeading>
-      <p>Jest, React Testing Library, Cypress, Chromatic, Lighthouse</p>
+      <p>React Testing Library, Cypress, Chromatic, Lighthouse</p>
     </div>
 
     <div class="subsection">
@@ -209,25 +193,9 @@
       <p>Webpack, Babel, PostCSS, ESLint, Stylelint, Prettier</p>
     </div>
   </Section>
-
-  <!-- <Section title="Talks">
-    <div class="subsection">
-      <p class="nowrap">
-        <a rel="external" href="https://cross-component-communication.mturco.com/"
-          >Cross Component Communication</a
-        >
-        <br />
-        React NYC &middot; 2020
-      </p>
-    </div>
-  </Section> -->
 </main>
 
 <style lang="postcss">
-  :global(body) {
-    font-family: 'Lato', var(--font-base);
-  }
-
   .header {
     @media print {
       display: none;
@@ -235,60 +203,84 @@
   }
 
   main {
-    --grid-line-color: var(--color-divider-hc);
-    --section-item-gap: 1.5rem;
+    --grid-line-color: var(--color-primary);
+    --section-item-gap: 2.5rem;
+    --sidebar-bg-color: hsl(200, 75%, 95%);
+    --sidebar-bg-color-dark: hsl(200, 10%, 17%);
 
     display: grid;
     grid-template:
-      'header' max-content
-      'experience' max-content
-      'technologies' max-content
-      /* 'talks' max-content */
+      'header' auto
+      'experience' auto
+      'technologies' auto
       / 1fr;
-    gap: 2rem 2.5rem;
     align-content: start;
     line-height: 1.5;
     margin: 0 auto;
-    padding: 10vh 5vw;
-    max-width: 64rem;
+    padding: 4vh 1rem;
+    max-width: 40rem;
+    font-family: 'Lato', var(--font-base);
 
-    @media print, (min-width: 60rem) {
+    @media screen and (min-width: 60rem) {
       grid-template:
-        'header header header' max-content
-        'experience divider technologies' max-content
-        /* 'experience divider talks' max-content */
-        'experience divider .' max-content
-        / 1fr min-content 26ch;
+        'header header' max-content
+        'experience technologies' max-content
+        / 1fr 20rem;
+      max-width: 64rem;
     }
 
     @media print {
-      padding: 0;
-      height: calc(11in - 1.5cm);
+      grid-template:
+        'header experience' max-content
+        'technologies experience' 1fr
+        / 20rem 1fr;
+      max-width: 64rem;
     }
+
+    @media print {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      --sidebar-bg-color: var(--sidebar-bg-color-dark);
+    }
+  }
+
+  :global(.theme-dark) main {
+    --sidebar-bg-color: var(--sidebar-bg-color-dark);
   }
 
   header {
     grid-area: header;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: baseline;
 
     @media print, (min-width: 60rem) {
-      flex-direction: row;
+      padding: var(--section-item-gap) var(--section-item-gap) 0;
     }
   }
 
   .name {
     font: 800 2.5rem var(--font-name);
     letter-spacing: 0.03em;
-    margin: 0 0 1rem;
+    margin: 0.5rem 0 1rem;
     line-height: 1;
-    white-space: nowrap;
     color: var(--color-primary);
 
-    @media print, (min-width: 60rem) {
-      margin-bottom: 0;
+    @media print {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .tagline {
+    font-weight: 700;
+    margin: 0;
+
+    @media print {
+      margin: 1rem 0;
     }
   }
 
@@ -297,15 +289,13 @@
     padding: 0;
     margin: 0;
 
-    @media print, (min-width: 38rem) {
-      display: inline-flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-    }
-
     & li {
       margin: 0;
       padding: 0;
+
+      &::before {
+        display: none;
+      }
     }
   }
 
@@ -313,75 +303,63 @@
     color: inherit;
   }
 
-  .slash::before {
-    content: '';
-
-    @media print, (min-width: 38rem) {
-      content: '';
-      display: inline-flex;
-      vertical-align: middle;
-      margin: 0 0.5rem 0 1.25rem;
-      transform: rotateZ(30deg);
-      height: 1.375rem;
-      border-left: 2px solid var(--color-primary);
-      transform-origin: top;
-    }
-  }
-
-  .divider {
-    grid-area: divider;
-    display: none;
-    border-left: 2px solid var(--color-divider-lc);
-
-    @media print, (min-width: 60rem) {
-      display: block;
+  .sidebar-bg {
+    @media print {
+      grid-row: 1 / -1;
+      grid-column: 1 / 2;
+      background-color: var(--sidebar-bg-color);
     }
   }
 
   .subsection:not(:last-child) {
-    margin-bottom: var(--section-item-gap);
+    margin-bottom: 1.25rem;
   }
 
   .role {
     align-items: baseline;
 
-    @media print, (min-width: 38rem) {
+    @media print, (min-width: 32rem) {
       display: flex;
     }
   }
 
-  p {
-    margin: 0;
+  :global(.content) {
+    & p {
+      margin: 0 0 0.375em;
 
-    &:not(:last-child) {
-      margin-bottom: 0.375em;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-  }
 
-  ul {
-    padding-left: 1.5rem;
-    margin: 0.5rem 0 0;
-    list-style-type: circle;
-  }
-
-  li {
-    margin-bottom: 0.75em;
-
-    &:last-child {
-      margin-bottom: 0;
+    & ul {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0 0;
+      list-style-type: circle;
     }
-  }
 
-  details {
-    @media print {
-      display: block;
+    & li {
+      margin-bottom: 0.75em;
+      position: relative;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::marker {
+        content: '';
+        display: none;
+      }
+
+      &::before {
+        content: '❯';
+        color: var(--color-primary);
+        position: absolute;
+        font-size: 0.875em;
+        line-height: 1.5rem;
+        left: -1rem;
+      }
     }
-  }
-
-  summary {
-    cursor: pointer;
-    user-select: none;
-    color: var(--color-primary);
   }
 
   :global([hidden]) {
