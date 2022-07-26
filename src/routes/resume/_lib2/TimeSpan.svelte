@@ -19,13 +19,13 @@
     margin-bottom: 0.5rem;
     font-size: 1rem;
 
-    @media print, (min-width: 32rem) and (max-width: 50rem), (min-width: 60rem) {
+    @media print, (min-width: 32rem) {
       margin-bottom: 0;
     }
   }
 
   div::before {
-    @media print, (min-width: 32rem) and (max-width: 50rem), (min-width: 60rem) {
+    @media print, (min-width: 32rem) {
       content: '—';
       font-weight: 700;
       margin: 0 0.25rem;

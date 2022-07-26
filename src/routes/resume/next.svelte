@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import Breadcrumb from '$lib/Breadcrumb.svelte';
   import Header from '$lib/Header.svelte';
   import Section from './_lib2/Section.svelte';
@@ -6,6 +7,13 @@
   import CompanyTitle from './_lib/CompanyTitle.svelte';
   import JobTitle from './_lib/JobTitle.svelte';
   import SidebarHeading from './_lib/SidebarHeading.svelte';
+
+  let printing = false;
+
+  onMount(() => {
+    window.addEventListener('beforeprint', () => (printing = true));
+    window.addEventListener('afterprint', () => (printing = false));
+  });
 </script>
 
 <svelte:head>
@@ -51,8 +59,10 @@
           >matt.turco@gmail.com</a
         >
       </li>
-      <li><a class="inherit-color" rel="external" href="tel:4026305866">(402) 630-5866</a></li>
-      <li><a class="inherit-color" href="/">mturco.com</a></li>
+      {#if printing}
+        <li><a class="inherit-color" rel="external" href="tel:4026305866">(402) 630-5866</a></li>
+        <li><a class="inherit-color" href="/">mturco.com</a></li>
+      {/if}
     </ul>
   </header>
 
@@ -207,7 +217,15 @@
     max-width: 40rem;
     font-family: 'Lato', var(--font-base);
 
-    @media print, (min-width: 50rem) {
+    @media screen and (min-width: 60rem) {
+      grid-template:
+        'header header' max-content
+        'experience technologies' max-content
+        / 1fr 20rem;
+      max-width: 64rem;
+    }
+
+    @media print {
       grid-template:
         'header experience' max-content
         'technologies experience' 1fr
@@ -236,7 +254,11 @@
     flex-direction: column;
     align-items: baseline;
 
-    @media print, (min-width: 50rem) {
+    @media screen and (min-width: 60rem) {
+      padding: var(--section-item-gap) var(--section-item-gap) 1rem;
+    }
+
+    @media print {
       padding: var(--section-item-gap) var(--section-item-gap) 0;
     }
   }
@@ -244,14 +266,22 @@
   .name {
     font: 800 2.5rem var(--font-name);
     letter-spacing: 0.03em;
-    margin: 0.5rem 0 2.5rem;
+    margin: 0.5rem 0 1rem;
     line-height: 1;
     color: var(--color-primary);
+
+    @media print {
+      margin-bottom: 2.5rem;
+    }
   }
 
   .tagline {
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin: 0;
+
+    @media print {
+      margin: 1rem 0;
+    }
   }
 
   .contact {
@@ -274,7 +304,7 @@
   }
 
   .sidebar-bg {
-    @media print, (min-width: 50rem) {
+    @media print {
       grid-row: 1 / -1;
       grid-column: 1 / 2;
       background-color: var(--sidebar-bg-color);
@@ -288,45 +318,47 @@
   .role {
     align-items: baseline;
 
-    @media print, (min-width: 32rem) and (max-width: 50rem), (min-width: 60rem) {
+    @media print, (min-width: 32rem) {
       display: flex;
     }
   }
 
-  p {
-    margin: 0 0 0.375em;
+  .subsection {
+    & p {
+      margin: 0 0 0.375em;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  ul {
-    padding-left: 1.5rem;
-    margin: 0.5rem 0 0;
-    list-style-type: circle;
-  }
-
-  li {
-    margin-bottom: 0.75em;
-    position: relative;
-
-    &:last-child {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
-    &::marker {
-      content: '';
-      display: none;
+    & ul {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0 0;
+      list-style-type: circle;
     }
 
-    &::before {
-      content: '❯';
-      color: var(--color-primary);
-      position: absolute;
-      font-size: 0.875em;
-      line-height: 1.5rem;
-      left: -1rem;
+    & li {
+      margin-bottom: 0.75em;
+      position: relative;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::marker {
+        content: '';
+        display: none;
+      }
+
+      &::before {
+        content: '❯';
+        color: var(--color-primary);
+        position: absolute;
+        font-size: 0.875em;
+        line-height: 1.5rem;
+        left: -1rem;
+      }
     }
   }
 

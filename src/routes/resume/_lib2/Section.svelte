@@ -13,7 +13,7 @@
     grid-area: var(--grid-area);
     margin-top: 2rem;
 
-    @media print, (min-width: 50rem) {
+    @media print, (min-width: 60rem) {
       padding: var(--section-item-gap);
       margin-top: 0;
     }
