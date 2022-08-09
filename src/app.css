@@ -3,7 +3,6 @@
 }
 
 body {
-  font-family: var(--font-base);
   background-color: var(--color-background);
   color: var(--color-text);
   transition-property: background-color, color;
