@@ -27,13 +27,13 @@ a {
   background-color: var(--color-highlight);
 }
 
-[data-focus-visible-added] {
-  outline: 2px solid var(--color-focus-ring);
-  outline-offset: 1px;
+:focus {
+  outline: none;
 }
 
-[data-js-focus-visible] :focus:not([data-focus-visible-added]) {
-  outline: none;
+:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 1px;
 }
 
 @media (prefers-reduced-motion: reduce) {

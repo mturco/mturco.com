@@ -1,6 +1,5 @@
 <script lang="ts">
   import { setContext } from 'svelte';
-  import 'focus-visible';
   import { applyThemePreference } from '$lib/theme';
   import '../normalize.css';
   import '../variables.css';
