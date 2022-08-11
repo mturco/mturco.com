@@ -21,9 +21,10 @@
   import GithubIcon from './_index/GithubIcon.svelte';
   import LinkedinIcon from './_index/LinkedinIcon.svelte';
   import ResumeIcon from './_index/ResumeIcon.svelte';
+  import ReadingListIcon from './_index/ReadingListIcon.svelte';
   import TwitterIcon from './_index/TwitterIcon.svelte';
+  import PageLink from './_index/PageLink.svelte';
   import ProfileLink from './_index/ProfileLink.svelte';
-  import CodepenIcon from './_index/CodepenIcon.svelte';
   import Section from './_index/Section.svelte';
   import PostPreview from './reading-list/_lib/PostPreview.svelte';
 
@@ -48,15 +49,10 @@
     <h2>software engineer <span class="mobile-break">&amp; design enthusiast</span></h2>
   </header>
 
-  <div class="links">
+  <div class="profile-links">
     <ProfileLink external href="https://github.com/mturco">
       <GithubIcon slot="icon" />
       <span slot="label">GitHub</span>
-    </ProfileLink>
-
-    <ProfileLink external href="https://codepen.io/mturco">
-      <CodepenIcon slot="icon" />
-      <span slot="label">CodePen</span>
     </ProfileLink>
 
     <ProfileLink external href="https://twitter.com/matt_turco">
@@ -73,14 +69,25 @@
       <EmailIcon slot="icon" />
       <span slot="label">Email</span>
     </ProfileLink>
-
-    <ProfileLink href="/resume">
-      <ResumeIcon slot="icon" />
-      <span slot="label">Resume</span>
-    </ProfileLink>
   </div>
 
-  <div class="recent" hidden>
+  <div class="section-container">
+    <Section title="Pages">
+      <div class="page-links">
+        <PageLink href="/resume">
+          <ResumeIcon slot="icon" />
+          <span slot="label">Resume</span>
+        </PageLink>
+
+        <PageLink href="/reading-list">
+          <ReadingListIcon slot="icon" />
+          <span slot="label">Reading List</span>
+        </PageLink>
+      </div>
+    </Section>
+  </div>
+
+  <div class="section-container" hidden>
     <Section title="Recent Posts">
       <PostPreview post={latestPost} highlight tag="Reading List" />
     </Section>
@@ -117,6 +124,7 @@
     text-transform: lowercase;
     line-height: 1.5;
     color: var(--color-text-lc);
+    margin: 1rem 0 2rem;
   }
 
   .mobile-break {
@@ -127,13 +135,19 @@
     }
   }
 
-  .links {
+  .profile-links {
     display: flex;
     flex-wrap: wrap;
-    margin: 2rem -0.75rem -0.75rem;
+    margin: 0 -0.5rem 0rem;
   }
 
-  .recent {
-    margin-top: 11rem;
+  .section-container {
+    margin-top: 5rem;
+  }
+
+  .page-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.75rem;
   }
 </style>

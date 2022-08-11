@@ -14,20 +14,21 @@
   a {
     --anim-duration: 0.5s;
     --anim-easing: var(--ease-out-quint);
+    --size: 3rem;
 
     color: var(--color-text);
-    padding: 0.625rem;
+    padding: 0.5rem;
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 0.75rem;
+    margin: 0.5rem;
     border: 2px solid var(--color-divider-lc);
     border-radius: 3.25rem;
     transition: border-color var(--anim-duration) var(--anim-easing),
       max-width var(--anim-duration) var(--anim-easing);
     text-decoration: none;
     overflow: hidden;
-    max-width: 3.25rem;
+    max-width: var(--size);
 
     &:hover {
       border-color: var(--color-primary);
@@ -35,7 +36,7 @@
 
     &:hover,
     &:focus {
-      max-width: calc(3.25rem + 0.5rem + var(--label-width));
+      max-width: calc(var(--size) + 0.5rem + var(--label-width));
     }
 
     &:hover span,
