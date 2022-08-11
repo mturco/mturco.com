@@ -3,7 +3,7 @@
   import Breadcrumb from '$lib/Breadcrumb.svelte';
   import Header from '$lib/Header.svelte';
   import ExperienceItem from './_lib/ExperienceItem.svelte';
-  import JobTitle from './_lib/JobTitle.svelte';
+  import RoleTitle from './_lib/RoleTitle.svelte';
   import Section from './_lib/Section.svelte';
   import SidebarHeading from './_lib/SidebarHeading.svelte';
   import TimeSpan from './_lib/TimeSpan.svelte';
@@ -67,21 +67,23 @@
 
   <Section title="Experience" className="content">
     <ExperienceItem company="Google" placeholder>
-      <div class="role" slot="roles">
-        <JobTitle>Senior Software Engineer</JobTitle>
-        <TimeSpan from="2021-08" />
+      <div slot="roles">
+        <div class="role">
+          <RoleTitle>Senior Software Engineer</RoleTitle>
+          <TimeSpan from="2021-08" />
+        </div>
       </div>
     </ExperienceItem>
 
     <ExperienceItem company="Namely" open={printing}>
       <div slot="roles">
         <div class="role">
-          <JobTitle>Senior Software Engineer, Tech Lead</JobTitle>
+          <RoleTitle>Senior Software Engineer, Tech Lead</RoleTitle>
           <TimeSpan from="2019-03" to="2021-08" />
         </div>
 
         <div class="role">
-          <JobTitle>Software Engineer</JobTitle>
+          <RoleTitle>Software Engineer</RoleTitle>
           <TimeSpan from="2018-05" to="2019-03" />
         </div>
       </div>
@@ -116,7 +118,7 @@
     <ExperienceItem company="Gallup" open={printing}>
       <div slot="roles">
         <div class="role">
-          <JobTitle>Front End Engineer</JobTitle>
+          <RoleTitle>Front End Engineer</RoleTitle>
           <TimeSpan from="2015-02" to="2018-04" />
         </div>
       </div>
@@ -145,7 +147,7 @@
     <ExperienceItem company="Optimum Data" open={printing}>
       <div slot="roles">
         <div class="role">
-          <JobTitle>Software Engineer</JobTitle>
+          <RoleTitle>Software Engineer</RoleTitle>
           <TimeSpan from="2012-11" to="2015-02" />
         </div>
       </div>
