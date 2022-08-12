@@ -44,53 +44,55 @@
 </span>
 
 <main>
-  <header>
-    <h1>Matt Turco</h1>
-    <h2>software engineer <span class="mobile-break">&amp; design enthusiast</span></h2>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Matt Turco</h1>
+      <h2>software engineer <span class="mobile-break">&amp; design enthusiast</span></h2>
+    </header>
 
-  <div class="profile-links">
-    <ProfileLink external href="https://github.com/mturco">
-      <GithubIcon slot="icon" />
-      <span slot="label">GitHub</span>
-    </ProfileLink>
+    <div class="profile-links">
+      <ProfileLink external href="https://github.com/mturco">
+        <GithubIcon slot="icon" />
+        <span slot="label">GitHub</span>
+      </ProfileLink>
 
-    <ProfileLink external href="https://twitter.com/matt_turco">
-      <TwitterIcon slot="icon" />
-      <span slot="label">Twitter</span>
-    </ProfileLink>
+      <ProfileLink external href="https://twitter.com/matt_turco">
+        <TwitterIcon slot="icon" />
+        <span slot="label">Twitter</span>
+      </ProfileLink>
 
-    <ProfileLink external href="https://linkedin.com/in/mattturco">
-      <LinkedinIcon slot="icon" />
-      <span slot="label">LinkedIn</span>
-    </ProfileLink>
+      <ProfileLink external href="https://linkedin.com/in/mattturco">
+        <LinkedinIcon slot="icon" />
+        <span slot="label">LinkedIn</span>
+      </ProfileLink>
 
-    <ProfileLink external href="mailto:matt.turco@gmail.com">
-      <EmailIcon slot="icon" />
-      <span slot="label">Email</span>
-    </ProfileLink>
-  </div>
+      <ProfileLink external href="mailto:matt.turco@gmail.com">
+        <EmailIcon slot="icon" />
+        <span slot="label">Email</span>
+      </ProfileLink>
+    </div>
 
-  <div class="section-container">
-    <Section title="Pages">
-      <div class="page-links">
-        <PageLink href="/resume">
-          <ResumeIcon slot="icon" />
-          <span slot="label">Resume</span>
-        </PageLink>
+    <div class="section-container">
+      <Section title="Pages">
+        <div class="page-links">
+          <PageLink href="/resume">
+            <ResumeIcon slot="icon" />
+            <span slot="label">Resume</span>
+          </PageLink>
 
-        <PageLink href="/reading-list">
-          <ReadingListIcon slot="icon" />
-          <span slot="label">Reading List</span>
-        </PageLink>
-      </div>
-    </Section>
-  </div>
+          <PageLink href="/reading-list">
+            <ReadingListIcon slot="icon" />
+            <span slot="label">Reading List</span>
+          </PageLink>
+        </div>
+      </Section>
+    </div>
 
-  <div class="section-container" hidden>
-    <Section title="Recent Posts">
-      <PostPreview post={latestPost} highlight tag="Reading List" />
-    </Section>
+    <div class="section-container" hidden>
+      <Section title="Recent Posts">
+        <PostPreview post={latestPost} highlight tag="Reading List" />
+      </Section>
+    </div>
   </div>
 </main>
 
@@ -106,9 +108,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
     padding: 18vh 5vw;
     margin: 0 auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 50rem;
   }
 
