@@ -48,7 +48,12 @@
     margin: 0 -0.5rem 0.5rem;
 
     @media print, (min-width: 60rem) {
-      margin: 0 -1rem 0.5rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+
+    @media print {
+      margin-bottom: 0;
     }
   }
 

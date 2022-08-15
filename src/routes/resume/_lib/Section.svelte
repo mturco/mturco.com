@@ -21,14 +21,31 @@
   }
 
   h1 {
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 1.5rem 0;
     font-weight: 700;
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--grid-line-color);
     line-height: 1;
-    padding: 0 0 0.25rem 0;
-    border-bottom: 2px solid var(--grid-line-color);
+
+    &::after {
+      background: var(--color-primary);
+      border-radius: 4px;
+      content: '';
+      display: block;
+      height: 4px;
+      margin-top: 1rem;
+      width: 2rem;
+    }
+
+    @media print {
+      margin-bottom: 1.25rem;
+
+      &::after {
+        margin-top: 0.75rem;
+        height: 3px;
+      }
+    }
   }
 </style>

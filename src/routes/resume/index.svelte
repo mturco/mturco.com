@@ -66,102 +66,104 @@
   </header>
 
   <Section title="Experience" className="content">
-    <ExperienceItem company="Google" placeholder>
-      <div slot="roles">
-        <div class="role">
-          <RoleTitle>Senior Software Engineer</RoleTitle>
-          <TimeSpan from="2021-08" />
+    <div class="experience-container">
+      <ExperienceItem company="Google" placeholder>
+        <div slot="roles">
+          <div class="role">
+            <RoleTitle>Senior Software Engineer</RoleTitle>
+            <TimeSpan from="2021-08" />
+          </div>
         </div>
-      </div>
-    </ExperienceItem>
+      </ExperienceItem>
 
-    <ExperienceItem company="Namely" open={printing}>
-      <div slot="roles">
-        <div class="role">
-          <RoleTitle>Senior Software Engineer, Tech Lead</RoleTitle>
-          <TimeSpan from="2019-03" to="2021-08" />
+      <ExperienceItem company="Namely" open={printing}>
+        <div slot="roles">
+          <div class="role">
+            <RoleTitle>Senior Software Engineer, Tech Lead</RoleTitle>
+            <TimeSpan from="2019-03" to="2021-08" />
+          </div>
+
+          <div class="role">
+            <RoleTitle>Software Engineer</RoleTitle>
+            <TimeSpan from="2018-05" to="2019-03" />
+          </div>
         </div>
 
-        <div class="role">
-          <RoleTitle>Software Engineer</RoleTitle>
-          <TimeSpan from="2018-05" to="2019-03" />
+        <div slot="content">
+          <ul>
+            <li>
+              Defined the vision and roadmap for the front end platform. Established code standards
+              and best practices. Led quarterly workshops to address tech debt and prototype new
+              ideas.
+            </li>
+            <li>
+              Compiled <a href="/reading-list">weekly reading lists</a>, presented new technologies,
+              and led group code review sessions. Established a strong engineering team culture.
+            </li>
+            <li>
+              Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
+              role and career advice, and created opportunities for growth.
+            </li>
+            <li>
+              Built design system components, focusing on composability and accessibility.
+              Emphasized the importance of semantic and predictable component APIs.
+            </li>
+            <li>
+              Developed a state management library that greatly simplified building complex forms
+              with conditional fields, multi-page flows, input validation, and inline editing.
+            </li>
+          </ul>
         </div>
-      </div>
+      </ExperienceItem>
 
-      <div slot="content">
-        <ul>
-          <li>
-            Defined the vision and roadmap for the front end platform. Established code standards
-            and best practices. Led quarterly workshops to address tech debt and prototype new
-            ideas.
-          </li>
-          <li>
-            Compiled <a href="/reading-list">weekly reading lists</a>, presented new technologies,
-            and led group code review sessions. Established a strong engineering team culture.
-          </li>
-          <li>
-            Onboarded and mentored 4 engineers. Explained best practices, reviewed code, offered
-            role and career advice, and created opportunities for growth.
-          </li>
-          <li>
-            Built design system components, focusing on composability and accessibility. Emphasized
-            the importance of semantic and predictable component APIs.
-          </li>
-          <li>
-            Developed a state management library that greatly simplified building complex forms with
-            conditional fields, multi-page flows, input validation, and inline editing.
-          </li>
-        </ul>
-      </div>
-    </ExperienceItem>
-
-    <ExperienceItem company="Gallup" open={printing}>
-      <div slot="roles">
-        <div class="role">
-          <RoleTitle>Front End Engineer</RoleTitle>
-          <TimeSpan from="2015-02" to="2018-04" />
+      <ExperienceItem company="Gallup" open={printing}>
+        <div slot="roles">
+          <div class="role">
+            <RoleTitle>Front End Engineer</RoleTitle>
+            <TimeSpan from="2015-02" to="2018-04" />
+          </div>
         </div>
-      </div>
 
-      <div slot="content">
-        <ul>
-          <li>
-            Created the charting library that renders all of Gallup&apos;s line chart graphics using
-            JavaScript and SVG. Built an <a
-              rel="external"
-              href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
-              >interactive data visualization</a
-            > on top of it.
-          </li>
-          <li>
-            Developed a UI library and integrated it into Gallup's custom CMS to enable dynamic
-            content on marketing pages.
-          </li>
-          <li>
-            Improved keyboard navigation and screen reader accessibility for WCAG2 certification.
-          </li>
-        </ul>
-      </div>
-    </ExperienceItem>
-
-    <ExperienceItem company="Optimum Data" open={printing}>
-      <div slot="roles">
-        <div class="role">
-          <RoleTitle>Software Engineer</RoleTitle>
-          <TimeSpan from="2012-11" to="2015-02" />
+        <div slot="content">
+          <ul>
+            <li>
+              Created the charting library that renders all of Gallup&apos;s line chart graphics
+              using JavaScript and SVG. Built an <a
+                rel="external"
+                href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
+                >interactive data visualization</a
+              > on top of it.
+            </li>
+            <li>
+              Developed a UI library and integrated it into Gallup's custom CMS to enable dynamic
+              content on marketing pages.
+            </li>
+            <li>
+              Improved keyboard navigation and screen reader accessibility for WCAG2 certification.
+            </li>
+          </ul>
         </div>
-      </div>
+      </ExperienceItem>
 
-      <div slot="content">
-        <ul>
-          <li>
-            Designed and developed a web app to surface critical order and inventory information
-            from Microsoft Dynamics NAV. Once rolled out, the app dramatically sped up order
-            fulfillment time.
-          </li>
-        </ul>
-      </div>
-    </ExperienceItem>
+      <ExperienceItem company="Optimum Data" open={printing}>
+        <div slot="roles">
+          <div class="role">
+            <RoleTitle>Software Engineer</RoleTitle>
+            <TimeSpan from="2012-11" to="2015-02" />
+          </div>
+        </div>
+
+        <div slot="content">
+          <ul>
+            <li>
+              Designed and developed a web app to surface critical order and inventory information
+              from Microsoft Dynamics NAV. Once rolled out, the app dramatically sped up order
+              fulfillment time.
+            </li>
+          </ul>
+        </div>
+      </ExperienceItem>
+    </div>
   </Section>
 
   <Section title="Technologies" className="content">
@@ -207,8 +209,8 @@
   main {
     --grid-line-color: var(--color-primary);
     --section-item-gap: 2.5rem;
-    --sidebar-bg-color: hsl(200, 75%, 95%);
-    --sidebar-bg-color-dark: hsl(200, 10%, 17%);
+    --sidebar-bg-color: hsl(200, 100%, 95%);
+    --sidebar-bg-color-dark: hsl(200, 20%, 16%);
 
     display: grid;
     grid-template:
@@ -323,6 +325,10 @@
     @media print, (min-width: 32rem) {
       display: flex;
     }
+  }
+
+  .experience-container {
+    margin-top: -0.5rem;
   }
 
   :global(.content) {
