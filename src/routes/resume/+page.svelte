@@ -127,8 +127,8 @@
         <div slot="content">
           <ul>
             <li>
-              Created the charting library that renders all of Gallup&apos;s line chart graphics
-              using JavaScript and SVG. Built an <a
+              Created the charting library that rendered all of Gallup&apos;s line charts using
+              JavaScript and SVG. Built an <a
                 rel="external"
                 href="http://news.gallup.com/interactives/185273/presidential-job-approval-center.aspx"
                 >interactive data visualization</a
