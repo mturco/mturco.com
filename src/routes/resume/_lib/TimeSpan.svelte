@@ -3,7 +3,7 @@
 
   const dateFormat = 'MMM y';
   export let from: string;
-  export let to: string = '';
+  export let to = '';
 
   $: fromDate = parseISO(from);
   $: fromString = format(fromDate, dateFormat);

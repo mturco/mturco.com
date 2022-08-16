@@ -1,26 +1,8 @@
-<script context="module" lang="ts">
-  export async function load({ fetch }) {
-    const res = await fetch(`/reading-list/all.json`);
-    const { posts } = await res.json();
-    const [latest, ...previousPosts] = posts;
-
-    if (res.ok) {
-      return { props: { latest, previousPosts } };
-    }
-
-    return {
-      status: res.status,
-      error: new Error('Failed to load post'),
-    };
-  }
-</script>
-
 <script lang="ts">
-  import type { IPost } from './_lib/types';
   import PostPreview from './_lib/PostPreview.svelte';
+  import type { PageData } from './$types';
 
-  export let latest: IPost;
-  export let previousPosts: IPost[];
+  export let data: PageData;
 </script>
 
 <svelte:head>
@@ -42,13 +24,13 @@
   </header>
 
   <div class="latest">
-    <PostPreview post={latest} highlight size="large" tag="Most Recent" />
+    <PostPreview post={data.latest} highlight size="large" tag="Most Recent" />
   </div>
 
   <h2>Previous Reading Lists</h2>
 
   <div class="previous">
-    {#each previousPosts as post}
+    {#each data.previousPosts as post}
       <PostPreview {post} />
     {/each}
   </div>

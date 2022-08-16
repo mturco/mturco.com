@@ -1,18 +1,18 @@
-<script context="module" lang="ts">
-  if (typeof window !== 'undefined') {
-    if ((window as any).netlifyIdentity) {
-      (window as any).netlifyIdentity.on('init', (user: unknown) => {
-        if (!user) {
-          (window as any).netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
+<script lang="ts">
+  import netlifyIdentity from 'netlify-identity-widget';
+  import type { User } from 'netlify-identity-widget';
+
+  if (netlifyIdentity) {
+    netlifyIdentity.on('init', (user: User) => {
+      if (!user) {
+        netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
   }
 </script>
 
 <svelte:head>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <title>Login | Matt Turco</title>
 </svelte:head>

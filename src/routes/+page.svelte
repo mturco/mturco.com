@@ -1,20 +1,3 @@
-<script context="module" lang="ts">
-  export async function load({ fetch }) {
-    const res = await fetch(`/reading-list/all.json`);
-    const { posts } = await res.json();
-    const [latestPost] = posts;
-
-    if (res.ok) {
-      return { props: { latestPost } };
-    }
-
-    return {
-      status: res.status,
-      error: new Error('Failed to load post'),
-    };
-  }
-</script>
-
 <script lang="ts">
   import ThemeToggle from '$lib/ThemeToggle.svelte';
   import EmailIcon from './_index/EmailIcon.svelte';
@@ -27,8 +10,9 @@
   import ProfileLink from './_index/ProfileLink.svelte';
   import Section from './_index/Section.svelte';
   import PostPreview from './reading-list/_lib/PostPreview.svelte';
+  import type { PageData } from './$types';
 
-  export let latestPost;
+  export let data: PageData;
 </script>
 
 <svelte:head>
@@ -90,7 +74,7 @@
 
     <div class="section-container" hidden>
       <Section title="Recent Posts">
-        <PostPreview post={latestPost} highlight tag="Reading List" />
+        <PostPreview post={data.latestPost} highlight tag="Reading List" />
       </Section>
     </div>
   </div>

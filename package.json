@@ -11,21 +11,22 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.38",
-    "@sveltejs/kit": "1.0.0-next.401",
+    "@sveltejs/adapter-static": "1.0.0-next.39",
+    "@sveltejs/kit": "1.0.0-next.408",
     "@types/marked": "^4.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.31.0",
-    "@typescript-eslint/parser": "^5.31.0",
+    "@types/netlify-identity-widget": "^1.9.3",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
     "autoprefixer": "^10.4.8",
-    "cssnano": "^5.1.12",
+    "cssnano": "^5.1.13",
     "date-fns": "^2.29.1",
-    "eslint": "^8.20.0",
+    "eslint": "^8.22.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "gray-matter": "^4.0.3",
     "husky": "^8.0.1",
     "marked": "^4.0.18",
-    "postcss": "^8.4.14",
+    "postcss": "^8.4.16",
     "postcss-load-config": "^4.0.1",
     "postcss-nesting": "^10.1.10",
     "prettier": "^2.7.1",
@@ -35,8 +36,11 @@
     "svelte-preprocess": "^4.10.7",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4",
-    "vite": "^3.0.4"
+    "vite": "^3.0.7"
   },
   "type": "module",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "netlify-identity-widget": "^1.9.2"
+  }
 }
