@@ -19,7 +19,6 @@
       but occasionally general interest. Not all content is necessarily fresh—I share things as I
       find them!
     </p>
-
     <p>With that said, here's the most recent reading list. Enjoy!</p>
   </header>
 
@@ -38,15 +37,11 @@
 
 <style>
   h1 {
-    font-weight: 700;
-    font-size: 1.5em;
     margin: 0.5em 0;
   }
 
   h2 {
-    font-weight: 700;
     font-size: 0.875em;
-    margin: 0.5em 0;
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
