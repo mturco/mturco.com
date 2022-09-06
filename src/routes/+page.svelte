@@ -58,17 +58,21 @@
 
     <div class="section-container">
       <Section title="Pages">
-        <div class="page-links">
+        <ul class="page-links">
+          <li>
           <PageLink href="/resume">
             <ResumeIcon slot="icon" />
             <span slot="label">Resume</span>
           </PageLink>
+          </li>
 
+          <li>
           <PageLink href="/reading-list">
             <ReadingListIcon slot="icon" />
             <span slot="label">Reading List</span>
           </PageLink>
-        </div>
+          </li>
+        </ul>
       </Section>
     </div>
 
@@ -142,5 +146,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: -0.75rem;
+    list-style: none;
+    padding: 0;
   }
 </style>
