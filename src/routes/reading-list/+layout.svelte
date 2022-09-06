@@ -15,7 +15,7 @@
 
 <style lang="postcss">
   .wrapper {
-    --page-max-width: 45rem;
+    --page-max-width: var(--page-width-narrow);
   }
 
   .content {

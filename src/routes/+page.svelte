@@ -106,13 +106,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 50rem;
+    max-width: var(--page-width-narrow);
+    min-width: 20rem;
   }
 
   h1 {
     color: var(--color-primary);
     font: 800 3em var(--font-name);
-    margin: 0 0 0.5rem -0.1ch;
+    margin: -0.25em 0 0.5rem -0.1ch;
   }
 
   h2 {
