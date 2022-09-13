@@ -364,7 +364,7 @@
         color: var(--color-primary);
         position: absolute;
         font-size: 0.875em;
-        line-height: 1.5rem;
+        line-height: 1.5;
         left: -1rem;
       }
     }
