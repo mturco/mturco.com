@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     padding: 0 1rem;
-    height: 3.5rem;
+    height: 4.5rem;
     border-bottom: 1px solid var(--color-divider-lc);
   }
 
