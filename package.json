@@ -28,7 +28,7 @@
     "marked": "^4.0.18",
     "postcss": "^8.4.16",
     "postcss-load-config": "^4.0.1",
-    "postcss-nesting": "^10.1.10",
+    "postcss-nesting": "^11.1.0",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
     "pretty-quick": "^3.1.1",
