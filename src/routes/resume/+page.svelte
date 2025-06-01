@@ -8,7 +8,12 @@
   import SidebarHeading from './_lib/SidebarHeading.svelte';
   import TimeSpan from './_lib/TimeSpan.svelte';
 
+  const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+  const expand = params.get('expand') === '' || Boolean(params.get('expand'));
   let printing = false;
+  let expanded = printing;
+
+  $: expanded = expand || printing;
 
   onMount(() => {
     window.addEventListener('beforeprint', () => (printing = true));
@@ -76,7 +81,7 @@
         </div>
       </ExperienceItem>
 
-      <ExperienceItem company="Namely" open={printing}>
+      <ExperienceItem company="Namely" open={expanded}>
         <div slot="roles">
           <div class="role">
             <RoleTitle>Senior Software Engineer, Tech Lead</RoleTitle>
@@ -116,7 +121,7 @@
         </div>
       </ExperienceItem>
 
-      <ExperienceItem company="Gallup" open={printing}>
+      <ExperienceItem company="Gallup" open={expanded}>
         <div slot="roles">
           <div class="role">
             <RoleTitle>Front End Engineer</RoleTitle>
@@ -145,7 +150,7 @@
         </div>
       </ExperienceItem>
 
-      <ExperienceItem company="Optimum Data" open={printing}>
+      <ExperienceItem company="Optimum Data" open={expanded}>
         <div slot="roles">
           <div class="role">
             <RoleTitle>Software Engineer</RoleTitle>
