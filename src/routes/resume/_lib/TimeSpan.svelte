@@ -23,7 +23,7 @@
     @media print, (min-width: 32rem) {
       content: '—';
       font-weight: 700;
-      margin: 0 0.25rem;
+      margin: 0 0.375rem;
       color: var(--color-primary);
     }
   }

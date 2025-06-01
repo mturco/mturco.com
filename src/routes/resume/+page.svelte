@@ -55,13 +55,13 @@
   <div class="sidebar-bg" />
   <header>
     <h1 class="name">Matt Turco</h1>
-    <p class="tagline">Software Engineer in Boulder, CO</p>
+    <p class="tagline">Software Engineer in Boulder</p>
 
     <ul class="contact">
       <li>
-        <a class="inherit-color" rel="external" href="mailto:matt.turco@gmail.com"
-          >matt.turco@gmail.com</a
-        >
+        <a class="inherit-color" rel="external" href="mailto:matt.turco@gmail.com">
+          matt.turco@gmail.com
+        </a>
       </li>
       {#if printing}
         <li><a class="inherit-color" rel="external" href="tel:4026305866">(402) 630-5866</a></li>
