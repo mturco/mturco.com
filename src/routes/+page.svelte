@@ -1,11 +1,11 @@
 <script lang="ts">
   import ThemeToggle from '$lib/ThemeToggle.svelte';
+  import BasketballIcon from './_index/BasketballIcon.svelte';
   import EmailIcon from './_index/EmailIcon.svelte';
   import GithubIcon from './_index/GithubIcon.svelte';
   import LinkedinIcon from './_index/LinkedinIcon.svelte';
   import ResumeIcon from './_index/ResumeIcon.svelte';
   import ReadingListIcon from './_index/ReadingListIcon.svelte';
-  import TwitterIcon from './_index/TwitterIcon.svelte';
   import PageLink from './_index/PageLink.svelte';
   import ProfileLink from './_index/ProfileLink.svelte';
   import Section from './_index/Section.svelte';
@@ -40,11 +40,6 @@
         <span slot="label">GitHub</span>
       </ProfileLink>
 
-      <ProfileLink external href="https://twitter.com/matt_turco">
-        <TwitterIcon slot="icon" />
-        <span slot="label">Twitter</span>
-      </ProfileLink>
-
       <ProfileLink external href="https://linkedin.com/in/mattturco">
         <LinkedinIcon slot="icon" />
         <span slot="label">LinkedIn</span>
@@ -59,18 +54,25 @@
     <div class="section-container">
       <Section title="Pages">
         <ul class="page-links">
-          <li>
-          <PageLink href="/resume">
-            <ResumeIcon slot="icon" />
-            <span slot="label">Resume</span>
-          </PageLink>
+          <li hidden>
+            <PageLink href="/resume">
+              <ResumeIcon slot="icon" />
+              <span slot="label">Resume</span>
+            </PageLink>
           </li>
 
           <li>
-          <PageLink href="/reading-list">
-            <ReadingListIcon slot="icon" />
-            <span slot="label">Reading List</span>
-          </PageLink>
+            <PageLink href="/reading-list">
+              <ReadingListIcon slot="icon" />
+              <span slot="label">Reading List</span>
+            </PageLink>
+          </li>
+
+          <li>
+            <PageLink href="https://nba.mturco.com">
+              <BasketballIcon slot="icon" />
+              <span slot="label">NBA Playoffs</span>
+            </PageLink>
           </li>
         </ul>
       </Section>
@@ -113,7 +115,7 @@
   h1 {
     color: var(--color-primary);
     font: 800 3em var(--font-name);
-    margin: -0.25em 0 0.5rem -0.1ch;
+    margin: -0.25em 0 0.5rem;
   }
 
   h2 {

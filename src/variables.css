@@ -56,20 +56,22 @@
   --page-width-narrow: 45rem;
 }
 
-.theme-dark {
-  --color-primary: var(--dark-primary);
-  --color-accent: var(--dark-accent);
-  --color-background: var(--dark-background);
-  --color-background-alt: var(--dark-background-alt);
-  --color-divider-lc: var(--dark-divider-lc);
-  --color-divider-hc: var(--dark-divider-hc);
-  --color-text: var(--dark-text);
-  --color-text-lc: var(--dark-text-lc);
-  --color-text-hc: var(--dark-text-hc);
-  --color-focus-ring: var(--dark-focus-ring);
+@media screen {
+  .theme-dark {
+    --color-primary: var(--dark-primary);
+    --color-accent: var(--dark-accent);
+    --color-background: var(--dark-background);
+    --color-background-alt: var(--dark-background-alt);
+    --color-divider-lc: var(--dark-divider-lc);
+    --color-divider-hc: var(--dark-divider-hc);
+    --color-text: var(--dark-text);
+    --color-text-lc: var(--dark-text-lc);
+    --color-text-hc: var(--dark-text-hc);
+    --color-focus-ring: var(--dark-focus-ring);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
   :root:not(.theme-light) {
     --color-primary: var(--dark-primary);
     --color-accent: var(--dark-accent);
