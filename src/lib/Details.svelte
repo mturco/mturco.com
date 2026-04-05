@@ -1,13 +1,21 @@
 <script lang="ts">
-  export let open = false;
+  import type { Snippet } from 'svelte';
 
-  let el: HTMLDetailsElement;
-  let summary: HTMLElement;
-  let content: HTMLDivElement;
-  let detailsHeight: number;
+  interface Props {
+    open?: boolean;
+    summary: Snippet;
+    children: Snippet;
+  }
+
+  let { open = $bindable(false), summary: summarySnippet, children }: Props = $props();
+
+  let el = $state<HTMLDetailsElement>();
+  let summary = $state<HTMLElement>();
+  let content = $state<HTMLDivElement>();
+  let detailsHeight = $state<number>(0);
   let closing = false;
   let opening = false;
-  let animation: Animation;
+  let animation: Animation | null = null;
 
   const animationOptions: KeyframeAnimationOptions = {
     duration: 500,
@@ -15,6 +23,7 @@
   };
 
   function toggle(e: MouseEvent) {
+    if (!el) return;
     e.preventDefault();
     el.style.overflow = 'hidden';
 
@@ -28,6 +37,7 @@
   }
 
   function expand() {
+    if (!el || !summary || !content) return;
     opening = true;
     if (animation) animation.cancel();
 
@@ -40,6 +50,7 @@
   }
 
   function collapse() {
+    if (!el || !summary) return;
     closing = true;
     if (animation) animation.cancel();
 
@@ -52,6 +63,7 @@
   }
 
   function cleanup(isOpen: boolean) {
+    if (!el) return;
     open = isOpen;
     animation = null;
     closing = false;
@@ -62,8 +74,8 @@
 </script>
 
 <details {open} bind:this={el} bind:clientHeight={detailsHeight}>
-  <summary on:click={toggle} bind:this={summary}><slot name="summary" /></summary>
-  <div class="content" bind:this={content}><slot /></div>
+  <summary onclick={toggle} bind:this={summary}>{@render summarySnippet()}</summary>
+  <div class="content" bind:this={content}>{@render children()}</div>
 </details>
 
 <style lang="postcss">

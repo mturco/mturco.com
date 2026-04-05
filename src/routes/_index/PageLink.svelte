@@ -1,10 +1,18 @@
 <script lang="ts">
-  export let href: string;
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    href: string;
+    icon: Snippet;
+    label: Snippet;
+  }
+
+  let { href, icon, label }: Props = $props();
 </script>
 
 <a {href}>
-  <slot name="icon" />
-  <span><slot name="label" /></span>
+  {@render icon()}
+  <span>{@render label()}</span>
 </a>
 
 <style lang="postcss">

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { browser } from '$app/env';
+  import { browser } from '$app/environment';
   import { applyThemePreference, getThemePreference, saveThemePreference } from './theme';
   import type { Theme } from './theme';
 
@@ -9,9 +9,8 @@
     return matches ? 'dark' : 'light';
   }
 
-  let theme = getThemePreference() ?? getSystemPreference();
-  let altTheme: Theme;
-  $: altTheme = theme === 'light' ? 'dark' : 'light';
+  let theme = $state<Theme>(getThemePreference() ?? getSystemPreference());
+  let altTheme = $derived<Theme>(theme === 'light' ? 'dark' : 'light');
 
   function toggleTheme() {
     theme = altTheme;
@@ -20,7 +19,7 @@
   }
 </script>
 
-<button on:click={toggleTheme} aria-label="Switch to {altTheme} theme">
+<button onclick={toggleTheme} aria-label="Switch to {altTheme} theme">
   <svg viewBox="0 0 24 24">
     <path
       d="M12,18V6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z"
@@ -39,7 +38,9 @@
     font-size: 1rem;
     text-decoration: none;
     line-height: normal;
-    transition: color 0.5s var(--ease-out-quint), background-color 0.5s var(--ease-out-quint);
+    transition:
+      color 0.5s var(--ease-out-quint),
+      background-color 0.5s var(--ease-out-quint);
     background-color: var(--color-background-alt);
     border-radius: 50%;
     border: 0;
@@ -57,7 +58,9 @@
       transform: scale3d(1.2, 1.2, 1);
       border: 2px solid transparent;
       pointer-events: none;
-      transition: border-color 0.5s var(--ease-out-quint), transform 0.5s var(--ease-out-quint);
+      transition:
+        border-color 0.5s var(--ease-out-quint),
+        transform 0.5s var(--ease-out-quint);
     }
 
     &:hover::after {

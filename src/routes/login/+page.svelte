@@ -3,7 +3,7 @@
   import type { User } from 'netlify-identity-widget';
 
   if (netlifyIdentity) {
-    netlifyIdentity.on('init', (user: User) => {
+    netlifyIdentity.on('init', (user: User | null) => {
       if (!user) {
         netlifyIdentity.on('login', () => {
           document.location.href = '/admin/';

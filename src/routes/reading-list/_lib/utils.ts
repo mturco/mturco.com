@@ -45,8 +45,8 @@ const getPostIds = (): number[] =>
   fs
     .readdirSync(postsBasePath)
     .map((file) => {
-      const [, id] = file.match(/([0-9]+)\.md$/);
-      return Number(id);
+      const match = file.match(/([0-9]+)\.md$/);
+      return match ? Number(match[1]) : NaN;
     })
     .filter((id) => !Number.isNaN(id))
     .sort((a, b) => a - b);
@@ -54,7 +54,7 @@ const getPostIds = (): number[] =>
 export const getPreviousPostId = (fromId: number): number | null =>
   getPostIds()
     .reverse()
-    .find((id) => id < fromId);
+    .find((id) => id < fromId) ?? null;
 
 export const getNextPostId = (fromId: number): number | null =>
-  getPostIds().find((id) => id > fromId);
+  getPostIds().find((id) => id > fromId) ?? null;

@@ -1,13 +1,21 @@
 <script lang="ts">
-  let labelWidth: number;
+  import type { Snippet } from 'svelte';
 
-  export let href: string;
-  export let external = false;
+  interface Props {
+    href: string;
+    external?: boolean;
+    icon: Snippet;
+    label: Snippet;
+  }
+
+  let { href, external = false, icon, label }: Props = $props();
+
+  let labelWidth = $state<number>(0);
 </script>
 
 <a {href} rel={external ? 'external' : undefined} style="--label-width: {labelWidth}px">
-  <slot name="icon" />
-  <span bind:clientWidth={labelWidth}><slot name="label" /></span>
+  {@render icon()}
+  <span bind:clientWidth={labelWidth}>{@render label()}</span>
 </a>
 
 <style lang="postcss">
@@ -24,7 +32,8 @@
     margin: 0.5rem;
     border: 2px solid var(--color-divider-lc);
     border-radius: 3.25rem;
-    transition: border-color var(--anim-duration) var(--anim-easing),
+    transition:
+      border-color var(--anim-duration) var(--anim-easing),
       max-width var(--anim-duration) var(--anim-easing);
     text-decoration: none;
     overflow: hidden;

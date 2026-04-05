@@ -5,10 +5,16 @@
   import Post from '../_lib/Post.svelte';
   import type { PageData } from './$types';
 
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+  }
 
-  $: title = `Reading List ${data.post.title} — ${formatPostDate(data.post.date)}`;
-  $: description = `Matt Turco's weekly reading list on software and design. This week: ${data.post.description}`;
+  let { data }: Props = $props();
+
+  let title = $derived(`Reading List ${data.post.title} — ${formatPostDate(data.post.date)}`);
+  let description = $derived(
+    `Matt Turco's weekly reading list on software and design. This week: ${data.post.description}`,
+  );
 </script>
 
 <svelte:head>

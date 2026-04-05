@@ -13,9 +13,11 @@
   ];
 
   const dayOfWeekAbbreviations = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-  let dayOfWeekHeaders = dayOfWeekAbbreviations;
-  let isNonMobile = true;
-  $: dayOfWeekHeaders = [...dayOfWeekAbbreviations, ...(isNonMobile ? dayOfWeekAbbreviations : [])];
+  let isNonMobile = $state(true);
+  let dayOfWeekHeaders = $derived([
+    ...dayOfWeekAbbreviations,
+    ...(isNonMobile ? dayOfWeekAbbreviations : []),
+  ]);
 
   onMount(() => {
     const mql = window.matchMedia('(min-width: 48rem)');
@@ -41,7 +43,7 @@
 
   {#each dates as date}
     {#if !date}
-      <div />
+      <div></div>
     {:else}
       <div
         class="day"

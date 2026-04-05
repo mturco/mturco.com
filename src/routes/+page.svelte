@@ -12,7 +12,11 @@
   import PostPreview from './reading-list/_lib/PostPreview.svelte';
   import type { PageData } from './$types';
 
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <svelte:head>
@@ -36,18 +40,30 @@
 
     <div class="profile-links">
       <ProfileLink external href="https://github.com/mturco">
-        <GithubIcon slot="icon" />
-        <span slot="label">GitHub</span>
+        {#snippet icon()}
+          <GithubIcon />
+        {/snippet}
+        {#snippet label()}
+          <span>GitHub</span>
+        {/snippet}
       </ProfileLink>
 
       <ProfileLink external href="https://linkedin.com/in/mattturco">
-        <LinkedinIcon slot="icon" />
-        <span slot="label">LinkedIn</span>
+        {#snippet icon()}
+          <LinkedinIcon />
+        {/snippet}
+        {#snippet label()}
+          <span>LinkedIn</span>
+        {/snippet}
       </ProfileLink>
 
       <ProfileLink external href="mailto:matt.turco@gmail.com">
-        <EmailIcon slot="icon" />
-        <span slot="label">Email</span>
+        {#snippet icon()}
+          <EmailIcon />
+        {/snippet}
+        {#snippet label()}
+          <span>Email</span>
+        {/snippet}
       </ProfileLink>
     </div>
 
@@ -56,22 +72,34 @@
         <ul class="page-links">
           <li hidden>
             <PageLink href="/resume">
-              <ResumeIcon slot="icon" />
-              <span slot="label">Resume</span>
+              {#snippet icon()}
+                <ResumeIcon />
+              {/snippet}
+              {#snippet label()}
+                <span>Resume</span>
+              {/snippet}
             </PageLink>
           </li>
 
           <li>
             <PageLink href="/reading-list">
-              <ReadingListIcon slot="icon" />
-              <span slot="label">Reading List</span>
+              {#snippet icon()}
+                <ReadingListIcon />
+              {/snippet}
+              {#snippet label()}
+                <span>Reading List</span>
+              {/snippet}
             </PageLink>
           </li>
 
           <li>
             <PageLink href="https://nba.mturco.com">
-              <BasketballIcon slot="icon" />
-              <span slot="label">NBA Playoffs</span>
+              {#snippet icon()}
+                <BasketballIcon />
+              {/snippet}
+              {#snippet label()}
+                <span>NBA Playoffs</span>
+              {/snippet}
             </PageLink>
           </li>
         </ul>
@@ -115,7 +143,7 @@
   h1 {
     color: var(--color-primary);
     font: 800 3em var(--font-name);
-    margin: -0.25em 0 0.5rem;
+    margin: -0.25em 0 0.5rem -0.1ch;
   }
 
   h2 {

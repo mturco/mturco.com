@@ -1,8 +1,9 @@
 <script lang="ts">
   import { getContext } from 'svelte';
   import { breadcrumbsContext } from './context';
+  import type { BreadcrumbsContext } from './context';
 
-  const { breadcrumbs } = getContext(breadcrumbsContext);
+  const { breadcrumbs } = getContext<BreadcrumbsContext>(breadcrumbsContext);
 </script>
 
 {#if $breadcrumbs.size}

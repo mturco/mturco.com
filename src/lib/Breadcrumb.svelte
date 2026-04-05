@@ -1,18 +1,23 @@
 <script lang="ts">
-  import { getContext, onDestroy } from 'svelte';
+  import { getContext } from 'svelte';
   import { breadcrumbsContext } from '$lib/context';
+  import type { BreadcrumbsContext } from '$lib/context';
 
-  export let title: string;
-  export let href: string;
-
-  let breadcrumb = { title, href };
-  const { breadcrumbs } = getContext(breadcrumbsContext);
-
-  $: {
-    breadcrumbs.remove(breadcrumb);
-    breadcrumb = { title, href };
-    breadcrumbs.add(breadcrumb);
+  interface Props {
+    title: string;
+    href: string;
   }
 
-  onDestroy(() => breadcrumbs.remove(breadcrumb));
+  let { title, href }: Props = $props();
+
+  const { breadcrumbs } = getContext<BreadcrumbsContext>(breadcrumbsContext);
+
+  $effect(() => {
+    const breadcrumb = { title, href };
+    breadcrumbs.add(breadcrumb);
+
+    return () => {
+      breadcrumbs.remove(breadcrumb);
+    };
+  });
 </script>

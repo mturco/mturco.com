@@ -4,10 +4,14 @@
 
   type Size = 'normal' | 'large';
 
-  export let post: IPost;
-  export let highlight = false;
-  export let size: Size = 'normal';
-  export let tag: string = undefined;
+  interface Props {
+    post: IPost;
+    highlight?: boolean;
+    size?: Size;
+    tag?: string;
+  }
+
+  let { post, highlight = false, size = 'normal', tag = undefined }: Props = $props();
 </script>
 
 <article class:highlight class={size} class:has-tag={tag}>
@@ -94,7 +98,9 @@
         letter-spacing: 0.15em;
         text-transform: uppercase;
         font-weight: 600;
-        transition: background-color 0.5s var(--ease-out-quint), color 0.5s var(--ease-out-quint);
+        transition:
+          background-color 0.5s var(--ease-out-quint),
+          color 0.5s var(--ease-out-quint);
       }
 
       &:hover::after {

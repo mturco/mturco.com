@@ -3,7 +3,11 @@
   import { formatPostDate } from './utils';
   import type { IPost } from './types';
 
-  export let post: IPost;
+  interface Props {
+    post: IPost;
+  }
+
+  let { post }: Props = $props();
 </script>
 
 <article>

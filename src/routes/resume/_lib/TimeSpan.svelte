@@ -1,14 +1,19 @@
 <script lang="ts">
   import { format, parseISO } from 'date-fns';
 
-  const dateFormat = 'MMM y';
-  export let from: string;
-  export let to = '';
+  interface Props {
+    from: string;
+    to?: string;
+  }
 
-  $: fromDate = parseISO(from);
-  $: fromString = format(fromDate, dateFormat);
-  $: toDate = to ? parseISO(to) : new Date();
-  $: toString = to ? format(toDate, dateFormat) : 'present';
+  let { from, to = '' }: Props = $props();
+
+  const dateFormat = 'MMM y';
+
+  let fromDate = $derived(parseISO(from));
+  let fromString = $derived(format(fromDate, dateFormat));
+  let toDate = $derived(to ? parseISO(to) : new Date());
+  let toString = $derived(to ? format(toDate, dateFormat) : 'present');
 </script>
 
 <div>{fromString}–{toString}</div>

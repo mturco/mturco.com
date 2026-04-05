@@ -34,7 +34,9 @@
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      transition: background-color 0.5s var(--ease-out-quint), transform 0.5s var(--ease-out-quint);
+      transition:
+        background-color 0.5s var(--ease-out-quint),
+        transform 0.5s var(--ease-out-quint);
       transform: scale3d(2, 2, 1);
       pointer-events: none;
     }

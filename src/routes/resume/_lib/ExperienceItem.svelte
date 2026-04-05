@@ -1,13 +1,20 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
+  import type { Snippet } from 'svelte';
   import Details from '$lib/Details.svelte';
   import CollapseIcon from '$lib/icons/Collapse.svelte';
   import ExpandIcon from '$lib/icons/Expand.svelte';
   import CompanyTitle from './CompanyTitle.svelte';
 
-  export let company: string;
-  export let open = false;
-  export let placeholder = false;
+  interface Props {
+    company: string;
+    open?: boolean;
+    placeholder?: boolean;
+    roles: Snippet;
+    content?: Snippet;
+  }
+
+  let { company, open = $bindable(false), placeholder = false, roles, content }: Props = $props();
 
   const fadeIn = { duration: 250, delay: 250 };
   const fadeOut = { duration: 250 };
@@ -17,27 +24,31 @@
   {#if placeholder}
     <div class="summary">
       <CompanyTitle>{company}</CompanyTitle>
-      <slot name="roles" />
+      {@render roles()}
     </div>
   {:else}
     <Details bind:open>
-      <div class="summary" slot="summary">
-        <CompanyTitle>{company}</CompanyTitle>
-        <slot name="roles" />
+      {#snippet summary()}
+        <div class="summary">
+          <CompanyTitle>{company}</CompanyTitle>
+          {@render roles()}
 
-        {#if open}
-          <div class="icon" in:fade={fadeIn} out:fade={fadeOut}>
-            <CollapseIcon />
-          </div>
-        {:else}
-          <div class="icon" in:fade={fadeIn} out:fade={fadeOut}>
-            <ExpandIcon />
-          </div>
-        {/if}
-      </div>
+          {#if open}
+            <div class="icon" in:fade={fadeIn} out:fade={fadeOut}>
+              <CollapseIcon />
+            </div>
+          {:else}
+            <div class="icon" in:fade={fadeIn} out:fade={fadeOut}>
+              <ExpandIcon />
+            </div>
+          {/if}
+        </div>
+      {/snippet}
 
       <div class="content">
-        <slot name="content" />
+        {#if content}
+          {@render content()}
+        {/if}
       </div>
     </Details>
   {/if}

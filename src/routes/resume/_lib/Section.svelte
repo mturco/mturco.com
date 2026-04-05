@@ -1,12 +1,19 @@
 <script lang="ts">
-  export let title: string;
-  export let className: string = undefined;
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    title: string;
+    className?: string;
+    children: Snippet;
+  }
+
+  let { title, className = undefined, children }: Props = $props();
 </script>
 
 <section style="--grid-area: {title.replace(' ', '-').toLowerCase()}" class={className}>
   <h1>{title}</h1>
 
-  <slot />
+  {@render children()}
 </section>
 
 <style lang="postcss">

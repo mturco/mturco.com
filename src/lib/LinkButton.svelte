@@ -1,9 +1,16 @@
 <script lang="ts">
-  export let href: string;
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    href: string;
+    children: Snippet;
+  }
+
+  let { href, children }: Props = $props();
 </script>
 
 <a {href}>
-  <slot />
+  {@render children()}
 </a>
 
 <style lang="postcss">
@@ -16,7 +23,9 @@
     font-size: 1rem;
     text-decoration: none;
     line-height: normal;
-    transition: color 0.5s var(--ease-out-quint), background-color 0.5s var(--ease-out-quint);
+    transition:
+      color 0.5s var(--ease-out-quint),
+      background-color 0.5s var(--ease-out-quint);
     background-color: var(--color-background-alt);
     border-radius: 5px;
     white-space: nowrap;
@@ -34,7 +43,9 @@
       transform: scale3d(1.1, 1.25, 1);
       border: 2px solid transparent;
       pointer-events: none;
-      transition: border-color 0.5s var(--ease-out-quint), transform 0.5s var(--ease-out-quint);
+      transition:
+        border-color 0.5s var(--ease-out-quint),
+        transform 0.5s var(--ease-out-quint);
     }
 
     &:hover::after {

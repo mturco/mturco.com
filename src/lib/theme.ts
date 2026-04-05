@@ -1,12 +1,15 @@
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 
-export type Theme = 'light' | 'dark' | null;
+export type Theme = 'light' | 'dark';
 const storageKey = 'prefersDark';
 
-export function getThemePreference(): Theme {
+export function getThemePreference(): Theme | null {
+  if (!browser) return null;
+
   try {
-    const stored = JSON.parse(window.localStorage.getItem(storageKey));
+    const stored = window.localStorage.getItem(storageKey);
     if (stored === null) return null;
+    const parsed = JSON.parse(stored);
     return stored ? 'dark' : 'light';
   } catch {
     return null;

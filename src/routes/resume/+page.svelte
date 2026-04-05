@@ -10,10 +10,8 @@
 
   const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
   const expand = params.get('expand') === '' || Boolean(params.get('expand'));
-  let printing = false;
-  let expanded = printing;
-
-  $: expanded = expand || printing;
+  let printing = $state(false);
+  let expanded = $derived(expand || printing);
 
   onMount(() => {
     window.addEventListener('beforeprint', () => (printing = true));
@@ -39,7 +37,7 @@
         margin: 0;
         padding: 0;
         font-size: 9.5pt !important;
-        color-adjust: exact;
+        print-color-adjust: exact;
       }
     }
   </style>
@@ -52,7 +50,7 @@
 </div>
 
 <main>
-  <div class="sidebar-bg" />
+  <div class="sidebar-bg"></div>
   <header>
     <h1 class="name">Matt Turco</h1>
     <p class="tagline">Software Engineer in Boulder</p>
@@ -73,16 +71,16 @@
   <Section title="Experience" className="content">
     <div class="experience-container">
       <ExperienceItem company="Google" placeholder>
-        <div slot="roles">
+        {#snippet roles()}
           <div class="role">
             <RoleTitle>Senior Software Engineer</RoleTitle>
             <TimeSpan from="2021-08" />
           </div>
-        </div>
+        {/snippet}
       </ExperienceItem>
 
       <ExperienceItem company="Namely" open={expanded}>
-        <div slot="roles">
+        {#snippet roles()}
           <div class="role">
             <RoleTitle>Senior Software Engineer, Tech Lead</RoleTitle>
             <TimeSpan from="2019-03" to="2021-08" />
@@ -92,9 +90,9 @@
             <RoleTitle>Software Engineer</RoleTitle>
             <TimeSpan from="2018-05" to="2019-03" />
           </div>
-        </div>
+        {/snippet}
 
-        <div slot="content">
+        {#snippet content()}
           <ul>
             <li>
               Defined the vision and roadmap for the front end platform. Established code standards
@@ -118,18 +116,18 @@
               with conditional fields, multi-page flows, input validation, and inline editing.
             </li>
           </ul>
-        </div>
+        {/snippet}
       </ExperienceItem>
 
       <ExperienceItem company="Gallup" open={expanded}>
-        <div slot="roles">
+        {#snippet roles()}
           <div class="role">
             <RoleTitle>Front End Engineer</RoleTitle>
             <TimeSpan from="2015-02" to="2018-04" />
           </div>
-        </div>
+        {/snippet}
 
-        <div slot="content">
+        {#snippet content()}
           <ul>
             <li>
               Created the charting library that rendered all of Gallup&apos;s line charts using
@@ -147,18 +145,18 @@
               Improved keyboard navigation and screen reader accessibility for WCAG2 certification.
             </li>
           </ul>
-        </div>
+        {/snippet}
       </ExperienceItem>
 
       <ExperienceItem company="Optimum Data" open={expanded}>
-        <div slot="roles">
+        {#snippet roles()}
           <div class="role">
             <RoleTitle>Software Engineer</RoleTitle>
             <TimeSpan from="2012-11" to="2015-02" />
           </div>
-        </div>
+        {/snippet}
 
-        <div slot="content">
+        {#snippet content()}
           <ul>
             <li>
               Designed and developed a web app to surface critical order and inventory information
@@ -166,7 +164,7 @@
               fulfillment time.
             </li>
           </ul>
-        </div>
+        {/snippet}
       </ExperienceItem>
     </div>
   </Section>
