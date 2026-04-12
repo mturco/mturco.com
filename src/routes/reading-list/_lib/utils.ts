@@ -17,7 +17,7 @@ export const getPost = (slug: number | string): IPost => {
     title: data.title,
     description: data.description,
     date: data.date,
-    html: marked(content),
+    html: marked.parse(content) as string,
     body: data.body,
     url: getPostUrl(id),
     permalink: getPostUrl(id, true),

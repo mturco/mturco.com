@@ -33,7 +33,7 @@
   <h2>Previous Reading Lists</h2>
 
   <div class="previous">
-    {#each data.previousPosts as post}
+    {#each data.previousPosts as post (post.id)}
       <PostPreview {post} />
     {/each}
   </div>

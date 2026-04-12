@@ -1,6 +1,7 @@
 import { error } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 
-export async function load({ params, fetch }) {
+export const load: PageLoad = async ({ params, fetch }) => {
   const res = await fetch(`/reading-list/${params.issue}.json`);
   const { post, next, prev } = await res.json();
 
@@ -9,4 +10,4 @@ export async function load({ params, fetch }) {
   }
 
   throw error(500, 'Failed to load post');
-}
+};

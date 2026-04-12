@@ -9,8 +9,8 @@
 {#if $breadcrumbs.size}
   <nav aria-label="breadcrumbs">
     <ol>
-      {#each Array.from($breadcrumbs.values()) as { title, href }, index}
-        {#if index < $breadcrumbs.size - 1}
+      {#each Array.from($breadcrumbs.values()) as { title, href }, i (i)}
+        {#if i < $breadcrumbs.size - 1}
           <li>
             <a {href}>{title}</a>
           </li>

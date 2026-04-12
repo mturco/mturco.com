@@ -9,6 +9,7 @@ const config = {
     adapter: adapter(),
     prerender: {
       handleHttpError: 'warn',
+      handleMissingId: 'warn',
     },
   },
 };

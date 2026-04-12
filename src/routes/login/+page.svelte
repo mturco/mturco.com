@@ -1,16 +1,19 @@
 <script lang="ts">
-  import netlifyIdentity from 'netlify-identity-widget';
+  import { onMount } from 'svelte';
   import type { User } from 'netlify-identity-widget';
 
-  if (netlifyIdentity) {
-    netlifyIdentity.on('init', (user: User | null) => {
-      if (!user) {
-        netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
-      }
-    });
-  }
+  onMount(async () => {
+    const netlifyIdentity = (await import('netlify-identity-widget')).default;
+    if (netlifyIdentity) {
+      netlifyIdentity.on('init', (user: User | null) => {
+        if (!user) {
+          netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  });
 </script>
 
 <svelte:head>

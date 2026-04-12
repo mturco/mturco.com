@@ -37,11 +37,11 @@
 <h1>{year}</h1>
 
 <div class="calendar">
-  {#each dayOfWeekHeaders as header}
+  {#each dayOfWeekHeaders as header (header)}
     <div class="header">{header}</div>
   {/each}
 
-  {#each dates as date}
+  {#each dates as date, i (date ? date.getTime() : i)}
     {#if !date}
       <div></div>
     {:else}

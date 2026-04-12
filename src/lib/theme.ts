@@ -10,7 +10,7 @@ export function getThemePreference(): Theme | null {
     const stored = window.localStorage.getItem(storageKey);
     if (stored === null) return null;
     const parsed = JSON.parse(stored);
-    return stored ? 'dark' : 'light';
+    return parsed ? 'dark' : 'light';
   } catch {
     return null;
   }
