@@ -2,6 +2,10 @@ import { format, parseISO } from 'date-fns';
 import fs from 'fs';
 import grayMatter from 'gray-matter';
 import { marked } from 'marked';
+import { gfmHeadingId } from 'marked-gfm-heading-id';
+
+marked.use(gfmHeadingId());
+
 
 import type { IPost } from './types';
 

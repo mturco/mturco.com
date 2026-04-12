@@ -29,6 +29,7 @@
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
     "marked": "^18.0.0",
+    "marked-gfm-heading-id": "^4.1.4",
     "netlify-plugin-a11y": "^0.0.12",
     "postcss": "^8.5.9",
     "postcss-load-config": "^6.0.1",
