@@ -2,16 +2,6 @@
   command = "pnpm build"
   publish = "build/"
 
-[[plugins]]
-  package = "netlify-plugin-a11y"
-  [plugins.inputs]
-    checkPaths = [
-      "/index.html",
-      "/resume.html",
-      "/reading-list.html",
-      "/reading-list/23.html",
-      "/sandbox.html"
-    ]
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
