@@ -4,6 +4,14 @@
 
 [[plugins]]
   package = "netlify-plugin-a11y"
+  [plugins.inputs]
+    checkPaths = [
+      "/",
+      "/resume",
+      "/reading-list",
+      "/reading-list/23",
+      "/sandbox"
+    ]
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
