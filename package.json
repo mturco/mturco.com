@@ -47,5 +47,11 @@
   "license": "MIT",
   "dependencies": {
     "netlify-identity-widget": "^2.0.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "puppeteer",
+      "esbuild"
+    ]
   }
 }
