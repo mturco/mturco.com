@@ -6,11 +6,11 @@
   package = "netlify-plugin-a11y"
   [plugins.inputs]
     checkPaths = [
-      "/",
-      "/resume",
-      "/reading-list",
-      "/reading-list/23",
-      "/sandbox"
+      "/index.html",
+      "/resume.html",
+      "/reading-list.html",
+      "/reading-list/23.html",
+      "/sandbox.html"
     ]
 
 [[plugins]]
